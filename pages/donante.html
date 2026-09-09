@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface":"#f8f9ff","surface-container-low":"#eff4ff","on-secondary":"#ffffff","inverse-on-surface":"#eaf1ff","secondary-fixed":"#d8e3fb","surface-variant":"#d3e4fe","primary-container":"#008378","on-secondary-fixed-variant":"#3c475a","surface-container":"#e5eeff","on-surface":"#0b1c30","tertiary-container":"#a36700","secondary-container":"#d5e0f8","on-primary-container":"#f4fffc","on-error-container":"#93000a","on-tertiary-fixed":"#2a1700","on-tertiary-container":"#fffbff","surface-dim":"#cbdbf5","primary-fixed":"#89f5e7","on-tertiary-fixed-variant":"#653e00","surface-tint":"#006a61","tertiary":"#825100","on-primary-fixed":"#00201d","surface-container-high":"#dce9ff","primary-fixed-dim":"#6bd8cb","tertiary-fixed-dim":"#ffb95f","background":"#f8f9ff","on-tertiary":"#ffffff","error":"#ba1a1a","surface-container-lowest":"#ffffff","inverse-primary":"#6bd8cb","inverse-surface":"#213145","outline":"#6d7a77","on-error":"#ffffff","primary":"#00685f","surface-container-highest":"#d3e4fe","on-secondary-container":"#586377","on-primary":"#ffffff","on-surface-variant":"#3d4947","on-background":"#0b1c30","outline-variant":"#bcc9c6","secondary-fixed-dim":"#bcc7de","secondary":"#545f73","tertiary-fixed":"#ffddb8","on-secondary-fixed":"#111c2d","surface-bright":"#f8f9ff","on-primary-fixed-variant":"#005049","error-container":"#ffdad6"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-2xs":"0.25rem","space-3xl":"4rem","margin-tablet":"2rem","space-xl":"2rem","margin-desktop":"3rem","gutter-desktop":"1.5rem","space-xs":"0.5rem","gutter-mobile":"1rem","space-3xs":"0.125rem","space-2xl":"3rem","space-sm":"0.75rem","space-md":"1rem","margin-mobile":"1rem","space-lg":"1.5rem"},fontFamily:{"title-sm":["Inter"],"display-lg-mobile":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Inter"],"title-md":["Inter"],"body-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"code-sm":["JetBrains Mono"],"label-sm":["Inter"],"body-lg":["Inter"]},fontSize:{"title-sm":["14px",{"lineHeight":"20px","fontWeight":"600"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"code-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm shrink-0"><img alt="DonaTrack Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight">DonaTrack</span><span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Trazabilidad Humanitaria</span></div></div><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface font-label-lg rounded-lg"><a class="px-space-sm py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio-impacto" href="#">Inicio &amp; Impacto</a><a class="px-space-sm py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mapa-en-vivo" href="#">Mapa en Vivo</a><a class="px-space-sm py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="galeria-de-entregas" href="#">Galería de Entregas</a><a aria-current="page" class="px-space-sm py-space-xs transition-colors bg-surface-container-high text-on-surface font-label-lg rounded-lg" data-path="portal-donante" href="#">Portal Donante</a><a class="px-space-sm py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="portal-beneficiario" href="#">Portal Beneficiario</a><a class="px-space-sm py-space-xs rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="panel-admin" href="#">Panel Admin</a></nav><div class="flex items-center gap-space-sm shrink-0"><div class="relative group"><button class="h-10 px-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface flex items-center gap-space-2xs transition-colors" type="button"><span>Iniciar Sesión</span><span class="material-symbols-outlined text-label-md">arrow_drop_down</span></button><div class="absolute right-0 mt-space-2xs w-48 bg-surface-container-lowest rounded-xl shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)] py-space-2xs hidden group-hover:block"><a class="block px-space-md py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="login-donante" href="#">Portal Donante</a><a class="block px-space-md py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="login-beneficiaria" href="#">Portal Beneficiaria</a><a class="block px-space-md py-space-xs font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="login-admin" href="#">Administrador</a></div></div><a class="h-10 px-space-md rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container hover:text-on-primary-container inline-flex items-center justify-center transition-all shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]" data-path="registro" href="#">Registrarse</a><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhqPjFvmlcUBOxYvu424LTe_v0mhvqZtK1osakepjZFEzc79YT5D1kboTVdVdToTDrk6yWCa5Ik9vUP1us_XVECr36H35bemt3nAEh7vac3oL-Y28DU-zMSOzVekI_bg5i8tsFCft1xrvCMwH6vXzyYaUog6Q-3Pe4qTuXlhYiZkhlg3nVrRv305VTHpnLR2sozrJ7zM6RdAOSem3hY6GE_uaNuXaunmsN7bSrKxLOmd5Vr1oCHCHQAQ"/></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Dynamic Top Banner / Donor Profile Overview -->
+<section class="w-full px-space-md lg:px-margin-desktop py-space-xl">
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-lg lg:p-space-xl shadow-sm">
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/3 -bottom-20 w-64 h-64 rounded-full bg-tertiary/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center gap-space-md">
+<div class="relative shrink-0">
+<img class="w-20 h-20 rounded-2xl object-cover shadow-sm" data-alt="Portrait photo of a smiling adult male volunteer donor in a light jacket against a clean neutral background, soft natural lighting, modern high quality" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkj9pX8wWTwnJ7Wt288Fco3g-mIL8Jfg2xh-HX5H2LeFOOPOUXVPUj_Q2L1jM5yN07aw50AcEIXbfh7wV49t6WDM3ro-6tkoT1SwNB1xOkadNAzqQLjB25xr1Qg9Bxp7E-t62tR-b688ipDB-nqP5Po1HuJKca8lh10Bkzz-9CxqUZgZToL8JekxF5ojB_NeixL9xQD9HqcGJzAq07FoKoGArXHTTBHlm1fUtFDCWJ32bcu9jiZZuXnQ"/>
+<div class="absolute -bottom-2 -right-2 bg-tertiary-container text-on-tertiary-container text-label-sm font-label-sm px-space-xs py-space-3xs rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Oro</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Hola, Mateo Rodríguez</h1>
+<span class="inline-flex items-center gap-1 px-space-xs py-space-3xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Donante Nivel Oro 🌟
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Matrícula Criptográfica Donante #DON-ARG-2918 • Miembro desde Marzo 2024
+            </p>
+<div class="flex items-center gap-space-sm mt-3">
+<div class="w-48 bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full" style="width: 78%;"></div>
+</div>
+<span class="font-code-sm text-code-sm text-primary">78% rumbo a Platino (350/450 pts)</span>
+</div>
+</div>
+</div>
+<!-- Quick Notifications Toggle & Action -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="relative p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all" id="btnNotifToggle">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface-container-lowest animate-ping"></span>
+<span class="absolute top-2 right-2 w-2.5 h-2.5 bg-error rounded-full"></span>
+</button>
+<a class="h-11 px-space-md rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container inline-flex items-center gap-space-xs shadow-sm transition-all" data-path="portal-donante" href="#">
+<span class="material-symbols-outlined text-title-md">add_circle</span>
+<span>Nueva Donación</span>
+</a>
+</div>
+</div>
+<!-- Real-time Personal Impact Stats Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mt-space-lg pt-space-lg bg-surface-container-low/60 rounded-xl p-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm text-primary">volunteer_activism</span>
+<span>Donaciones Hechas</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">18</span>
+<span class="font-body-sm text-body-sm text-primary">100% verificadas en ledger</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm text-primary">scale</span>
+<span>Kilos Aportados</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">3.250 <span class="font-body-md text-body-md text-on-surface-variant">kg</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+420 kg este último mes</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm text-primary">diversity_1</span>
+<span>Entidades Beneficiadas</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">5 <span class="font-body-md text-body-md text-on-surface-variant">comedores</span></span>
+<span class="font-body-sm text-body-sm text-primary">Impacto directo comprobado</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm text-tertiary">military_tech</span>
+<span>Puntos de Impacto</span>
+</div>
+<span class="font-headline-md text-headline-md text-tertiary mt-1">450 <span class="font-body-md text-body-md text-on-surface-variant">pts</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Próxima insignia a los 500 pts</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Notifications Popover Overlay (Hidden by default, can be toggled) -->
+<div class="hidden px-space-md lg:px-margin-desktop mb-space-md" id="notifPanel">
+<div class="w-full bg-surface-container-lowest rounded-2xl p-space-md shadow-md border-l-4 border-primary">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-high mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-title-md">notifications_active</span>
+<span class="font-title-md text-title-md text-on-surface">Centro de Notificaciones en Tiempo Real</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface text-label-sm font-label-sm flex items-center gap-1" onclick="document.getElementById('notifPanel').classList.add('hidden')">
+<span>Cerrar</span>
+<span class="material-symbols-outlined text-xs">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-primary font-code-sm text-code-sm">#DON-9042</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hace 12 min</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Tu donación ha sido asignada y enviada a <strong>Merendero Sol Brillante</strong>.</p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-tertiary font-code-sm text-code-sm">Misión Lograda</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hace 2 horas</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">¡Felicitaciones! Cumpliste la misión <strong>"Primer Donativo del Mes"</strong> (+50 pts).</p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-tertiary font-code-sm text-code-sm">Rango Elevado</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ayer</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">¡Has subido a <strong>Donante Oro</strong> por consistencia operativa!</p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1 hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-primary font-code-sm text-code-sm">Recepción Confirmada</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hace 2 días</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Comedor <strong>El Progreso</strong> confirmó la recepción de tus 50 kg de arroz.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Fleet Telemetry Module (Seguimiento GPS en Vivo) -->
+<section class="w-full px-space-md lg:px-margin-desktop mb-space-xl">
+<div class="rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="p-space-md lg:p-space-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md bg-surface-container-low">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-title-md text-title-md text-on-surface">Telemetría GPS en Vivo: Donación en Camino</span>
+<span class="font-code-sm text-code-sm px-space-xs py-space-3xs rounded bg-surface-container-high text-on-surface">Lote DON-9042</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Visualización criptográfica satelital conectada a la unidad de transporte solidario.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs font-code-sm text-code-sm text-primary bg-surface-container-lowest px-space-sm py-space-xs rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-sm">satellite_alt</span>
+<span>Última actualización GPS: Hace 2 minutos</span>
+</div>
+</div>
+<!-- Split View: Interactive Map Representation & Telemetry Manifest HUD -->
+<div class="grid grid-cols-1 lg:grid-cols-12">
+<!-- Telemetry Map View (7 cols) -->
+<div class="lg:col-span-7 relative min-h-[380px] bg-surface-container overflow-hidden">
+<div class="w-full h-full min-h-[380px] bg-cover bg-center" data-location="Buenos Aires, Argentina" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1xP58aLM7FN51RpeWwqUmNnBT4tabWg41bEvuSUVNO0I_UO64THCntZa35BBydrWbtmiZRxGRKCuG6DbqVpawcBnFPXzBPZDC3GTim7DrDb_F9gh22l1Dm3UzRixWt7k9618JDvdtFCVbE50cmwDZC3wNdotH60sbbN35zpH46j70wjjxVPWmzGJCaaAzQMrKb1-EzsZKJ6o5lT8UO5tDMJEczUAOaDf14YULp1PEjvDD-pRr9GtmGQ')"></div>
+<!-- Dynamic HUD Overlay Pins -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent pointer-events-none"></div>
+<!-- Live Floating Node Info -->
+<div class="absolute top-space-md left-space-md bg-surface-container-lowest/90 backdrop-blur-md p-space-sm rounded-xl shadow-md max-w-xs">
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm mb-1">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+<span>Camión #04 • Mercedes-Benz Atego</span>
+</div>
+<p class="font-title-sm text-title-sm text-on-surface">Av. Juan B. Justo 4200</p>
+<p class="font-body-sm text-body-sm text-primary font-medium">A 18 min del destino (Merendero Sol Brillante)</p>
+</div>
+<!-- Live Telemetry Data Tag Bottom Right -->
+<div class="absolute bottom-space-md right-space-md bg-surface-container-lowest/95 backdrop-blur-md px-space-sm py-space-xs rounded-xl shadow-md flex items-center gap-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Temperatura Furgón</span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">14.2°C (Óptima)</span>
+</div>
+<div class="w-px h-6 bg-surface-container-high"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Velocidad Promedio</span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">42 km/h</span>
+</div>
+</div>
+</div>
+<!-- Logistics Manifest Details (5 cols) -->
+<div class="lg:col-span-5 p-space-md lg:p-space-lg flex flex-col justify-between bg-surface-container-lowest">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface">Hoja de Ruta &amp; Responsables</span>
+<span class="px-space-xs py-space-3xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+                En Ruta Segura
+              </span>
+</div>
+<!-- Chofer and Vehicle Card -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-xl object-cover" data-alt="Close up professional portrait of a male delivery driver in uniform with a friendly expression, high resolution realistic photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJt3VQ36uGiUR-BFD6unetWYr9JEMneRHRVeY8p3zsYXqRyFc540nZW_fCGTJX2cDYqVBDRrYYg74BLMFq0QKqjWoKlVxP1oeYcUgO17-W5Trr44-CTSimnQVwp6gmqB3kVZbRxL_PG3MLWGx9Rb8EZNQU0g-jbAAeorNX47BLIp4ORae-YRaDmcmWZ5oRAV0DXJH-VPj6e-_-AObz_-Fd5CR6Zfc3YTYEfPNarqQjpFyWLznZ3R1p2g"/>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Carlos Gómez</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Conductor Logístico Certificado</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Matrícula: AF-924-ZZ • ID #OP-881</span>
+</div>
+</div>
+<!-- Checkpoint timeline -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Hitos de la Ruta</span>
+<div class="flex items-start gap-space-sm relative">
+<div class="w-6 flex flex-col items-center">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<div class="w-0.5 h-8 bg-primary"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">08:30 - Salida Centro Logístico Central</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Carga de 120 kg Leche Entera verificada</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm relative">
+<div class="w-6 flex flex-col items-center">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<div class="w-0.5 h-8 bg-surface-container-high"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">09:15 - Checkpoint Peaje Autopista Oeste</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lectura RFID confirmada sin demoras</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-6 flex flex-col items-center">
+<span class="w-3 h-3 rounded-full bg-surface-container-high"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">09:45 (Estimado) - Llegada a Merendero Sol Brillante</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Recepción coordinada con Directora Elena</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hash SHA-256 de Custodia</span>
+<span class="font-code-sm text-code-sm text-primary">0x7f9a...c32d</span>
+</div>
+<button class="h-9 px-space-sm rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md inline-flex items-center gap-1 transition-all">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Copiar Hash</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter & History of Realized Donations (Advanced Filter Component) -->
+<section class="w-full px-space-md lg:px-margin-desktop mb-space-xl">
+<div class="flex flex-col gap-space-md">
+<!-- Section Title & Descriptor -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Trazabilidad de Envíos</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Mis Donaciones Realizadas</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Filtrando historial transparente con auditoría criptográfica</span>
+</div>
+<!-- Advanced Filter Controller Bar -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-md">
+<!-- Status Chips Filter -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Filtrar por Estado Operativo:</label>
+<div class="flex flex-wrap items-center gap-space-xs" id="statusFilterBar">
+<button class="filter-btn active-state px-space-sm py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-sm transition-all" data-filter="all">
+              Todos (4)
+            </button>
+<button class="filter-btn px-space-sm py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-filter="deposito">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary mr-1"></span>En depósito (1)
+            </button>
+<button class="filter-btn px-space-sm py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-filter="asignada">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-fixed-dim mr-1"></span>Asignada (1)
+            </button>
+<button class="filter-btn px-space-sm py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-filter="transito">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary animate-pulse mr-1"></span>En tránsito (Camión) (1)
+            </button>
+<button class="filter-btn px-space-sm py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-filter="entregada">
+<span class="inline-block w-2 h-2 rounded-full bg-primary mr-1"></span>Entregada con éxito (1)
+            </button>
+</div>
+</div>
+<!-- Category & Subcategory Selectors / Search -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1">Categoría Principal</label>
+<select class="h-10 px-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container">
+<option value="all">Todas las categorías</option>
+<option selected="" value="alimentos">Alimentos no perecederos</option>
+<option value="abrigo">Abrigo y Calzado</option>
+<option value="higiene">Higiene personal y sanidad</option>
+</select>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1">Subcategoría Específica</label>
+<select class="h-10 px-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container">
+<option value="all">Todas las subcategorías</option>
+<option value="lacteos">Lácteos y Derivados</option>
+<option value="legumbres">Legumbres y Granos secos</option>
+<option value="cereales">Cereales y Harinas</option>
+<option value="frazadas">Frazadas y Ropa de cama</option>
+<option value="bebes">Cuidado infantil y pañales</option>
+</select>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1">Búsqueda Rápida</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-sm">search</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container" placeholder="Ej. Leche, DON-9042..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Grid of Donation Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md" id="donationsGrid">
+<!-- Card 1: #DON-9042 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md flex flex-col justify-between shadow-sm transition-all hover:shadow-md" data-category="transito">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-primary font-bold">#DON-9042</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span> En tránsito
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mt-1">120 kg Leche Entera Larga Vida</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Destino: <strong>Merendero Sol Brillante</strong></p>
+<div class="bg-surface-container-low p-space-xs rounded-lg mt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<p>🚛 <strong>Camión #04</strong> (Carlos Gómez)</p>
+<p class="font-code-sm text-code-sm text-primary">GPS activo en ruta directa</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex flex-col gap-2">
+<button class="w-full h-10 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container inline-flex items-center justify-center gap-1 transition-all">
+<span class="material-symbols-outlined text-sm">my_location</span>
+<span>Seguir Camión en Vivo</span>
+</button>
+<span class="font-code-sm text-code-sm text-on-surface-variant text-center">Despachado: Hoy 08:15 hs</span>
+</div>
+</div>
+<!-- Card 2: #DON-8812 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md flex flex-col justify-between shadow-sm transition-all hover:shadow-md" data-category="entregada">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-primary font-bold">#DON-8812</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">check_circle</span> Entregado
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mt-1">50 Paq. Pañales y Jabones</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Destino: <strong>Hogar Cuna de Esperanza</strong></p>
+<!-- Verification Mini Photo -->
+<div class="relative rounded-xl overflow-hidden mt-space-xs group">
+<img class="w-full h-28 object-cover rounded-xl" data-alt="Community dining kitchen workers happily holding newly received sanitary relief supplies and cardboard diaper boxes with signed delivery receipt, clear daytime lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2Jwdp14PZhXjpOpP75wG9wqryspi531B1Oj6-VPqlyzl2nGU3ZXACPBehLeoYlbfzAhweuZ9qYEaTYNJiQZWbeb-UpejLovhFO4TZKwKxVOCOxSW4GKKqeF6LGvnmX7vhFwmcHfglo6EN4r_xyn0LUxRXCzvtm1Kv2tOyY_G3LrHcGlioaBZcmYjlwXzTIw7ja8XF1m6j9tEeWqPRUGyxlbWyLyNpYQEUpxBGj_hcXKwTbEarCQOc-Q"/>
+<div class="absolute inset-0 bg-surface-container-lowest/60 backdrop-blur-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm text-on-surface bg-surface-container-lowest px-2 py-1 rounded shadow">Ver acta fotográfica</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex flex-col gap-2">
+<div class="flex items-center justify-between font-body-sm text-body-sm text-primary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span> Firma digital validada
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">14 May 2025</span>
+</div>
+<button class="w-full h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all">
+              Ver Certificado de Impacto
+            </button>
+</div>
+</div>
+<!-- Card 3: #DON-9104 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md flex flex-col justify-between shadow-sm transition-all hover:shadow-md" data-category="deposito">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-primary font-bold">#DON-9104</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">inventory_2</span> En depósito
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mt-1">200 kg Harina y Aceite</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ubicación: <strong>Depósito Central Nave 3B</strong></p>
+<div class="bg-surface-container-low p-space-xs rounded-lg mt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<p class="text-on-surface font-medium">Clasificado &amp; Paletizado</p>
+<p class="font-code-sm text-code-sm text-tertiary">Vencimiento: 12/2025</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Etapa logística:</span>
+<span class="font-semibold text-on-surface">Asignación pendiente</span>
+</div>
+<button class="w-full h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all">
+              Ver Trazabilidad Almacén
+            </button>
+</div>
+</div>
+<!-- Card 4: #DON-9080 -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md flex flex-col justify-between shadow-sm transition-all hover:shadow-md" data-category="asignada">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-primary font-bold">#DON-9080</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">assignment_turned_in</span> Asignada
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mt-1">40 Frazadas polares</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Asignada a: <strong>Comedor Infantil Belén</strong></p>
+<div class="bg-surface-container-low p-space-xs rounded-lg mt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<p>Turno de carga: <strong>Mañana 07:00 hs</strong></p>
+<p class="font-code-sm text-code-sm text-primary">Campaña Emergencia Frío</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Ruta de entrega:</span>
+<span class="font-semibold text-primary">#RUT-012 Belén</span>
+</div>
+<button class="w-full h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all">
+              Detalles de Asignación
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gamification, Active Missions & Impact Badges Showcase -->
+<section class="w-full px-space-md lg:px-margin-desktop mb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop">
+<!-- Active Missions (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary">target</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Misiones Solidarias Activas</h2>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary-fixed px-space-xs py-space-3xs rounded-full">
+              Temporada Invierno 2025
+            </span>
+</div>
+<!-- Mission Cards List -->
+<div class="flex flex-col gap-space-md">
+<!-- Mission 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">ac_unit</span>
+<span class="font-title-md text-title-md text-on-surface">Misión 'Guardián del Invierno'</span>
+</div>
+<span class="font-code-sm text-code-sm text-tertiary font-bold">+150 pts • Insignia Bronce</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dona 100 prendas de abrigo o frazadas antes del 1° de Julio.</p>
+<div class="mt-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-1">
+<span class="text-on-surface">Progreso de la misión</span>
+<span class="font-code-sm text-code-sm text-primary">65 / 100 prendas (65%)</span>
+</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-2.5 rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+<!-- Mission 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">local_drink</span>
+<span class="font-title-md text-title-md text-on-surface">Misión 'Nutrición Infantil'</span>
+</div>
+<span class="font-code-sm text-code-sm text-tertiary font-bold">+100 pts</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Completa 3 donaciones de leche fortificada este mes calendario.</p>
+<div class="mt-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-1">
+<span class="text-on-surface">Progreso actual</span>
+<span class="font-code-sm text-code-sm text-primary">2 / 3 entregas (66%)</span>
+</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-2.5 rounded-full" style="width: 66%;"></div>
+</div>
+</div>
+</div>
+<!-- Mission 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">event_available</span>
+<span class="font-title-md text-title-md text-on-surface">Misión 'Puntualidad Solidaria'</span>
+</div>
+<span class="font-code-sm text-code-sm text-tertiary font-bold">+50 pts</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Asiste con tu donación a la colecta barrial programada este sábado.</p>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sábado 24 de Mayo • Plaza Almagro</span>
+<button class="px-space-sm py-1 bg-surface-container-highest text-on-surface font-label-sm text-label-sm rounded-lg hover:bg-surface-container transition-colors">
+                  Confirmar Asistencia
+                </button>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gana puntos para desbloquear bonificaciones logísticas y auditorías VIP.</span>
+<a class="font-label-md text-label-md text-primary hover:underline inline-flex items-center gap-1" href="#">
+<span>Ver todas las misiones</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Badges Showcase & Monthly Leaderboard (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Vitrina de Insignias Obtenidas -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary">workspace_premium</span>
+<h3 class="font-title-md text-title-md text-on-surface">Insignias Solidarias (4)</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Verificadas</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-tertiary-fixed/30 flex flex-col items-center text-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-title-sm text-title-sm text-on-surface">Pionero Solidario</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Primeros 100 donantes</span>
+</div>
+<div class="p-space-sm rounded-xl bg-tertiary-fixed/30 flex flex-col items-center text-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-title-sm text-title-sm text-on-surface">Corazón de Oro</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+300 kg entregados</span>
+</div>
+<div class="p-space-sm rounded-xl bg-tertiary-fixed/30 flex flex-col items-center text-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 1;">repeat</span>
+<span class="font-title-sm text-title-sm text-on-surface">Donante Frecuente</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nivel 3 consecutivo</span>
+</div>
+<div class="p-space-sm rounded-xl bg-tertiary-fixed/30 flex flex-col items-center text-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-title-sm text-title-sm text-on-surface">Impacto Certificado</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auditoría 100% limpia</span>
+</div>
+</div>
+</div>
+<!-- Monthly Leaderboard Preview -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface">Ranking Donantes del Mes</span>
+<span class="font-label-sm text-label-sm text-primary">Mayo 2025</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="font-bold text-tertiary">#1</span>
+<span>Fundación Manos Unidas</span>
+</div>
+<span class="font-code-sm text-code-sm text-primary">1.450 pts</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface-variant">#2</span>
+<span>Laura M. Pellegrini</span>
+</div>
+<span class="font-code-sm text-code-sm text-primary">890 pts</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-primary/10 border-l-2 border-primary font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="font-bold text-primary">#6</span>
+<span class="font-semibold text-on-surface">Tú (Mateo Rodríguez)</span>
+</div>
+<span class="font-code-sm text-code-sm text-primary font-bold">450 pts</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Beneficiary Entities Directory & Search Engine -->
+<section class="w-full px-space-md lg:px-margin-desktop mb-space-2xl">
+<div class="flex flex-col gap-space-md">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Red de Asistencia</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Directorio de Entidades Beneficiarias Registradas</h2>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline inline-flex items-center gap-1" data-path="portal-beneficiario" href="#">
+<span>Ver mapa completo de comedores</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<!-- Entity Search & Geographical Filters -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col md:flex-row gap-space-sm items-center">
+<div class="relative w-full md:w-1/2 flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-sm">storefront</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container" placeholder="Buscar comedor por nombre, barrio o necesidad..." type="text"/>
+</div>
+<div class="w-full md:w-1/4">
+<select class="w-full h-11 px-space-sm rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container">
+<option value="all">Todas las zonas geográficas</option>
+<option value="sur">Zona Sur (Quilmes, Lanús)</option>
+<option value="oeste">Zona Oeste (Morón, Moreno)</option>
+<option selected="" value="caba">CABA (Almagro, La Boca, Flores)</option>
+<option value="norte">Zona Norte (San Martín, Tigre)</option>
+</select>
+</div>
+<div class="w-full md:w-1/4">
+<select class="w-full h-11 px-space-sm rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container">
+<option value="all">Cualquier urgencia</option>
+<option selected="" value="alimentos">Alimentos críticos</option>
+<option value="abrigo">Abrigo y calzado infantil</option>
+<option value="higiene">Insumos de limpieza</option>
+</select>
+</div>
+</div>
+<!-- Directory Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Comedor 1 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+<div>
+<div class="relative h-44 w-full">
+<img class="w-full h-full object-cover" data-alt="Warm and organized community soup kitchen dining room with long wooden tables and clean kitchen counters, filled with natural soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbVG3PvA4R5vcgaf9zukm7u797TtLluSqYZIODfd_vr9V0_4GTdWwRzYLOStXUIa5ffzbUUzqjSt2GoQKuMtz-zaNlIrjOmU0eS0aOpp7Zs_EsmFsIasZofao-8jCLZcPsc3WRyuCYFuGYfLJKS6dm3rQSNxbtj0CDTA94CaWAvkA_mG6Up549693ItCI6NRveIzqJmQvLsqs19zV5HprcEWU1AsHXTvIJkeLcsqWHEftU965tjy5WtQ"/>
+<span class="absolute top-3 right-3 px-space-xs py-space-3xs rounded-full bg-error text-on-error font-label-sm text-label-sm font-semibold">
+                Urgente: Alimentos
+              </span>
+<span class="absolute bottom-3 left-3 px-space-xs py-space-3xs rounded bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm">
+                CABA • La Boca
+              </span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<h3 class="font-title-md text-title-md text-on-surface">Merendero Sol Brillante</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Atiende a más de 120 familias en situación de vulnerabilidad alimentaria los 7 días de la semana.</p>
+<div class="mt-2 bg-surface-container-low p-space-xs rounded-xl flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-error font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">priority_high</span> Necesidad declarada urgente:
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface">150 kg de Leche Larga Vida y Harina</span>
+</div>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<button class="w-full h-10 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container inline-flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-sm">favorite</span>
+<span>Donar a este Comedor</span>
+</button>
+</div>
+</div>
+<!-- Comedor 2 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+<div>
+<div class="relative h-44 w-full">
+<img class="w-full h-full object-cover" data-alt="Community center playroom and nursery room with clean colorful educational play mats, soft ambient daylight, highly organized social foundation space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMvZuYeFZTa9w6HXXuJWIg5bw_aloH2C1tEd0vcdmUG4c0lD64dz_wMDQ43_Ko4vWRga4uvK9J-hyHNlHymNmd2hmTYMH4nlgeGamizWDkA4kYiuqe97UQaYC3Y1Bner_pF6LUER2pZuOzzA5IvlqFXG1fhsR9Wk-BELrJNxuvFBEQE-dTRKGsfLWTx7JKFGOj759ex80IXLikUXqCFFRBlt83HSga3O6uzhG5BhyDZS2cwwg6Scb2Q"/>
+<span class="absolute top-3 right-3 px-space-xs py-space-3xs rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold">
+                Urgencia Media
+              </span>
+<span class="absolute bottom-3 left-3 px-space-xs py-space-3xs rounded bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm">
+                CABA • Flores
+              </span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<h3 class="font-title-md text-title-md text-on-surface">Hogar Cuna de Esperanza</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Centro de contención materno-infantil y apoyo escolar primario para 85 niños y niñas.</p>
+<div class="mt-2 bg-surface-container-low p-space-xs rounded-xl flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">child_friendly</span> Necesidad declarada urgente:
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface">Pañales Talle G y XG + Jabón líquido</span>
+</div>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<button class="w-full h-10 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container inline-flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-sm">favorite</span>
+<span>Donar a este Comedor</span>
+</button>
+</div>
+</div>
+<!-- Comedor 3 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+<div>
+<div class="relative h-44 w-full">
+<img class="w-full h-full object-cover" data-alt="Shelter storage room with neatly stacked warm blankets and winter winter coats on shelves, clean bright lighting in humanitarian facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9zOvOBkm3pPwm-gueGwYt2NELTrrAkQ4Ker1poqfui6BU_VtqPfI2WCHHqx5vpHIJDDL1BV3PP7yu_RQNwC2qyl4G1ZyktA96je2IR_0RTcYUF_4G1jY963OzSq1qA-At-rvnf5rpbQOtvgCA-iDraQ1FUyhEoB60S6CZ2MCWAeeRMwS9Is1SMz_exqvKgKS-5DqVQX-pSvAlTsP7Ec_FMi-US6uUTeDcLiOm7reqqVwiPhWG7qzfMA"/>
+<span class="absolute top-3 right-3 px-space-xs py-space-3xs rounded-full bg-error text-on-error font-label-sm text-label-sm font-semibold">
+                Urgente: Frío
+              </span>
+<span class="absolute bottom-3 left-3 px-space-xs py-space-3xs rounded bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm">
+                Zona Sur • Lanús
+              </span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<h3 class="font-title-md text-title-md text-on-surface">Comedor Infantil Belén</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Brinda cena caliente y talleres culturales a 160 personas en el conurbano bonaerense.</p>
+<div class="mt-2 bg-surface-container-low p-space-xs rounded-xl flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-error font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">bed</span> Necesidad declarada urgente:
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface">60 Frazadas térmicas y calzado talle 28-36</span>
+</div>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<button class="w-full h-10 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container inline-flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-sm">favorite</span>
+<span>Donar a este Comedor</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Interactive Client-side Logic for Filters & Notifications -->
+<script>
+  // Notification center toggle
+  const notifBtn = document.getElementById('btnNotifToggle');
+  const notifPanel = document.getElementById('notifPanel');
+  if (notifBtn && notifPanel) {
+    notifBtn.addEventListener('click', () => {
+      notifPanel.classList.toggle('hidden');
+    });
+  }
+
+  // Donation status filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const donationCards = document.querySelectorAll('#donationsGrid > div');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary');
+        b.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      btn.classList.add('bg-primary', 'text-on-primary');
+      btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+      const filterVal = btn.getAttribute('data-filter');
+
+      donationCards.forEach(card => {
+        if (filterVal === 'all' || card.getAttribute('data-category') === filterVal) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] mt-auto"><div class="w-full px-space-lg lg:px-margin-desktop py-space-2xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter-desktop"><div class="lg:col-span-2 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="DonaTrack Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q"/><span class="font-headline-sm text-headline-sm text-on-surface">DonaTrack</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Infraestructura de trazabilidad humanitaria basada en verificación criptográfica y telemetría de última milla. Garantizamos transparencia total y auditoría pública para donaciones de impacto social.</p><div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm"><span class="material-symbols-outlined text-sm">verified_user</span><span>Auditoría abierta y verificable en tiempo real</span></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-sm text-title-sm text-on-surface">Operaciones &amp; Datos</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-primary transition-colors" data-path="mapa-en-vivo" href="#">Mapa en Vivo</a><a class="hover:text-primary transition-colors" data-path="galeria-de-entregas" href="#">Galería de Entregas</a><a class="hover:text-primary transition-colors" data-path="auditoria-de-entregas" href="#">Auditoría de Entregas</a><a class="hover:text-primary transition-colors" data-path="api-de-datos-abiertos" href="#">API de Datos Abiertos</a></ul></div><div class="flex flex-col gap-space-sm"><span class="font-title-sm text-title-sm text-on-surface">Entidades &amp; Actores</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-primary transition-colors" data-path="portal-donante" href="#">Registro Donantes</a><a class="hover:text-primary transition-colors" data-path="registro-entidades" href="#">Registro Entidades y ONGs</a><a class="hover:text-primary transition-colors" data-path="portal-beneficiario" href="#">Portal Beneficiario</a><a class="hover:text-primary transition-colors" data-path="panel-admin" href="#">Acceso Institucional</a></ul></div><div class="flex flex-col gap-space-sm"><span class="font-title-sm text-title-sm text-on-surface">Gobernanza &amp; Legal</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-primary transition-colors" data-path="transparencia" href="#">Transparencia</a><a class="hover:text-primary transition-colors" data-path="terminos-de-servicio" href="#">Términos de Servicio</a><a class="hover:text-primary transition-colors" data-path="politica-de-privacidad" href="#">Política de Privacidad</a><a class="hover:text-primary transition-colors" data-path="seguridad-y-cumplimiento" href="#">Seguridad y Cumplimiento</a></ul></div></div><div class="mt-space-2xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant"><span class="font-body-sm text-body-sm">© 2025 DonaTrack - Sistema Nacional de Trazabilidad Humanitaria. Todos los derechos reservados.</span><div class="flex items-center gap-space-md font-body-sm text-body-sm"><span class="inline-flex items-center gap-space-3xs text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span>Red Operativa Activa</span><a class="hover:text-on-surface transition-colors" data-path="transparencia" href="#">Reportes de Impacto</a></div></div></div></footer></body></html>
