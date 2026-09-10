@@ -30,7 +30,7 @@
         <a class="nav-enlace active" href="index.html">Inicio</a>
         <a class="nav-enlace" href="pages/entidadBeneficiaria.html">Mi perfil (entidad)</a>
         <a class="nav-enlace" href="pages/donante.html">Mi perfil (donante)</a>
-        <a class="nav-enlace" href="pages/donante.html#incentivos">Incentivos (donante)</a>
+        <a class="nav-enlace" href="pages/incentivos.html">Incentivos (donante)</a>
         <a class="nav-enlace" href="pages/administrador.html">Panel (admin)</a>
       </nav>
 
@@ -506,7 +506,114 @@
       </div>
     </section>
 
-    <!-- 7. Modal Público de Fotos (Sin Login) -->
+    <!-- 7. Directorio de Entidades Beneficiarias Registradas -->
+    <section class="seccion-donaciones" id="directorio-entidades" style="padding-top: var(--space-xl); padding-bottom: var(--space-2xl);">
+      <div class="seccion-donaciones-contenedor">
+        <div class="mapa-header-fila">
+          <div class="seccion-titulo-bloque">
+            <div class="seccion-tag">
+              <span class="material-symbols-outlined" style="font-size: 16px;">storefront</span>
+              <span>Red de Asistencia</span>
+            </div>
+            <h2 class="seccion-titulo">Directorio de Entidades Beneficiarias Registradas</h2>
+            <p class="seccion-desc">
+              Comedores comunitarios, hogares y merenderos certificados en la red solidaria con auditoría y recepción geolocalizada.
+            </p>
+          </div>
+          <a class="btn btn-tonal" href="pages/entidadBeneficiaria.html" style="display: inline-flex; align-items: center; gap: 6px;">
+            <span>Ver Ficha de Comedor</span>
+            <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+          </a>
+        </div>
+
+        <!-- Barra de Búsqueda y Filtro Geográfico -->
+        <div class="panel-filtros-directorio" style="margin-bottom: var(--space-lg);">
+          <div style="flex: 2; min-width: 240px; position: relative; display: flex; align-items: center;">
+            <span class="material-symbols-outlined" style="position: absolute; left: 12px; color: var(--on-surface-variant); font-size: 18px;">storefront</span>
+            <input class="form-input" style="padding-left: 36px; width: 100%;" placeholder="Buscar comedor por nombre, barrio o necesidad..." type="text" />
+          </div>
+          <div style="flex: 1; min-width: 180px;">
+            <select class="form-select" style="width: 100%;">
+              <option value="all">Todas las zonas geográficas</option>
+              <option value="sur">Zona Sur (Quilmes, Lanús)</option>
+              <option value="oeste">Zona Oeste (Morón, Moreno)</option>
+              <option selected value="caba">CABA (Almagro, La Boca, Flores)</option>
+              <option value="norte">Zona Norte (San Martín, Tigre)</option>
+            </select>
+          </div>
+          <div style="flex: 1; min-width: 180px;">
+            <select class="form-select" style="width: 100%;">
+              <option value="all">Cualquier urgencia</option>
+              <option selected value="alimentos">Alimentos críticos</option>
+              <option value="abrigo">Abrigo y calzado infantil</option>
+              <option value="higiene">Insumos de limpieza</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Grilla de Comedores -->
+        <div class="comedores-grid">
+          <!-- Comedor 1 -->
+          <div class="tarjeta-comedor">
+            <div>
+              <div class="comedor-img-wrap">
+                <img class="comedor-img" alt="Merendero Sol Brillante" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbVG3PvA4R5vcgaf9zukm7u797TtLluSqYZIODfd_vr9V0_4GTdWwRzYLOStXUIa5ffzbUUzqjSt2GoQKuMtz-zaNlIrjOmU0eS0aOpp7Zs_EsmFsIasZofao-8jCLZcPsc3WRyuCYFuGYfLJKS6dm3rQSNxbtj0CDTA94CaWAvkA_mG6Up549693ItCI6NRveIzqJmQvLsqs19zV5HprcEWU1AsHXTvIJkeLcsqWHEftU965tjy5WtQ" />
+                <span class="comedor-urgencia-badge">Urgente: Alimentos</span>
+                <span class="comedor-ubicacion-tag">CABA • La Boca</span>
+              </div>
+              <div class="comedor-cuerpo">
+                <h3 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--on-surface);">Merendero Sol Brillante</h3>
+                <p style="font-size: 12px; color: var(--on-surface-variant);">Atiende a más de 120 familias en situación de vulnerabilidad alimentaria los 7 días de la semana.</p>
+                <div class="comedor-necesidad-caja">
+                  <span style="font-size: 11px; font-weight: 700; color: var(--error);">Necesidad declarada urgente:</span>
+                  <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">150 kg de Leche Larga Vida y Harina</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comedor 2 -->
+          <div class="tarjeta-comedor">
+            <div>
+              <div class="comedor-img-wrap">
+                <img class="comedor-img" alt="Hogar Cuna de Esperanza" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMvZuYeFZTa9w6HXXuJWIg5bw_aloH2C1tEd0vcdmUG4c0lD64dz_wMDQ43_Ko4vWRga4uvK9J-hyHNlHymNmd2hmTYMH4nlgeGamizWDkA4kYiuqe97UQaYC3Y1Bner_pF6LUER2pZuOzzA5IvlqFXG1fhsR9Wk-BELrJNxuvFBEQE-dTRKGsfLWTx7JKFGOj759ex80IXLikUXqCFFRBlt83HSga3O6uzhG5BhyDZS2cwwg6Scb2Q" />
+                <span class="comedor-urgencia-badge" style="background-color: var(--secondary);">Urgencia Media</span>
+                <span class="comedor-ubicacion-tag">CABA • Flores</span>
+              </div>
+              <div class="comedor-cuerpo">
+                <h3 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--on-surface);">Hogar Cuna de Esperanza</h3>
+                <p style="font-size: 12px; color: var(--on-surface-variant);">Centro de contención materno-infantil y apoyo escolar primario para 85 niños y niñas.</p>
+                <div class="comedor-necesidad-caja">
+                  <span style="font-size: 11px; font-weight: 700; color: var(--primary);">Necesidad declarada urgente:</span>
+                  <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">Pañales Talle G y XG + Jabón líquido</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comedor 3 -->
+          <div class="tarjeta-comedor">
+            <div>
+              <div class="comedor-img-wrap">
+                <img class="comedor-img" alt="Comedor Infantil Belén" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9zOvOBkm3pPwm-gueGwYt2NELTrrAkQ4Ker1poqfui6BU_VtqPfI2WCHHqx5vpHIJDDL1BV3PP7yu_RQNwC2qyl4G1ZyktA96je2IR_0RTcYUF_4G1jY963OzSq1qA-At-rvnf5rpbQOtvgCA-iDraQ1FUyhEoB60S6CZ2MCWAeeRMwS9Is1SMz_exqvKgKS-5DqVQX-pSvAlTsP7Ec_FMi-US6uUTeDcLiOm7reqqVwiPhWG7qzfMA" />
+                <span class="comedor-urgencia-badge">Urgente: Frío</span>
+                <span class="comedor-ubicacion-tag">Zona Sur • Lanús</span>
+              </div>
+              <div class="comedor-cuerpo">
+                <h3 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--on-surface);">Comedor Infantil Belén</h3>
+                <p style="font-size: 12px; color: var(--on-surface-variant);">Brinda cena caliente y talleres culturales a 160 personas en el conurbano bonaerense.</p>
+                <div class="comedor-necesidad-caja">
+                  <span style="font-size: 11px; font-weight: 700; color: var(--error);">Necesidad declarada urgente:</span>
+                  <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">60 Frazadas térmicas y calzado talle 28-36</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Modal Público de Fotos (Sin Login) -->
     <div class="modal-overlay hidden" id="modal-fotos-publicas">
       <div class="modal-contenedor" style="max-width: 780px;">
         <div class="modal-header">
@@ -616,6 +723,7 @@
           <span class="footer-col-titulo">Entidades &amp; Actores</span>
           <div class="footer-col-lista">
             <a class="footer-link" data-path="portal-donante" href="pages/donante.html">Portal Donante</a>
+            <a class="footer-link" data-path="portal-incentivos" href="pages/incentivos.html">Incentivos Donante</a>
             <a class="footer-link" data-path="registro-entidades" href="pages/administrador.html">Registro y Gestión de Entidades</a>
             <a class="footer-link" data-path="portal-beneficiario" href="pages/entidadBeneficiaria.html">Portal Beneficiario</a>
             <a class="footer-link" data-path="panel-admin" href="pages/administrador.html">Acceso Institucional</a>

@@ -128,7 +128,7 @@
 .admin-kpi-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--gutter-desktop);
+  gap: calc(var(--space-md) + 1rem);
 }
 
 @media (min-width: 640px) {
@@ -443,7 +443,7 @@
 .matching-cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
+  gap: calc(var(--space-md) + 1rem);
 }
 
 @media (min-width: 1024px) {
@@ -679,7 +679,7 @@
 .fleet-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--gutter-desktop);
+  gap: calc(var(--space-md) + 1rem);
 }
 
 @media (min-width: 768px) {
@@ -749,7 +749,7 @@
 .ranking-csv-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--gutter-desktop);
+  gap: calc(var(--space-md) + 1rem);
 }
 
 @media (min-width: 1024px) {

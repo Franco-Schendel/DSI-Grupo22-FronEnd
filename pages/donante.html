@@ -18,10 +18,10 @@
 <body>
 
   <!-- Encabezado Principal Global -->
-  <<header class="header-principal">
+  <header class="header-principal">
     <div class="header-contenedor">
       <div class="header-brand">
-        <a href="index.html" style="display: flex; align-items: center;">
+        <a href="../index.html" style="display: flex; align-items: center;">
           <img alt="DonaTrack Logo" class="header-logo" src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q" />
         </a>
       </div>
@@ -30,7 +30,7 @@
         <a class="nav-enlace" href="../index.html">Inicio</a>
         <a class="nav-enlace" href="entidadBeneficiaria.html">Mi perfil (entidad)</a>
         <a class="nav-enlace active" href="donante.html">Mi perfil (donante)</a>
-        <a class="nav-enlace" href="donante.html#incentivos">Incentivos (donante)</a>
+        <a class="nav-enlace" href="incentivos.html">Incentivos (donante)</a>
         <a class="nav-enlace" href="administrador.html">Panel (admin)</a>
       </nav>
 
@@ -70,14 +70,8 @@
                 </span>
               </div>
               <p style="font-size: 13px; color: var(--on-surface-variant); margin-top: 4px;">
-                Matrícula Criptográfica Donante #DON-ARG-2918 • Miembro desde Marzo 2024
+                Miembro desde Marzo 2024
               </p>
-              <div style="display: flex; align-items: center; gap: 12px; margin-top: 10px;">
-                <div class="progreso-rango-barra">
-                  <div class="progreso-rango-relleno" style="width: 78%;"></div>
-                </div>
-                <span style="font-family: var(--font-code); font-size: 12px; color: var(--primary);">78% rumbo a Platino (350/450 pts)</span>
-              </div>
             </div>
           </div>
 
@@ -87,10 +81,6 @@
               <span class="material-symbols-outlined">notifications</span>
               <span class="campana-ping"></span>
               <span class="campana-dot"></span>
-            </button>
-            <button class="btn btn-primary" onclick="alert('Abriendo asistente de registro de nueva donación...');" type="button">
-              <span class="material-symbols-outlined" style="font-size: 18px;">add_circle</span>
-              <span>Nueva Donación</span>
             </button>
           </div>
         </div>
@@ -472,273 +462,6 @@
         </div>
       </section>
 
-      <!-- 5. Gamificación: Misiones Solidarias & Insignias -->
-      <section class="misiones-grid-layout" id="incentivos">
-        <!-- Misiones Activas (7 cols) -->
-        <div class="tarjeta-base" style="padding: var(--space-xl); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span class="material-symbols-outlined" style="color: var(--tertiary);">target</span>
-                <h2 style="font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--on-surface);">Misiones Solidarias Activas</h2>
-              </div>
-              <span class="badge badge-tertiary">Temporada Invierno 2025</span>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 16px;">
-              <!-- Misión 1 -->
-              <div class="tarjeta-mision-item">
-                <div class="mision-header">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span class="material-symbols-outlined" style="color: var(--primary);">ac_unit</span>
-                    <span style="font-size: 14px; font-weight: 700; color: var(--on-surface);">Misión 'Guardián del Invierno'</span>
-                  </div>
-                  <span style="font-family: var(--font-code); font-size: 11px; font-weight: 700; color: var(--tertiary);">+150 pts • Insignia Bronce</span>
-                </div>
-                <p style="font-size: 12px; color: var(--on-surface-variant);">Dona 100 prendas de abrigo o frazadas antes del 1° de Julio.</p>
-                <div style="margin-top: 6px;">
-                  <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;">
-                    <span>Progreso de la misión</span>
-                    <span style="font-family: var(--font-code); color: var(--primary); font-weight: 700;">65 / 100 prendas (65%)</span>
-                  </div>
-                  <div class="barra-progreso-contenedor" style="max-width: 100%;">
-                    <div class="barra-progreso-relleno" style="width: 65%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Misión 2 -->
-              <div class="tarjeta-mision-item">
-                <div class="mision-header">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span class="material-symbols-outlined" style="color: var(--primary);">local_drink</span>
-                    <span style="font-size: 14px; font-weight: 700; color: var(--on-surface);">Misión 'Nutrición Infantil'</span>
-                  </div>
-                  <span style="font-family: var(--font-code); font-size: 11px; font-weight: 700; color: var(--tertiary);">+100 pts</span>
-                </div>
-                <p style="font-size: 12px; color: var(--on-surface-variant);">Completa 3 donaciones de leche fortificada este mes calendario.</p>
-                <div style="margin-top: 6px;">
-                  <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;">
-                    <span>Progreso actual</span>
-                    <span style="font-family: var(--font-code); color: var(--primary); font-weight: 700;">2 / 3 entregas (66%)</span>
-                  </div>
-                  <div class="barra-progreso-contenedor" style="max-width: 100%;">
-                    <div class="barra-progreso-relleno" style="width: 66%;"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Misión 3 -->
-              <div class="tarjeta-mision-item">
-                <div class="mision-header">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span class="material-symbols-outlined" style="color: var(--primary);">event_available</span>
-                    <span style="font-size: 14px; font-weight: 700; color: var(--on-surface);">Misión 'Puntualidad Solidaria'</span>
-                  </div>
-                  <span style="font-family: var(--font-code); font-size: 11px; font-weight: 700; color: var(--tertiary);">+50 pts</span>
-                </div>
-                <p style="font-size: 12px; color: var(--on-surface-variant);">Asiste con tu donación a la colecta barrial programada este sábado.</p>
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 6px;">
-                  <span style="font-size: 12px; color: var(--on-surface-variant);">Sábado 24 de Mayo • Plaza Almagro</span>
-                  <button class="btn btn-tonal btn-sm" onclick="alert('¡Asistencia confirmada para el sábado!');">Confirmar Asistencia</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div style="padding-top: 16px; margin-top: 16px; border-top: 1px solid var(--surface-container); display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--on-surface-variant);">
-            <span>Gana puntos para desbloquear bonificaciones logísticas y auditorías VIP.</span>
-            <a href="#" style="color: var(--primary); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
-              <span>Ver todas las misiones</span>
-              <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Insignias y Ranking (5 cols) -->
-        <div style="display: flex; flex-direction: column; gap: 16px;">
-          <div class="tarjeta-base" style="padding: var(--space-lg);">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span class="material-symbols-outlined" style="color: var(--tertiary);">workspace_premium</span>
-                <h3 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--on-surface);">Insignias Solidarias (4)</h3>
-              </div>
-              <span class="badge badge-secondary">Verificadas</span>
-            </div>
-
-            <div class="insignias-grid">
-              <div class="insignia-box">
-                <span class="material-symbols-outlined" style="color: var(--tertiary); font-size: 26px; font-variation-settings: 'FILL' 1;">eco</span>
-                <span style="font-size: 13px; font-weight: 700; color: var(--on-surface);">Pionero Solidario</span>
-                <span style="font-size: 11px; color: var(--on-surface-variant);">Primeros 100 donantes</span>
-              </div>
-              <div class="insignia-box">
-                <span class="material-symbols-outlined" style="color: var(--tertiary); font-size: 26px; font-variation-settings: 'FILL' 1;">favorite</span>
-                <span style="font-size: 13px; font-weight: 700; color: var(--on-surface);">Corazón de Oro</span>
-                <span style="font-size: 11px; color: var(--on-surface-variant);">+300 kg entregados</span>
-              </div>
-              <div class="insignia-box">
-                <span class="material-symbols-outlined" style="color: var(--tertiary); font-size: 26px; font-variation-settings: 'FILL' 1;">repeat</span>
-                <span style="font-size: 13px; font-weight: 700; color: var(--on-surface);">Donante Frecuente</span>
-                <span style="font-size: 11px; color: var(--on-surface-variant);">Nivel 3 consecutivo</span>
-              </div>
-              <div class="insignia-box">
-                <span class="material-symbols-outlined" style="color: var(--tertiary); font-size: 26px; font-variation-settings: 'FILL' 1;">verified_user</span>
-                <span style="font-size: 13px; font-weight: 700; color: var(--on-surface);">Impacto Certificado</span>
-                <span style="font-size: 11px; color: var(--on-surface-variant);">Auditoría 100% limpia</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tarjeta-base" style="padding: var(--space-md);">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-              <span style="font-size: 14px; font-weight: 700; color: var(--on-surface);">Ranking Donantes del Mes</span>
-              <span class="badge badge-primary">Mayo 2025</span>
-            </div>
-            <div class="ranking-lista">
-              <div class="ranking-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <span style="font-weight: 700; color: var(--tertiary);">#1</span>
-                  <span>Fundación Manos Unidas</span>
-                </div>
-                <span style="font-family: var(--font-code); color: var(--primary); font-weight: 600;">1.450 pts</span>
-              </div>
-              <div class="ranking-item">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <span style="font-weight: 700; color: var(--on-surface-variant);">#2</span>
-                  <span>Laura M. Pellegrini</span>
-                </div>
-                <span style="font-family: var(--font-code); color: var(--primary); font-weight: 600;">890 pts</span>
-              </div>
-              <div class="ranking-item ranking-user">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <span style="font-weight: 700; color: var(--primary);">#6</span>
-                  <span>Tú (Mateo Rodríguez)</span>
-                </div>
-                <span style="font-family: var(--font-code); color: var(--primary); font-weight: 700;">450 pts</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6. Directorio de Entidades Beneficiarias Registradas -->
-      <section style="display: flex; flex-direction: column; gap: 16px;">
-        <div style="display: flex; flex-direction: column; gap: 4px;">
-          <span style="font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.08em;">Red de Asistencia</span>
-          <h2 style="font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--on-surface);">Directorio de Entidades Beneficiarias Registradas</h2>
-          <div style="display: flex; justify-content: flex-end;">
-            <a href="entidadBeneficiaria.html" style="color: var(--primary); font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
-              <span>Ver ficha detallada de comedor</span>
-              <span class="material-symbols-outlined" style="font-size: 14px;">open_in_new</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Barra de Búsqueda y Filtro Geográfico -->
-        <div class="panel-filtros-donaciones" style="flex-direction: row; flex-wrap: wrap;">
-          <div style="flex: 2; min-width: 240px; position: relative; display: flex; align-items: center;">
-            <span class="material-symbols-outlined" style="position: absolute; left: 12px; color: var(--on-surface-variant); font-size: 18px;">storefront</span>
-            <input class="form-input" style="padding-left: 36px;" placeholder="Buscar comedor por nombre, barrio o necesidad..." type="text" />
-          </div>
-          <div style="flex: 1; min-width: 180px;">
-            <select class="form-select">
-              <option value="all">Todas las zonas geográficas</option>
-              <option value="sur">Zona Sur (Quilmes, Lanús)</option>
-              <option value="oeste">Zona Oeste (Morón, Moreno)</option>
-              <option selected value="caba">CABA (Almagro, La Boca, Flores)</option>
-              <option value="norte">Zona Norte (San Martín, Tigre)</option>
-            </select>
-          </div>
-          <div style="flex: 1; min-width: 180px;">
-            <select class="form-select">
-              <option value="all">Cualquier urgencia</option>
-              <option selected value="alimentos">Alimentos críticos</option>
-              <option value="abrigo">Abrigo y calzado infantil</option>
-              <option value="higiene">Insumos de limpieza</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Grilla de Comedores -->
-        <div class="comedores-grid">
-          <!-- Comedor 1 -->
-          <div class="tarjeta-comedor">
-            <div>
-              <div class="comedor-img-wrap">
-                <img class="comedor-img" alt="Merendero Sol Brillante" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbVG3PvA4R5vcgaf9zukm7u797TtLluSqYZIODfd_vr9V0_4GTdWwRzYLOStXUIa5ffzbUUzqjSt2GoQKuMtz-zaNlIrjOmU0eS0aOpp7Zs_EsmFsIasZofao-8jCLZcPsc3WRyuCYFuGYfLJKS6dm3rQSNxbtj0CDTA94CaWAvkA_mG6Up549693ItCI6NRveIzqJmQvLsqs19zV5HprcEWU1AsHXTvIJkeLcsqWHEftU965tjy5WtQ" />
-                <span class="comedor-urgencia-badge">Urgente: Alimentos</span>
-                <span class="comedor-ubicacion-tag">CABA • La Boca</span>
-              </div>
-              <div class="comedor-cuerpo">
-                <h3 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--on-surface);">Merendero Sol Brillante</h3>
-                <p style="font-size: 12px; color: var(--on-surface-variant);">Atiende a más de 120 familias en situación de vulnerabilidad alimentaria los 7 días de la semana.</p>
-                <div class="comedor-necesidad-caja">
-                  <span style="font-size: 11px; font-weight: 700; color: var(--error);">Necesidad declarada urgente:</span>
-                  <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">150 kg de Leche Larga Vida y Harina</span>
-                </div>
-              </div>
-            </div>
-            <div style="padding: var(--space-md); padding-top: 0;">
-              <button class="btn btn-primary" onclick="alert('Abriendo formulario de donación para Merendero Sol Brillante...');" style="width: 100%;">
-                <span class="material-symbols-outlined" style="font-size: 16px;">favorite</span>
-                <span>Donar a este Comedor</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Comedor 2 -->
-          <div class="tarjeta-comedor">
-            <div>
-              <div class="comedor-img-wrap">
-                <img class="comedor-img" alt="Hogar Cuna de Esperanza" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMvZuYeFZTa9w6HXXuJWIg5bw_aloH2C1tEd0vcdmUG4c0lD64dz_wMDQ43_Ko4vWRga4uvK9J-hyHNlHymNmd2hmTYMH4nlgeGamizWDkA4kYiuqe97UQaYC3Y1Bner_pF6LUER2pZuOzzA5IvlqFXG1fhsR9Wk-BELrJNxuvFBEQE-dTRKGsfLWTx7JKFGOj759ex80IXLikUXqCFFRBlt83HSga3O6uzhG5BhyDZS2cwwg6Scb2Q" />
-                <span class="comedor-urgencia-badge" style="background-color: var(--secondary);">Urgencia Media</span>
-                <span class="comedor-ubicacion-tag">CABA • Flores</span>
-              </div>
-              <div class="comedor-cuerpo">
-                <h3 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--on-surface);">Hogar Cuna de Esperanza</h3>
-                <p style="font-size: 12px; color: var(--on-surface-variant);">Centro de contención materno-infantil y apoyo escolar primario para 85 niños y niñas.</p>
-                <div class="comedor-necesidad-caja">
-                  <span style="font-size: 11px; font-weight: 700; color: var(--primary);">Necesidad declarada urgente:</span>
-                  <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">Pañales Talle G y XG + Jabón líquido</span>
-                </div>
-              </div>
-            </div>
-            <div style="padding: var(--space-md); padding-top: 0;">
-              <button class="btn btn-primary" onclick="alert('Abriendo formulario de donación para Hogar Cuna de Esperanza...');" style="width: 100%;">
-                <span class="material-symbols-outlined" style="font-size: 16px;">favorite</span>
-                <span>Donar a este Comedor</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Comedor 3 -->
-          <div class="tarjeta-comedor">
-            <div>
-              <div class="comedor-img-wrap">
-                <img class="comedor-img" alt="Comedor Infantil Belén" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9zOvOBkm3pPwm-gueGwYt2NELTrrAkQ4Ker1poqfui6BU_VtqPfI2WCHHqx5vpHIJDDL1BV3PP7yu_RQNwC2qyl4G1ZyktA96je2IR_0RTcYUF_4G1jY963OzSq1qA-At-rvnf5rpbQOtvgCA-iDraQ1FUyhEoB60S6CZ2MCWAeeRMwS9Is1SMz_exqvKgKS-5DqVQX-pSvAlTsP7Ec_FMi-US6uUTeDcLiOm7reqqVwiPhWG7qzfMA" />
-                <span class="comedor-urgencia-badge">Urgente: Frío</span>
-                <span class="comedor-ubicacion-tag">Zona Sur • Lanús</span>
-              </div>
-              <div class="comedor-cuerpo">
-                <h3 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--on-surface);">Comedor Infantil Belén</h3>
-                <p style="font-size: 12px; color: var(--on-surface-variant);">Brinda cena caliente y talleres culturales a 160 personas en el conurbano bonaerense.</p>
-                <div class="comedor-necesidad-caja">
-                  <span style="font-size: 11px; font-weight: 700; color: var(--error);">Necesidad declarada urgente:</span>
-                  <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">60 Frazadas térmicas y calzado talle 28-36</span>
-                </div>
-              </div>
-            </div>
-            <div style="padding: var(--space-md); padding-top: 0;">
-              <button class="btn btn-primary" onclick="alert('Abriendo formulario de donación para Comedor Infantil Belén...');" style="width: 100%;">
-                <span class="material-symbols-outlined" style="font-size: 16px;">favorite</span>
-                <span>Donar a este Comedor</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
   </main>
 
@@ -773,7 +496,8 @@
         <div class="footer-col">
           <span class="footer-col-titulo">Entidades &amp; Actores</span>
           <div class="footer-col-lista">
-            <a class="footer-link" data-path="portal-donante" href="donante.html">Registro Donantes</a>
+            <a class="footer-link" data-path="portal-donante" href="donante.html">Mi Perfil (Donante)</a>
+            <a class="footer-link" data-path="portal-incentivos" href="incentivos.html">Incentivos (Donante)</a>
             <a class="footer-link" data-path="registro-entidades" href="../index.html#seccion-registro">Registro Entidades y ONGs</a>
             <a class="footer-link" data-path="portal-beneficiario" href="entidadBeneficiaria.html">Portal Beneficiario</a>
             <a class="footer-link" data-path="panel-admin" href="administrador.html">Acceso Institucional</a>
