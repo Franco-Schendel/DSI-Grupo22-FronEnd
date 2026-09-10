@@ -1,0 +1,747 @@
+/* ==========================================================================
+   DONATRACK - SISTEMA DE DISEÑO Y ESTILOS GLOBALES (common.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES CSS (TOKENS DE DISEÑO)
+   Permite cambiar paleta de colores, tipografías y espaciados globalmente.
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta Principal (Teal Institucional) */
+  --primary: #00685f;
+  --primary-container: #008378;
+  --on-primary: #ffffff;
+  --on-primary-container: #f4fffc;
+  --primary-fixed: #89f5e7;
+  --primary-fixed-dim: #6bd8cb;
+  --on-primary-fixed: #00201d;
+  --on-primary-fixed-variant: #005049;
+  --inverse-primary: #6bd8cb;
+
+  /* Paleta Secundaria (Slate / Neutro) */
+  --secondary: #545f73;
+  --secondary-container: #d5e0f8;
+  --on-secondary: #ffffff;
+  --on-secondary-container: #586377;
+  --secondary-fixed: #d8e3fb;
+  --secondary-fixed-dim: #bcc7de;
+  --on-secondary-fixed: #111c2d;
+  --on-secondary-fixed-variant: #3c475a;
+
+  /* Paleta Terciaria (Ámbar / Solidaridad) */
+  --tertiary: #825100;
+  --tertiary-container: #a36700;
+  --on-tertiary: #ffffff;
+  --on-tertiary-container: #fffbff;
+  --tertiary-fixed: #ffddb8;
+  --tertiary-fixed-dim: #ffb95f;
+  --on-tertiary-fixed: #2a1700;
+  --on-tertiary-fixed-variant: #653e00;
+
+  /* Superficies y Fondos */
+  --surface: #f8f9ff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #eff4ff;
+  --surface-container: #e5eeff;
+  --surface-container-high: #dce9ff;
+  --surface-container-highest: #d3e4fe;
+  --surface-dim: #cbdbf5;
+  --surface-bright: #f8f9ff;
+  --surface-variant: #d3e4fe;
+  --surface-tint: #006a61;
+
+  /* Inversos */
+  --inverse-surface: #213145;
+  --inverse-on-surface: #eaf1ff;
+
+  /* Textos y Bordes */
+  --on-surface: #0b1c30;
+  --on-surface-variant: #3d4947;
+  --outline: #6d7a77;
+  --outline-variant: #bcc9c6;
+  --border-light: rgba(188, 201, 198, 0.35);
+
+  /* Estados de Error y Alerta */
+  --error: #ba1a1a;
+  --error-container: #ffdad6;
+  --on-error: #ffffff;
+  --on-error-container: #93000a;
+
+  /* Estados de Éxito / Advertencia */
+  --success: #16a34a;
+  --success-container: #dcfce7;
+  --on-success: #14532d;
+  --warning: #d97706;
+  --warning-container: #fef3c7;
+  --on-warning: #78350f;
+
+  /* Tipografías */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+
+  /* Espaciados */
+  --space-3xs: 0.125rem; /* 2px */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+
+  /* Radios de Borde */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 0.75rem;  /* 12px */
+  --radius-xl: 1rem;     /* 16px */
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.10);
+
+  /* Transiciones */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET / NORMALIZACIÓN GLOBAL
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   3. ENCABEZADO GLOBAL (HEADER & NAVBAR)
+   -------------------------------------------------------------------------- */
+.header-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid var(--surface-container);
+}
+
+.header-contenedor {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.header-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-titulos {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-nombre {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--on-surface);
+  letter-spacing: -0.02em;
+}
+
+.header-bajada {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Navegación */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.header-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-enlace {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav-enlace:hover {
+  background-color: var(--surface-container-high);
+  color: var(--on-surface);
+}
+
+.nav-enlace.active,
+.nav-enlace[aria-current="page"] {
+  background-color: var(--surface-container-high);
+  color: var(--on-surface);
+  font-weight: 600;
+}
+
+/* Acciones de la barra superior */
+.header-acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.dropdown-login {
+  position: relative;
+}
+
+.btn-login-trigger {
+  height: 40px;
+  padding: 0 var(--space-sm);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  transition: background-color var(--transition-fast);
+}
+
+.btn-login-trigger:hover {
+  background-color: var(--surface-container);
+  color: var(--on-surface);
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: var(--space-2xs);
+  width: 190px;
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2xs) 0;
+  border: 1px solid var(--surface-container);
+  display: none;
+  z-index: 100;
+}
+
+.dropdown-login:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: var(--space-xs) var(--space-md);
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  transition: background-color var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background-color: var(--surface-container-low);
+  color: var(--on-surface);
+}
+
+.header-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--primary);
+  display: block;
+  transition: transform var(--transition-fast);
+}
+
+.header-avatar:hover {
+  transform: scale(1.05);
+}
+
+.header-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  color: var(--on-surface-variant);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.header-icon-btn:hover {
+  background-color: var(--surface-container-high);
+  color: var(--on-surface);
+}
+
+.notif-badge-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--error);
+  border: 2px solid var(--surface-container-lowest);
+}
+
+/* --------------------------------------------------------------------------
+   4. COMPONENTES GLOBALES (BOTONES, BADGES, TARJETAS)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  height: 40px;
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-sm {
+  height: 32px;
+  padding: 0 var(--space-sm);
+  font-size: 12px;
+}
+
+.btn-lg {
+  height: 44px;
+  padding: 0 var(--space-lg);
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--inverse-surface);
+  color: var(--inverse-on-surface);
+}
+
+.btn-secondary:hover {
+  background-color: var(--on-surface);
+}
+
+.btn-outline {
+  border: 1px solid var(--outline-variant);
+  background-color: transparent;
+  color: var(--on-surface);
+}
+
+.btn-outline:hover {
+  background-color: var(--surface-container-high);
+}
+
+.btn-tonal {
+  background-color: var(--surface-container-highest);
+  color: var(--on-surface);
+}
+
+.btn-tonal:hover {
+  background-color: var(--surface-dim);
+}
+
+/* Badges y Etiquetas */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  padding: var(--space-3xs) var(--space-xs);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.badge-primary {
+  background-color: rgba(0, 104, 95, 0.12);
+  color: var(--primary);
+}
+
+.badge-tertiary {
+  background-color: rgba(130, 81, 0, 0.12);
+  color: var(--tertiary);
+}
+
+.badge-secondary {
+  background-color: var(--surface-container-high);
+  color: var(--on-surface-variant);
+}
+
+.badge-success {
+  background-color: var(--success-container);
+  color: var(--on-success);
+}
+
+.badge-error {
+  background-color: var(--error-container);
+  color: var(--on-error-container);
+}
+
+.badge-code {
+  font-family: var(--font-code);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Tarjetas Base */
+.tarjeta-base {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--surface-container);
+  transition: box-shadow var(--transition-normal);
+}
+
+.tarjeta-base:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   5. MODALES GLOBALES
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 28, 48, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  z-index: 100;
+}
+
+.modal-contenedor {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--surface-container);
+  padding: var(--space-lg);
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--surface-container);
+}
+
+.modal-cerrar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.modal-cerrar:hover {
+  background-color: var(--surface-container-high);
+  color: var(--on-surface);
+}
+
+/* Form Groups para Modales */
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  margin-bottom: var(--space-md);
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--outline-variant);
+  background-color: var(--surface-container-lowest);
+  color: var(--on-surface);
+  font-size: 13px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 104, 95, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   6. FOOTER GLOBAL
+   -------------------------------------------------------------------------- */
+.footer-principal {
+  width: 100%;
+  background-color: var(--surface-container-lowest);
+  border-top: 1px solid var(--surface-container);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+  margin-top: auto;
+}
+
+.footer-contenedor {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.footer-col-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.footer-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-nombre {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.footer-desc {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  max-width: 420px;
+  line-height: 1.6;
+}
+
+.footer-auditoria-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-col-titulo {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.footer-col-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.footer-link {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--surface-container);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  color: var(--on-surface-variant);
+  font-size: 12px;
+}
+
+.footer-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.dot-live {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   7. UTILIDADES ESENCIALES
+   -------------------------------------------------------------------------- */
+.hidden {
+  display: none !important;
+}
+
+.contenedor-principal {
+  width: 100%;
+  padding-top: 64px;
+  min-height: 100vh;
+}
+
+.max-ancho {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Responsividad general */
+@media (max-width: 1100px) {
+  .header-nav {
+    display: none;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

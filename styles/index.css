@@ -1,0 +1,1019 @@
+/* ==========================================================================
+   DONATRACK - ESTILOS DE PÁGINA: INICIO & IMPACTO (index.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BARRA DE TELEMETRÍA EN VIVO (TOP)
+   -------------------------------------------------------------------------- */
+.barra-telemetria {
+  width: 100%;
+  background-color: var(--surface-container-high);
+  padding: var(--space-xs) var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid var(--surface-container);
+}
+
+.telemetria-contenedor {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+}
+
+.telemetria-nodo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.telemetria-pulso {
+  position: relative;
+  display: flex;
+  width: 8px;
+  height: 8px;
+}
+
+.telemetria-pulso-ping {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+  opacity: 0.75;
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.telemetria-pulso-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.telemetria-texto-red {
+  font-family: var(--font-code);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.telemetria-auditoria-info {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+}
+
+.telemetria-acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--on-surface-variant);
+}
+
+.telemetria-btn-galeria {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.telemetria-btn-galeria:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   2. HERO SECTION & KPIS
+   -------------------------------------------------------------------------- */
+.hero-seccion {
+  position: relative;
+  width: 100%;
+  padding: var(--space-2xl) var(--space-lg);
+  background-color: var(--surface-container-low);
+  overflow: hidden;
+}
+
+.hero-mancha-1 {
+  position: absolute;
+  right: -6rem;
+  top: -6rem;
+  width: 24rem;
+  height: 24rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(0, 104, 95, 0.08);
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.hero-mancha-2 {
+  position: absolute;
+  left: -5rem;
+  bottom: 0;
+  width: 20rem;
+  height: 20rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(130, 81, 0, 0.07);
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.hero-contenedor {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  position: relative;
+  z-index: 10;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+
+.hero-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  background-color: var(--surface-container);
+  padding: var(--space-3xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--on-surface);
+}
+
+.hero-titulo {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--on-surface);
+  letter-spacing: -0.02em;
+}
+
+.hero-bajada {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--on-surface-variant);
+  max-width: 640px;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-xs);
+}
+
+.hero-social-proof {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-xs);
+  color: var(--on-surface-variant);
+  font-size: 13px;
+}
+
+.avatar-group {
+  display: flex;
+}
+
+.avatar-item {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: -8px;
+  border: 2px solid var(--surface-container-low);
+}
+
+.avatar-item:first-child {
+  margin-left: 0;
+}
+
+/* Tarjeta Hero de Despacho */
+.hero-tarjeta-visual {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  border: 1px solid var(--surface-container);
+}
+
+.hero-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.hero-card-img-wrap {
+  height: 180px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-card-overlay {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-card-grid-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xs);
+}
+
+.hero-card-sub-box {
+  background-color: var(--surface-container);
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--radius-md);
+}
+
+.hero-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-code);
+  font-size: 11px;
+  color: var(--on-surface-variant);
+}
+
+/* Ribbon de KPIs */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+}
+
+.kpi-card {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  border: 1px solid var(--surface-container);
+}
+
+.kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--on-surface-variant);
+}
+
+.kpi-valor {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--on-surface);
+  line-height: 1.1;
+}
+
+.kpi-valor.kpi-color-primary {
+  color: var(--primary);
+}
+
+.kpi-desc {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   3. MAPA INTERACTIVO EN TIEMPO REAL
+   -------------------------------------------------------------------------- */
+.seccion-mapa {
+  width: 100%;
+  padding: var(--space-2xl) var(--space-lg);
+  background-color: var(--surface);
+}
+
+.seccion-mapa-contenedor {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.mapa-header-fila {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .mapa-header-fila {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.seccion-titulo-bloque {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.seccion-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.seccion-titulo {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+.seccion-desc {
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  max-width: 600px;
+}
+
+/* Filtros */
+.filtros-mapa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  background-color: var(--surface-container-low);
+  padding: var(--space-2xs);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.filtro-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  padding: var(--space-3xs) var(--space-xs);
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--surface-container);
+}
+
+.filtro-select {
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--on-surface);
+  cursor: pointer;
+  outline: none;
+}
+
+/* Contenedor del Mapa */
+.mapa-display {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background-color: var(--surface-container);
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mapa-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.mapa-filtro-oscuro {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(11, 28, 48, 0.12);
+  pointer-events: none;
+}
+
+.mapa-controles-top {
+  position: relative;
+  z-index: 10;
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  pointer-events: none;
+}
+
+.mapa-pill-estado {
+  pointer-events: auto;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 12px;
+}
+
+.mapa-btn-control {
+  pointer-events: auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: var(--space-2xs);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  color: var(--on-surface);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+}
+
+.mapa-btn-control:hover {
+  background-color: var(--surface);
+}
+
+/* Pines en el mapa */
+.mapa-canvas-pines {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-md);
+  flex: 1;
+}
+
+.pin-marker {
+  position: absolute;
+  cursor: pointer;
+}
+
+.pin-icono-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin-pulso {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+  opacity: 0.5;
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.pin-burbuja {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+  color: var(--on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast);
+}
+
+.pin-marker:hover .pin-burbuja {
+  transform: scale(1.15);
+}
+
+.pin-burbuja.pin-tertiary {
+  background-color: var(--tertiary);
+  color: var(--on-tertiary);
+}
+
+.pin-etiqueta {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--on-surface);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+
+/* Posiciones de los 4 pines de muestra */
+#pin-1 { top: 25%; left: 32%; }
+#pin-2 { top: 50%; left: 65%; }
+#pin-3 { bottom: 25%; left: 22%; }
+#pin-4 { top: 32%; right: 24%; }
+
+/* Popover de Inspección de Pin */
+.pin-popover {
+  position: relative;
+  z-index: 20;
+  margin: var(--space-md);
+  padding: var(--space-md);
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  max-width: 520px;
+  border: 1px solid var(--surface-container);
+  transition: all var(--transition-normal);
+}
+
+.popover-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-xs);
+}
+
+.popover-grid-datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--space-2xs);
+  padding: var(--space-xs);
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-md);
+  margin: var(--space-xs) 0;
+}
+
+.popover-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2xs);
+  margin-top: var(--space-2xs);
+}
+
+.popover-thumb-item {
+  height: 64px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.popover-thumb-item:hover {
+  opacity: 0.85;
+}
+
+.popover-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Leyenda del Mapa */
+.mapa-leyenda {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 20;
+  background-color: var(--surface-container-lowest);
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  border: 1px solid var(--surface-container);
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-size: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   4. DONACIONES DESTACADAS (TARJETAS)
+   -------------------------------------------------------------------------- */
+.seccion-donaciones {
+  width: 100%;
+  padding: var(--space-2xl) var(--space-lg);
+  background-color: var(--surface-container-low);
+}
+
+.seccion-donaciones-contenedor {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.donaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.tarjeta-donacion {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--surface-container);
+  transition: box-shadow var(--transition-fast);
+}
+
+.tarjeta-donacion:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.donacion-img-wrap {
+  height: 200px;
+  width: 100%;
+  position: relative;
+}
+
+.donacion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.donacion-pill-estado {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.donacion-codigo-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: rgba(33, 49, 69, 0.85);
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-code);
+  font-size: 11px;
+}
+
+.donacion-cuerpo {
+  padding: var(--space-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.donacion-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--on-surface-variant);
+}
+
+.donacion-titulo {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--on-surface);
+  line-height: 1.3;
+}
+
+.donacion-desc {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+.donacion-footer-card {
+  padding-top: var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   5. SECCIÓN MULTI-ROL Y REGISTRO
+   -------------------------------------------------------------------------- */
+.seccion-registro {
+  width: 100%;
+  padding: var(--space-3xl) var(--space-lg);
+  background-color: var(--surface);
+}
+
+.registro-contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.registro-tabs {
+  background-color: var(--surface-container-low);
+  padding: var(--space-2xs);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .registro-tabs {
+    flex-direction: row;
+  }
+}
+
+.tab-rol {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  transition: all var(--transition-fast);
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  background: transparent;
+}
+
+.tab-rol:hover {
+  background-color: var(--surface-container);
+}
+
+.tab-rol.tab-rol-activo {
+  background-color: var(--surface-container-lowest);
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-rol-textos {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.tab-rol-titulo {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.tab-rol-sub {
+  font-size: 11px;
+  color: var(--on-surface-variant);
+}
+
+.registro-tarjeta-form {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--surface-container);
+}
+
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .form-grid-2col {
+    grid-template-columns: 1fr 1fr;
+  }
+  .form-col-full {
+    grid-column: span 2;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. BANNER DE DATOS ABIERTOS Y TRANSPARENCIA
+   -------------------------------------------------------------------------- */
+.seccion-datos-abiertos {
+  width: 100%;
+  padding: var(--space-2xl) var(--space-lg);
+  background-color: var(--surface-container);
+}
+
+.datos-abiertos-contenedor {
+  max-width: 1440px;
+  margin: 0 auto;
+  border-radius: var(--radius-xl);
+  background-color: var(--surface-container-lowest);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 1024px) {
+  .datos-abiertos-contenedor {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.datos-abiertos-checks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-xs);
+  font-size: 12px;
+  color: var(--on-surface-variant);
+}
+
+.check-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.datos-abiertos-botones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .datos-abiertos-botones {
+    flex-direction: row;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. MODAL DE FOTOS PÚBLICAS
+   -------------------------------------------------------------------------- */
+.modal-visor-fotos {
+  height: 280px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background-color: var(--surface);
+}
+
+.modal-visor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-visor-stamp {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-code);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--on-surface);
+}
+
+.modal-thumbs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xs);
+}
+
+.modal-thumb {
+  height: 72px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.modal-thumb.thumb-active {
+  border: 2px solid var(--primary);
+}
+
+.modal-thumb:hover {
+  opacity: 0.8;
+}
+
+.modal-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-metadata-grid {
+  background-color: var(--surface-container-low);
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--space-xs);
+  font-size: 12px;
+}

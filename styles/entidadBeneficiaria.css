@@ -1,0 +1,514 @@
+/* ==========================================================================
+   DONATRACK - ESTILOS DE PÁGINA: PORTAL BENEFICIARIO (entidadBeneficiaria.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BANNER DE IDENTIDAD Y MÉTRICAS
+   -------------------------------------------------------------------------- */
+.beneficiario-contenedor {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.banner-identidad {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--surface-container);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 1024px) {
+  .banner-identidad {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.identidad-perfil {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .identidad-perfil {
+    align-items: center;
+  }
+}
+
+.identidad-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.identidad-icono-caja {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  background-color: var(--surface-container-high);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.indicador-verificado-dot {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+  border: 2px solid var(--surface-container-lowest);
+}
+
+.identidad-datos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+}
+
+.identidad-titulos-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.identidad-nombre {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+.identidad-responsable {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* Métricas en vivo del banner */
+.metricas-resumen-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  background-color: var(--surface-container-low);
+  padding: var(--space-md);
+  border-radius: var(--radius-xl);
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .metricas-resumen-banner {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+.metrica-banner-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.metrica-banner-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+
+.metrica-banner-valor {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--on-surface);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+/* --------------------------------------------------------------------------
+   2. DISTRIBUCIÓN DEL ÁREA DE TRABAJO (2 COLUMNAS)
+   -------------------------------------------------------------------------- */
+.workspace-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 1024px) {
+  .workspace-grid {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+
+.col-principal,
+.col-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* --------------------------------------------------------------------------
+   3. SECCIÓN DE NECESIDADES MATERIALES ACTIVAS
+   -------------------------------------------------------------------------- */
+.seccion-tarjeta {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--surface-container);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.seccion-tarjeta-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-xs);
+}
+
+@media (min-width: 640px) {
+  .seccion-tarjeta-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.seccion-tarjeta-titulo {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--on-surface);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.seccion-tarjeta-bajada {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+}
+
+/* Lista de Necesidades */
+.lista-necesidades {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.tarjeta-necesidad {
+  background-color: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  border: 1px solid var(--surface-container);
+  transition: all var(--transition-fast);
+}
+
+@media (min-width: 640px) {
+  .tarjeta-necesidad {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.tarjeta-necesidad:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--outline-variant);
+}
+
+.tarjeta-necesidad-info {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.tarjeta-necesidad-icono {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-container-highest);
+  color: var(--on-secondary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tarjeta-necesidad-icono.icono-tertiary {
+  background-color: var(--tertiary-fixed);
+  color: var(--on-tertiary-fixed);
+}
+
+.tarjeta-necesidad-icono.icono-success {
+  background-color: var(--success-container);
+  color: var(--on-success);
+}
+
+.tarjeta-necesidad-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+}
+
+.tarjeta-necesidad-titulo {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.barra-progreso-contenedor {
+  width: 100%;
+  max-width: 260px;
+  height: 6px;
+  background-color: var(--surface-container-high);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.barra-progreso-relleno {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.tarjeta-necesidad-estado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3xs);
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .tarjeta-necesidad-estado {
+    align-items: flex-end;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. TELEMETRÍA EN VIVO (HUD DE MAPA Y CAMIÓN)
+   -------------------------------------------------------------------------- */
+.hud-mapa-contenedor {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.hud-mapa-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.hud-mapa-tarjeta {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  border: 1px solid var(--surface-container);
+}
+
+@media (min-width: 640px) {
+  .hud-mapa-tarjeta {
+    right: auto;
+    max-width: 420px;
+  }
+}
+
+.hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hud-camion-icono {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: var(--on-surface);
+  color: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hud-grid-detalles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xs);
+  font-size: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   5. DONACIONES ASIGNADAS & ACTA DE RECEPCIÓN
+   -------------------------------------------------------------------------- */
+.tarjeta-donacion-asignada {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  border: 1px solid var(--surface-container);
+}
+
+.checklist-control {
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 13px;
+  color: var(--on-surface);
+  cursor: pointer;
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.area-subir-foto {
+  border: 2px dashed var(--outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  background-color: var(--surface);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.area-subir-foto:hover {
+  border-color: var(--primary);
+}
+
+.thumbs-previa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xs);
+  padding-top: var(--space-xs);
+}
+
+.thumb-previa {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--surface-container);
+}
+
+.thumb-previa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb-previa-tag {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--on-surface);
+  font-size: 10px;
+  padding: 1px 4px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-code);
+}
+
+/* Alerta de Éxito de Certificación */
+.alerta-exito-certificacion {
+  background-color: var(--success-container);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.alerta-exito-certificacion .material-symbols-outlined {
+  color: var(--success);
+  font-size: 24px;
+}
+
+/* Notificaciones del Portal */
+.lista-notificaciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.item-notificacion {
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  background-color: var(--surface);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  border: 1px solid var(--surface-container);
+}
+
+.item-notificacion.notif-unread {
+  background-color: var(--surface-container-low);
+}
+
+.notif-icono {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

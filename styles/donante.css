@@ -1,0 +1,593 @@
+/* ==========================================================================
+   DONATRACK - ESTILOS DE PÁGINA: PORTAL DONANTE (donante.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PERFIL DEL DONANTE Y ESTADÍSTICAS DE IMPACTO
+   -------------------------------------------------------------------------- */
+.donante-contenedor {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.banner-perfil-donante {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background-color: var(--surface-container-lowest);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--surface-container);
+}
+
+.perfil-donante-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 1280px) {
+  .perfil-donante-top {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.perfil-avatar-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .perfil-avatar-info {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.donante-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.donante-avatar-img {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-xl);
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--surface-container-high);
+}
+
+.insignia-rango-flotante {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  background-color: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  box-shadow: var(--shadow-sm);
+}
+
+.progreso-rango-barra {
+  width: 180px;
+  height: 8px;
+  background-color: var(--surface-container-high);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progreso-rango-relleno {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+/* Acciones del banner (Campana y botón Nueva Donación) */
+.donante-header-acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.btn-notif-campana {
+  position: relative;
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-container);
+  color: var(--on-surface);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-notif-campana:hover {
+  background-color: var(--surface-container-high);
+}
+
+.campana-ping {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--error);
+  border-radius: var(--radius-full);
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.campana-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--error);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--surface-container-lowest);
+}
+
+/* Estadísticas de impacto personal en tiempo real */
+.stats-donante-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background-color: rgba(239, 244, 255, 0.6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--surface-container);
+}
+
+@media (min-width: 768px) {
+  .stats-donante-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-donante-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-donante-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+}
+
+.stat-donante-num {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   2. PANEL DESPLEGABLE DE NOTIFICACIONES
+   -------------------------------------------------------------------------- */
+.panel-notificaciones-overlay {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--primary);
+  border: 1px solid var(--surface-container);
+  border-left-width: 4px;
+  margin-bottom: var(--space-md);
+}
+
+.notificaciones-grid-donante {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .notificaciones-grid-donante {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .notificaciones-grid-donante {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-notif-donante {
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-container-low);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background-color var(--transition-fast);
+}
+
+.card-notif-donante:hover {
+  background-color: var(--surface-container);
+}
+
+/* --------------------------------------------------------------------------
+   3. SECCIÓN DE TELEMETRÍA GPS EN VIVO (MAPA + MANIFIESTO)
+   -------------------------------------------------------------------------- */
+.telemetria-gps-tarjeta {
+  border-radius: var(--radius-xl);
+  background-color: var(--surface-container-lowest);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--surface-container);
+}
+
+.telemetria-gps-header {
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--surface-container-low);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+@media (min-width: 1024px) {
+  .telemetria-gps-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.telemetria-gps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .telemetria-gps-grid {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+
+.telemetria-mapa-canvas {
+  position: relative;
+  min-height: 380px;
+  background-color: var(--surface-container);
+  overflow: hidden;
+}
+
+.telemetria-mapa-bg {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  background-size: cover;
+  background-position: center;
+}
+
+.telemetria-hud-camion {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 280px;
+  border: 1px solid var(--surface-container);
+}
+
+.telemetria-hud-sensores {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  border: 1px solid var(--surface-container);
+}
+
+/* Manifiesto y Hoja de Ruta */
+.manifiesto-logistico {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--surface-container-lowest);
+  gap: var(--space-md);
+}
+
+.chofer-tarjeta {
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-container-low);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.chofer-img {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.timeline-ruta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  position: relative;
+}
+
+.timeline-nodo {
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary);
+}
+
+.timeline-dot.dot-pending {
+  background-color: var(--surface-container-high);
+}
+
+.timeline-linea {
+  width: 2px;
+  height: 32px;
+  background-color: var(--primary);
+}
+
+.timeline-linea.linea-pending {
+  background-color: var(--surface-container-high);
+}
+
+/* --------------------------------------------------------------------------
+   4. HISTORIAL DE DONACIONES Y FILTROS
+   -------------------------------------------------------------------------- */
+.panel-filtros-donaciones {
+  background-color: var(--surface-container-lowest);
+  padding: var(--space-md);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--surface-container);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.chips-estado-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.filter-btn {
+  padding: 6px var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--surface-container);
+  color: var(--on-surface-variant);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: none;
+}
+
+.filter-btn:hover {
+  background-color: var(--surface-container-high);
+}
+
+.filter-btn.active-state {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.donaciones-donante-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.card-donacion-historial {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--surface-container);
+  transition: box-shadow var(--transition-fast);
+}
+
+.card-donacion-historial:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   5. GAMIFICACIÓN: MISIONES Y VITRINA DE INSIGNIAS
+   -------------------------------------------------------------------------- */
+.misiones-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 1024px) {
+  .misiones-grid-layout {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+
+.tarjeta-mision-item {
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-container-low);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  border: 1px solid var(--surface-container);
+}
+
+.mision-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.insignias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.insignia-box {
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  background-color: rgba(255, 221, 184, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  border: 1px solid rgba(255, 185, 95, 0.2);
+}
+
+.ranking-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-container-low);
+  font-size: 13px;
+}
+
+.ranking-item.ranking-user {
+  background-color: rgba(0, 104, 95, 0.1);
+  border-left: 3px solid var(--primary);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   6. DIRECTORIO DE COMEDORES REGISTRADOS
+   -------------------------------------------------------------------------- */
+.comedores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: var(--space-md);
+}
+
+.tarjeta-comedor {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--surface-container);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow var(--transition-fast);
+}
+
+.tarjeta-comedor:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.comedor-img-wrap {
+  height: 180px;
+  width: 100%;
+  position: relative;
+}
+
+.comedor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comedor-urgencia-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--error);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.comedor-ubicacion-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: var(--on-surface);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.comedor-cuerpo {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.comedor-necesidad-caja {
+  background-color: var(--surface-container-low);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
