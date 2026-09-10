@@ -39,7 +39,7 @@
           <span class="material-symbols-outlined">notifications</span>
           <span class="notif-badge-dot"></span>
         </button>
-        <a class="header-avatar-link" href="pages/donante.html" title="Mi perfil (donante)">
+        <a class="header-avatar-link" href="javascript:void(0)" style="cursor: default;" title="Mi perfil (donante)">
           <img alt="Perfil de usuario" class="header-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhqPjFvmlcUBOxYvu424LTe_v0mhvqZtK1osakepjZFEzc79YT5D1kboTVdVdToTDrk6yWCa5Ik9vUP1us_XVECr36H35bemt3nAEh7vac3oL-Y28DU-zMSOzVekI_bg5i8tsFCft1xrvCMwH6vXzyYaUog6Q-3Pe4qTuXlhYiZkhlg3nVrRv305VTHpnLR2sozrJ7zM6RdAOSem3hY6GE_uaNuXaunmsN7bSrKxLOmd5Vr1oCHCHQAQ" />
         </a>
       </div>
@@ -98,17 +98,17 @@
 
           <div class="stat-donante-card">
             <div class="stat-donante-label">
-              <span class="material-symbols-outlined" style="font-size: 16px; color: var(--primary);">scale</span>
-              <span>Kilos Aportados</span>
+              <span class="material-symbols-outlined" style="font-size: 16px; color: var(--primary);">calendar_month</span>
+              <span>Donaciones por Mes</span>
             </div>
-            <span class="stat-donante-num">3.250 <span style="font-size: 14px; font-weight: 400; color: var(--on-surface-variant);">kg</span></span>
-            <span style="font-size: 12px; color: var(--on-surface-variant);">+420 kg este último mes</span>
+            <span class="stat-donante-num">4 <span style="font-size: 14px; font-weight: 400; color: var(--on-surface-variant);">este mes</span></span>
+            <span style="font-size: 12px; color: var(--primary);">+33% vs mes anterior (Ago)</span>
           </div>
 
           <div class="stat-donante-card">
             <div class="stat-donante-label">
               <span class="material-symbols-outlined" style="font-size: 16px; color: var(--primary);">diversity_1</span>
-              <span>Entidades Beneficiadas</span>
+              <span>Organizaciones Ayudadas</span>
             </div>
             <span class="stat-donante-num">5 <span style="font-size: 14px; font-weight: 400; color: var(--on-surface-variant);">comedores</span></span>
             <span style="font-size: 12px; color: var(--primary);">Impacto directo comprobado</span>
@@ -116,11 +116,11 @@
 
           <div class="stat-donante-card">
             <div class="stat-donante-label">
-              <span class="material-symbols-outlined" style="font-size: 16px; color: var(--tertiary);">military_tech</span>
-              <span>Puntos de Impacto</span>
+              <span class="material-symbols-outlined" style="font-size: 16px; color: var(--tertiary);">leaderboard</span>
+              <span>Posición en Ranking</span>
             </div>
-            <span class="stat-donante-num" style="color: var(--tertiary);">450 <span style="font-size: 14px; font-weight: 400; color: var(--on-surface-variant);">pts</span></span>
-            <span style="font-size: 12px; color: var(--on-surface-variant);">Próxima insignia a los 500 pts</span>
+            <span class="stat-donante-num" style="color: var(--tertiary);">#4 <span style="font-size: 14px; font-weight: 400; color: var(--on-surface-variant);">activo</span></span>
+            <span style="font-size: 12px; color: var(--on-surface-variant);">Top 3% de la comunidad</span>
           </div>
         </div>
       </section>
@@ -152,7 +152,7 @@
               <span style="font-family: var(--font-code); color: var(--tertiary); font-weight: 700;">Misión Lograda</span>
               <span style="color: var(--on-surface-variant);">Hace 2 horas</span>
             </div>
-            <p style="font-size: 12px; color: var(--on-surface);">¡Felicitaciones! Cumpliste la misión <strong>"Primer Donativo del Mes"</strong> (+50 pts).</p>
+            <p style="font-size: 12px; color: var(--on-surface);">¡Felicitaciones! Cumpliste la misión <strong>"Primer Donativo del Mes"</strong> (Consistencia Verificada).</p>
           </div>
 
           <div class="card-notif-donante">
@@ -168,10 +168,343 @@
               <span style="font-family: var(--font-code); color: var(--primary); font-weight: 700;">Recepción Confirmada</span>
               <span style="color: var(--on-surface-variant);">Hace 2 días</span>
             </div>
-            <p style="font-size: 12px; color: var(--on-surface);">Comedor <strong>El Progreso</strong> confirmó la recepción de tus 50 kg de arroz.</p>
+            <p style="font-size: 12px; color: var(--on-surface);">Comedor <strong>El Progreso</strong> confirmó la recepción de tu lote de alimentos secos.</p>
           </div>
         </div>
       </div>
+
+      <!-- 2.1 ESTADÍSTICAS HISTÓRICAS, EVOLUCIÓN, COMPARATIVAS Y RANKING DEL DONANTE -->
+      <section class="analitica-donante-seccion" id="estadisticas-donante" style="display: flex; flex-direction: column; gap: var(--space-md);">
+        
+        <!-- Encabezado de la Sección y Selector de Período -->
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-sm);">
+          <div>
+            <span style="font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.08em;">Auditoría de Impacto</span>
+            <h2 style="font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--on-surface); margin: 0;">Evolución y Estadísticas del Donante</h2>
+            <p style="font-size: 13px; color: var(--on-surface-variant); margin-top: 2px;">Totales históricos, evolución temporal, comparaciones mensuales y ranking comunitario activo.</p>
+          </div>
+          
+          <!-- Selector de Período -->
+          <div style="display: flex; gap: var(--space-2xs); background-color: var(--surface-container-low); padding: 4px; border-radius: var(--radius-lg); border: 1px solid var(--surface-container);">
+            <button class="filter-btn active-state" id="periodo-btn-6m" onclick="cambiarPeriodoEvolucion('6m', this)" type="button">Últimos 6 Meses</button>
+            <button class="filter-btn" id="periodo-btn-año" onclick="cambiarPeriodoEvolucion('año', this)" type="button">Año 2026</button>
+            <button class="filter-btn" id="periodo-btn-todo" onclick="cambiarPeriodoEvolucion('todo', this)" type="button">Histórico Total</button>
+          </div>
+        </div>
+
+        <!-- Ribbon de Totales Históricos -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: var(--space-sm); background-color: var(--surface-container-lowest); padding: var(--space-md); border-radius: var(--radius-xl); border: 1px solid var(--surface-container); box-shadow: var(--shadow-sm);">
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 11px; font-weight: 600; color: var(--on-surface-variant);">Total Donaciones Históricas</span>
+            <span style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--on-surface); margin-top: 2px;">18 <span style="font-size: 12px; font-weight: 400; color: var(--on-surface-variant);">lotes</span></span>
+            <span style="font-size: 11px; color: var(--primary);">Registradas en plataforma</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 11px; font-weight: 600; color: var(--on-surface-variant);">Entregadas con Éxito</span>
+            <span style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--primary); margin-top: 2px;">14 <span style="font-size: 12px; font-weight: 400; color: var(--on-surface-variant);">finalizadas</span></span>
+            <span style="font-size: 11px; color: var(--on-surface-variant);">Con acta y firma digital</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 11px; font-weight: 600; color: var(--on-surface-variant);">En Ruta Logística</span>
+            <span style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--tertiary); margin-top: 2px;">2 <span style="font-size: 12px; font-weight: 400; color: var(--on-surface-variant);">en tránsito</span></span>
+            <span style="font-size: 11px; color: var(--on-surface-variant);">Telemetría satelital activa</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 11px; font-weight: 600; color: var(--on-surface-variant);">En Depósito Central</span>
+            <span style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--secondary); margin-top: 2px;">2 <span style="font-size: 12px; font-weight: 400; color: var(--on-surface-variant);">clasificadas</span></span>
+            <span style="font-size: 11px; color: var(--on-surface-variant);">En rack de almacenamiento</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 11px; font-weight: 600; color: var(--on-surface-variant);">Organizaciones Ayudadas</span>
+            <span style="font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--on-surface); margin-top: 2px;">5 <span style="font-size: 12px; font-weight: 400; color: var(--on-surface-variant);">comedores</span></span>
+            <span style="font-size: 11px; color: var(--primary);">Impacto social directo</span>
+          </div>
+        </div>
+
+        <!-- Fila 1: Gráfico de Evolución Temporal + Comparaciones Mensuales -->
+        <div class="md-grid-evolucion">
+          
+          <!-- Tarjeta: Gráfico de Evolución por Período -->
+          <div style="background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: var(--space-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--surface-container); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="material-symbols-outlined" style="color: var(--primary); font-size: 20px;">monitoring</span>
+                  <h3 style="font-size: 15px; font-weight: 700; color: var(--on-surface); margin: 0;">Gráfico de Evolución por Período</h3>
+                </div>
+                <span class="badge badge-primary" id="label-periodo-grafico">Abril 2026 - Septiembre 2026</span>
+              </div>
+              <p style="font-size: 12px; color: var(--on-surface-variant); margin-bottom: var(--space-md);">Frecuencia de donaciones entregadas en depósitos logísticos a lo largo del tiempo.</p>
+              
+              <!-- Gráfico de Barras Estilizado y Responsivo -->
+              <div id="grafico-barras-contenedor" style="height: 180px; display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-sm); padding-top: var(--space-md); border-bottom: 2px solid var(--surface-container-high); position: relative;">
+                <!-- Rellenado dinámicamente por JavaScript -->
+              </div>
+            </div>
+
+            <!-- Leyenda y Métricas del Gráfico -->
+            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--on-surface-variant); margin-top: var(--space-md); padding-top: var(--space-xs); border-top: 1px solid var(--surface-container-low);">
+              <span style="display: inline-flex; align-items: center; gap: 4px;">
+                <span style="width: 10px; height: 10px; border-radius: 2px; background: linear-gradient(180deg, var(--primary), var(--primary-container));"></span> Donaciones del ciclo
+              </span>
+              <span id="promedio-periodo-texto" style="font-family: var(--font-code); color: var(--primary); font-weight: 700;">Promedio: 2.8 donaciones / mes</span>
+            </div>
+          </div>
+
+          <!-- Tarjeta: Comparaciones Mensuales -->
+          <div style="background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: var(--space-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--surface-container); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="material-symbols-outlined" style="color: var(--tertiary); font-size: 20px;">compare_arrows</span>
+                  <h3 style="font-size: 15px; font-weight: 700; color: var(--on-surface); margin: 0;">Comparaciones Mensuales</h3>
+                </div>
+                <span class="badge badge-tertiary">Septiembre vs Agosto 2026</span>
+              </div>
+              <p style="font-size: 12px; color: var(--on-surface-variant); margin-bottom: var(--space-md);">Balance comparativo del ciclo en curso frente al mes inmediato anterior.</p>
+
+              <!-- Comparativas Específicas -->
+              <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                
+                <!-- Comparativa 1: Donaciones -->
+                <div style="padding: var(--space-sm); border-radius: var(--radius-md); background-color: var(--surface-container-low); border: 1px solid var(--surface-container);">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">Volumen de Donaciones</span>
+                    <span style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 2px;">
+                      <span class="material-symbols-outlined" style="font-size: 14px;">trending_up</span> +33.3%
+                    </span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; justify-content: space-between;">
+                    <span style="font-size: 18px; font-weight: 700; color: var(--on-surface); font-family: var(--font-display);">4 donaciones <span style="font-size: 11px; font-weight: 400; color: var(--on-surface-variant);">(Sep 2026)</span></span>
+                    <span style="font-size: 13px; color: var(--on-surface-variant); font-family: var(--font-code);">3 donaciones (Ago)</span>
+                  </div>
+                  <div style="height: 6px; width: 100%; background-color: var(--surface-container-high); border-radius: var(--radius-full); margin-top: 6px; overflow: hidden;">
+                    <div style="height: 100%; width: 100%; background: linear-gradient(90deg, var(--secondary) 75%, var(--primary) 100%); border-radius: var(--radius-full);"></div>
+                  </div>
+                </div>
+
+                <!-- Comparativa 2: Organizaciones Alcanzadas -->
+                <div style="padding: var(--space-sm); border-radius: var(--radius-md); background-color: var(--surface-container-low); border: 1px solid var(--surface-container);">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">Organizaciones Alcanzadas</span>
+                    <span style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 2px;">
+                      <span class="material-symbols-outlined" style="font-size: 14px;">trending_up</span> +50.0%
+                    </span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; justify-content: space-between;">
+                    <span style="font-size: 18px; font-weight: 700; color: var(--on-surface); font-family: var(--font-display);">3 comedores <span style="font-size: 11px; font-weight: 400; color: var(--on-surface-variant);">(Sep 2026)</span></span>
+                    <span style="font-size: 13px; color: var(--on-surface-variant); font-family: var(--font-code);">2 comedores (Ago)</span>
+                  </div>
+                </div>
+
+                <!-- Comparativa 3: Rapidez de Asignación y Despacho -->
+                <div style="padding: var(--space-sm); border-radius: var(--radius-md); background-color: var(--surface-container-low); border: 1px solid var(--surface-container);">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">Tiempo Promedio Despacho</span>
+                    <span style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 2px;">
+                      <span class="material-symbols-outlined" style="font-size: 14px;">speed</span> 16% más ágil
+                    </span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; justify-content: space-between;">
+                    <span style="font-size: 18px; font-weight: 700; color: var(--on-surface); font-family: var(--font-display);">4.2 horas <span style="font-size: 11px; font-weight: 400; color: var(--on-surface-variant);">(Sep)</span></span>
+                    <span style="font-size: 13px; color: var(--on-surface-variant); font-family: var(--font-code);">5.0 horas (Ago)</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-sm); padding-top: var(--space-xs); border-top: 1px solid var(--surface-container-low); font-size: 11px; color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+              <span class="material-symbols-outlined" style="font-size: 16px;">verified</span>
+              <span>Tendencia creciente en donaciones y organizaciones beneficiadas consecutivamente.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Fila 2: Ranking de Donantes Activos + Organizaciones Ayudadas e Indicadores de Impacto -->
+        <div class="md-grid-ranking-orgs">
+          
+          <!-- Ranking de Donantes Activos -->
+          <div style="background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: var(--space-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--surface-container); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="material-symbols-outlined" style="color: var(--tertiary); font-size: 20px;">leaderboard</span>
+                  <h3 style="font-size: 15px; font-weight: 700; color: var(--on-surface); margin: 0;">Posición en Ranking de Donantes Activos</h3>
+                </div>
+                <span class="badge badge-primary">Septiembre 2026</span>
+              </div>
+              <p style="font-size: 12px; color: var(--on-surface-variant); margin-bottom: var(--space-md);">Ubicación oficial en la tabla general comunitaria basada en donaciones activas verificadas.</p>
+
+              <!-- Tarjeta de Posición del Usuario -->
+              <div style="padding: var(--space-sm) var(--space-md); background: linear-gradient(135deg, rgba(0, 104, 95, 0.12), rgba(15, 157, 88, 0.08)); border: 1.5px solid var(--primary); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-md);">
+                <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                  <div style="width: 38px; height: 38px; border-radius: var(--radius-full); background-color: var(--primary); color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; box-shadow: var(--shadow-sm);">
+                    #4
+                  </div>
+                  <div>
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                      <strong style="font-size: 14px; color: var(--on-surface);">Mateo Rodríguez (Tú)</strong>
+                      <span class="badge badge-secondary" style="font-size: 10px; padding: 2px 6px;">Nivel Oro 🌟</span>
+                    </div>
+                    <span style="font-size: 11px; color: var(--on-surface-variant);">18 donaciones históricas • 4 en el mes actual</span>
+                  </div>
+                </div>
+                <div style="text-align: right;">
+                  <span style="font-size: 11px; color: var(--primary); font-weight: 700; display: block;">Top 3% de la Red</span>
+                  <span style="font-size: 10px; color: var(--on-surface-variant);">240 donantes activos</span>
+                </div>
+              </div>
+
+              <!-- Lista Top 5 Donantes -->
+              <div class="ranking-lista">
+                <div class="ranking-item">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-weight: 700; color: #b8860b; font-size: 13px;">🥇 #1</span>
+                    <span style="font-weight: 500;">Fundación Manos Unidas</span>
+                  </div>
+                  <span style="font-family: var(--font-code); color: var(--primary); font-weight: 600; font-size: 12px;">28 donaciones</span>
+                </div>
+                <div class="ranking-item">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-weight: 700; color: #708090; font-size: 13px;">🥈 #2</span>
+                    <span style="font-weight: 500;">Alimentos Cono Sur S.A.</span>
+                  </div>
+                  <span style="font-family: var(--font-code); color: var(--primary); font-weight: 600; font-size: 12px;">24 donaciones</span>
+                </div>
+                <div class="ranking-item">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-weight: 700; color: #cd7f32; font-size: 13px;">🥉 #3</span>
+                    <span style="font-weight: 500;">Laura M. Pellegrini</span>
+                  </div>
+                  <span style="font-family: var(--font-code); color: var(--primary); font-weight: 600; font-size: 12px;">21 donaciones</span>
+                </div>
+                <div class="ranking-item ranking-user">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-weight: 700; color: var(--primary); font-size: 13px;">⭐ #4</span>
+                    <span><strong>Tú (Mateo Rodríguez)</strong></span>
+                  </div>
+                  <span style="font-family: var(--font-code); color: var(--primary); font-weight: 700; font-size: 12px;">18 donaciones</span>
+                </div>
+                <div class="ranking-item">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-weight: 600; color: var(--on-surface-variant); font-size: 13px;">#5</span>
+                    <span>Distribuidora Sol</span>
+                  </div>
+                  <span style="font-family: var(--font-code); color: var(--on-surface-variant); font-size: 12px;">16 donaciones</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-sm); font-size: 11px; color: var(--on-surface-variant); text-align: center;">
+              Actualización en tiempo real conforme ingresan lotes en depósitos autorizados.
+            </div>
+          </div>
+
+          <!-- Organizaciones Ayudadas & Indicadores de Impacto Acumulado -->
+          <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+            
+            <!-- Bloque: Organizaciones Ayudadas -->
+            <div style="background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: var(--space-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--surface-container);">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="material-symbols-outlined" style="color: var(--primary); font-size: 20px;">diversity_1</span>
+                  <h3 style="font-size: 15px; font-weight: 700; color: var(--on-surface); margin: 0;">Organizaciones que ha Ayudado</h3>
+                </div>
+                <span class="badge badge-success">5 Entidades Totales</span>
+              </div>
+              <p style="font-size: 12px; color: var(--on-surface-variant); margin-bottom: var(--space-sm);">Comedores comunitarios y merenderos asistidos mediante tus aportes:</p>
+
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; background-color: var(--surface-container-low); border-radius: var(--radius-md); font-size: 12px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="material-symbols-outlined" style="color: var(--primary); font-size: 16px;">restaurant</span>
+                    <div>
+                      <strong style="color: var(--on-surface);">Comedor Rayito de Sol</strong>
+                      <span style="font-size: 10px; color: var(--on-surface-variant); display: block;">Quilmes Centro</span>
+                    </div>
+                  </div>
+                  <span class="badge badge-primary" style="font-size: 10px;">6 donaciones recibidas</span>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; background-color: var(--surface-container-low); border-radius: var(--radius-md); font-size: 12px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="material-symbols-outlined" style="color: var(--primary); font-size: 16px;">sunny</span>
+                    <div>
+                      <strong style="color: var(--on-surface);">Merendero Sol Brillante</strong>
+                      <span style="font-size: 10px; color: var(--on-surface-variant); display: block;">La Matanza</span>
+                    </div>
+                  </div>
+                  <span class="badge badge-primary" style="font-size: 10px;">5 donaciones recibidas</span>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; background-color: var(--surface-container-low); border-radius: var(--radius-md); font-size: 12px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="material-symbols-outlined" style="color: var(--primary); font-size: 16px;">child_care</span>
+                    <div>
+                      <strong style="color: var(--on-surface);">Hogar Cuna de Esperanza</strong>
+                      <span style="font-size: 10px; color: var(--on-surface-variant); display: block;">Avellaneda</span>
+                    </div>
+                  </div>
+                  <span class="badge badge-primary" style="font-size: 10px;">3 donaciones recibidas</span>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; background-color: var(--surface-container-low); border-radius: var(--radius-md); font-size: 12px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="material-symbols-outlined" style="color: var(--primary); font-size: 16px;">shelves</span>
+                    <div>
+                      <strong style="color: var(--on-surface);">Comedor Infantil Belén</strong>
+                      <span style="font-size: 10px; color: var(--on-surface-variant); display: block;">Lanús</span>
+                    </div>
+                  </div>
+                  <span class="badge badge-primary" style="font-size: 10px;">2 donaciones recibidas</span>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; background-color: var(--surface-container-low); border-radius: var(--radius-md); font-size: 12px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="material-symbols-outlined" style="color: var(--primary); font-size: 16px;">home_work</span>
+                    <div>
+                      <strong style="color: var(--on-surface);">Comedor El Progreso</strong>
+                      <span style="font-size: 10px; color: var(--on-surface-variant); display: block;">Lomas de Zamora</span>
+                    </div>
+                  </div>
+                  <span class="badge badge-primary" style="font-size: 10px;">2 donaciones recibidas</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bloque: Indicadores de Impacto Acumulado -->
+            <div style="background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: var(--space-md) var(--space-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--surface-container);">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: var(--space-xs);">
+                <span class="material-symbols-outlined" style="color: var(--primary); font-size: 18px;">verified_user</span>
+                <h4 style="font-size: 13px; font-weight: 700; color: var(--on-surface); margin: 0;">Indicadores de Impacto Acumulado</h4>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xs); text-align: center;">
+                <div style="padding: 8px 6px; background-color: var(--surface-container-low); border-radius: var(--radius-md); border: 1px solid var(--surface-container);">
+                  <span style="font-size: 17px; font-weight: 700; color: var(--primary); font-family: var(--font-display); display: block;">100%</span>
+                  <span style="font-size: 10px; color: var(--on-surface-variant); line-height: 1.2; display: block; margin-top: 2px;">Trazabilidad Verificada</span>
+                </div>
+                <div style="padding: 8px 6px; background-color: var(--surface-container-low); border-radius: var(--radius-md); border: 1px solid var(--surface-container);">
+                  <span style="font-size: 17px; font-weight: 700; color: var(--secondary); font-family: var(--font-display); display: block;">1.420</span>
+                  <span style="font-size: 10px; color: var(--on-surface-variant); line-height: 1.2; display: block; margin-top: 2px;">Raciones Garantizadas</span>
+                </div>
+                <div style="padding: 8px 6px; background-color: var(--surface-container-low); border-radius: var(--radius-md); border: 1px solid var(--surface-container);">
+                  <span style="font-size: 17px; font-weight: 700; color: var(--tertiary); font-family: var(--font-display); display: block;">0</span>
+                  <span style="font-size: 10px; color: var(--on-surface-variant); line-height: 1.2; display: block; margin-top: 2px;">Incidencias en Ruta</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
 
       <!-- 3. Telemetría GPS en Vivo: Donación en Camino -->
       <section class="telemetria-gps-tarjeta">
@@ -507,7 +840,6 @@
         <div class="footer-col">
           <span class="footer-col-titulo">Gobernanza &amp; Legal</span>
           <div class="footer-col-lista">
-            <a class="footer-link" data-path="transparencia" href="../index.html#descargar-datos">Transparencia</a>
             <a class="footer-link" data-path="terminos-de-servicio" href="#">Términos de Servicio</a>
             <a class="footer-link" data-path="politica-de-privacidad" href="#">Política de Privacidad</a>
             <a class="footer-link" data-path="seguridad-y-cumplimiento" href="#">Seguridad y Cumplimiento</a>
@@ -516,7 +848,7 @@
       </div>
 
       <div class="footer-bottom">
-        <span>© 2025 DonaTrack - Sistema Nacional de Trazabilidad Humanitaria. Todos los derechos reservados.</span>
+        <span>© 2026 DonaTrack - Sistema Nacional de Trazabilidad Humanitaria. Todos los derechos reservados.</span>
         <div style="display: flex; align-items: center; gap: 16px;">
           <span class="footer-live-indicator"><span class="dot-live"></span>Red Operativa Activa</span>
           <a class="footer-link" data-path="transparencia" href="#">Reportes de Impacto</a>
@@ -536,13 +868,13 @@
       });
     }
 
-    // Filtrado por estado de donación
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    // Filtrado por estado de donación (específico a la barra de estado)
+    const statusFilterBtns = document.querySelectorAll('#statusFilterBar .filter-btn');
     const donationCards = document.querySelectorAll('#donationsGrid > div');
 
-    filterBtns.forEach(btn => {
+    statusFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach(b => {
+        statusFilterBtns.forEach(b => {
           b.classList.remove('active-state');
         });
         btn.classList.add('active-state');
@@ -558,6 +890,89 @@
         });
       });
     });
+
+    // 2. Gráfico de Evolución de Donaciones por Período
+    const datosEvolucion = {
+      '6m': {
+        label: 'Abril 2026 - Septiembre 2026',
+        promedio: 'Promedio: 2.8 donaciones / mes',
+        meses: [
+          { mes: 'Abr', cant: 2, pct: 50 },
+          { mes: 'May', cant: 3, pct: 75 },
+          { mes: 'Jun', cant: 2, pct: 50 },
+          { mes: 'Jul', cant: 3, pct: 75 },
+          { mes: 'Ago', cant: 3, pct: 75 },
+          { mes: 'Sep', cant: 4, pct: 100, actual: true }
+        ]
+      },
+      'año': {
+        label: 'Enero 2026 - Septiembre 2026',
+        promedio: 'Promedio: 2.0 donaciones / mes',
+        meses: [
+          { mes: 'Ene', cant: 1, pct: 25 },
+          { mes: 'Feb', cant: 1, pct: 25 },
+          { mes: 'Mar', cant: 2, pct: 50 },
+          { mes: 'Abr', cant: 2, pct: 50 },
+          { mes: 'May', cant: 3, pct: 75 },
+          { mes: 'Jun', cant: 2, pct: 50 },
+          { mes: 'Jul', cant: 3, pct: 75 },
+          { mes: 'Ago', cant: 3, pct: 75 },
+          { mes: 'Sep', cant: 4, pct: 100, actual: true }
+        ]
+      },
+      'todo': {
+        label: 'Histórico Total (2024 - 2026)',
+        promedio: 'Total: 18 donaciones registradas',
+        meses: [
+          { mes: 'Q1-25', cant: 2, pct: 35 },
+          { mes: 'Q2-25', cant: 3, pct: 50 },
+          { mes: 'Q3-25', cant: 2, pct: 35 },
+          { mes: 'Q4-25', cant: 3, pct: 50 },
+          { mes: 'Q1-26', cant: 4, pct: 65 },
+          { mes: 'Q2-26', cant: 7, pct: 90 },
+          { mes: 'Q3-26', cant: 7, pct: 100, actual: true }
+        ]
+      }
+    };
+
+    function renderizarGraficoBarras(periodoKey) {
+      const data = datosEvolucion[periodoKey];
+      if (!data) return;
+
+      const labelElem = document.getElementById('label-periodo-grafico');
+      const promedioElem = document.getElementById('promedio-periodo-texto');
+      const container = document.getElementById('grafico-barras-contenedor');
+
+      if (labelElem) labelElem.innerText = data.label;
+      if (promedioElem) promedioElem.innerText = data.promedio;
+      if (!container) return;
+
+      container.innerHTML = '';
+
+      data.meses.forEach(item => {
+        const col = document.createElement('div');
+        col.style.cssText = 'flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 6px;';
+        
+        col.innerHTML = `
+          <span style="font-family: var(--font-code); font-size: 11px; font-weight: 700; color: ${item.actual ? 'var(--primary)' : 'var(--on-surface)'};">${item.cant}</span>
+          <div style="width: 100%; max-width: 38px; height: ${item.pct}%; background: ${item.actual ? 'linear-gradient(180deg, var(--primary), var(--primary-container))' : 'var(--surface-container-high)'}; border-radius: var(--radius-sm) var(--radius-sm) 0 0; transition: height 0.4s ease; border: 1px solid ${item.actual ? 'var(--primary)' : 'var(--outline-variant)'};"></div>
+          <span style="font-size: 11px; font-weight: ${item.actual ? '700' : '500'}; color: ${item.actual ? 'var(--primary)' : 'var(--on-surface-variant)'};">${item.mes}</span>
+        `;
+        container.appendChild(col);
+      });
+    }
+
+    function cambiarPeriodoEvolucion(periodo, btn) {
+      document.querySelectorAll('#estadisticas-donante .filter-btn').forEach(b => b.classList.remove('active-state'));
+      if (btn) btn.classList.add('active-state');
+      renderizarGraficoBarras(periodo);
+    }
+
+    // Inicializar gráfico de evolución
+    document.addEventListener('DOMContentLoaded', () => {
+      renderizarGraficoBarras('6m');
+    });
+    renderizarGraficoBarras('6m');
   </script>
 </body>
 </html>

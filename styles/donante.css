@@ -591,3 +591,30 @@
   flex-direction: column;
   gap: 2px;
 }
+
+/* --------------------------------------------------------------------------
+   7. ANALÍTICA HISTÓRICA, EVOLUCIÓN Y RANKING
+   -------------------------------------------------------------------------- */
+.md-grid-evolucion {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 1024px) {
+  .md-grid-evolucion {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+
+.md-grid-ranking-orgs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 1024px) {
+  .md-grid-ranking-orgs {
+    grid-template-columns: 6fr 6fr;
+  }
+}

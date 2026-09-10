@@ -39,7 +39,7 @@
           <span class="material-symbols-outlined">notifications</span>
           <span class="notif-badge-dot"></span>
         </button>
-        <a class="header-avatar-link" href="donante.html" title="Mi perfil (donante)">
+        <a class="header-avatar-link" href="javascript:void(0)" style="cursor: default;" title="Mi perfil (admin)">
           <img alt="Perfil de usuario" class="header-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhqPjFvmlcUBOxYvu424LTe_v0mhvqZtK1osakepjZFEzc79YT5D1kboTVdVdToTDrk6yWCa5Ik9vUP1us_XVECr36H35bemt3nAEh7vac3oL-Y28DU-zMSOzVekI_bg5i8tsFCft1xrvCMwH6vXzyYaUog6Q-3Pe4qTuXlhYiZkhlg3nVrRv305VTHpnLR2sozrJ7zM6RdAOSem3hY6GE_uaNuXaunmsN7bSrKxLOmd5Vr1oCHCHQAQ" />
         </a>
       </div>
@@ -68,6 +68,10 @@
             <span class="material-symbols-outlined">add_box</span>
             <span>+ Ingresar Donación Recibida</span>
           </button>
+          <a class="btn btn-tonal" href="#registro">
+            <span class="material-symbols-outlined">person_add</span>
+            <span>+ Registrar Donante / Entidad</span>
+          </a>
           <button class="btn btn-tonal" onclick="document.getElementById('modal-camion').classList.remove('hidden')">
             <span class="material-symbols-outlined">local_shipping</span>
             <span>+ Nuevo Camión</span>
@@ -815,11 +819,219 @@
         </section>
       </div>
 
+      <!-- 7. REGISTRO DE DONANTES Y ENTIDADES BENEFICIARIAS -->
+      <section class="admin-card-section" id="registro" style="margin-top: var(--space-xl);">
+        <div class="sm-flex-row" style="display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-sm); padding-bottom: var(--space-md); border-bottom: 1px solid var(--surface-container);">
+          <div style="display: flex; align-items: center; gap: var(--space-xs);">
+            <div class="kpi-icon-pill kpi-icon-primary">
+              <span class="material-symbols-outlined">person_add</span>
+            </div>
+            <div>
+              <h2 class="section-title">Registro de Donantes y Entidades Beneficiarias</h2>
+              <p class="section-subtitle">Alta institucional de nuevos actores en la red de trazabilidad solidaria.</p>
+            </div>
+          </div>
+          
+          <!-- Selector Principal: Donante vs Entidad Beneficiaria -->
+          <div style="display: flex; gap: var(--space-xs); background-color: var(--surface-container-low); padding: 4px; border-radius: var(--radius-lg);">
+            <button class="btn btn-primary btn-sm" id="tab-btn-donante" onclick="conmutarTabRegistro('donante')" type="button">
+              <span class="material-symbols-outlined" style="font-size: 16px;">volunteer_activism</span>
+              <span>Donante</span>
+            </button>
+            <button class="btn btn-tonal btn-sm" id="tab-btn-entidad" onclick="conmutarTabRegistro('entidad')" type="button">
+              <span class="material-symbols-outlined" style="font-size: 16px;">foundation</span>
+              <span>Entidad Beneficiaria</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PANEL REGISTRO DONANTE -->
+        <div id="panel-registro-donante" style="margin-top: var(--space-md);">
+          <!-- Selector Subtipo: Humano vs Jurídico -->
+          <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-md); padding: var(--space-xs) var(--space-md); background-color: var(--surface-container); border-radius: var(--radius-md);">
+            <span style="font-size: 0.8125rem; font-weight: 600; color: var(--on-surface);">Tipo de Donante:</span>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8125rem; cursor: pointer;">
+              <input checked name="tipo-donante" onchange="conmutarTipoDonante('humano')" type="radio" value="humano" />
+              <span style="font-weight: 600;">Humano</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8125rem; cursor: pointer;">
+              <input name="tipo-donante" onchange="conmutarTipoDonante('juridico')" type="radio" value="juridico" />
+              <span style="font-weight: 600;">Jurídico</span>
+            </label>
+          </div>
+
+          <!-- Formulario Donante Humano -->
+          <form id="form-donante-humano" onsubmit="guardarDonanteHumano(event)">
+            <div class="md-grid-2" style="display: grid; grid-template-columns: 1fr; gap: var(--space-md);">
+              <div class="form-grupo">
+                <label class="form-label" for="humano-nombre">Nombre *</label>
+                <input class="form-input" id="humano-nombre" placeholder="Ej: Mateo" required type="text" />
+              </div>
+              <div class="form-grupo">
+                <label class="form-label" for="humano-apellido">Apellido *</label>
+                <input class="form-input" id="humano-apellido" placeholder="Ej: Rodríguez" required type="text" />
+              </div>
+            </div>
+
+            <div class="md-grid-3" style="display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-md);">
+              <div class="form-grupo">
+                <label class="form-label" for="humano-edad">Edad (Integer) *</label>
+                <input class="form-input" id="humano-edad" min="1" placeholder="Ej: 34" required step="1" type="number" />
+              </div>
+              <div class="form-grupo">
+                <label class="form-label" for="humano-dni">DNI *</label>
+                <input class="form-input" id="humano-dni" placeholder="Ej: 34209118" required type="text" />
+              </div>
+              <div class="form-grupo">
+                <label class="form-label" for="humano-genero">Género *</label>
+                <select class="form-select" id="humano-genero" required>
+                  <option value="">Selecciona género</option>
+                  <option value="Femenino">Femenino</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="No binario">No binario</option>
+                  <option value="Otro">Otro / Prefiero no decir</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="md-grid-2" style="display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-md);">
+              <div class="form-grupo">
+                <label class="form-label" for="humano-direccion">Dirección *</label>
+                <input class="form-input" id="humano-direccion" placeholder="Ej: Av. San Martín 1234, CABA" required type="text" />
+              </div>
+              <div class="form-grupo">
+                <label class="form-label" for="humano-email">Email *</label>
+                <input class="form-input" id="humano-email" placeholder="Ej: mateo.rodriguez@email.com" required type="email" />
+              </div>
+            </div>
+
+            <div class="md-grid-2" style="display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-md);">
+              <div class="form-grupo">
+                <label class="form-label" for="humano-telefono">Teléfono (Opcional)</label>
+                <input class="form-input" id="humano-telefono" oninput="validarTelefonoHumano()" placeholder="Ej: +54 11 4455-6677" type="tel" />
+                <span id="humano-telefono-hint" style="font-size: 0.6875rem; color: var(--on-surface-variant); display: block; margin-top: 4px;">SMS y WhatsApp solo disponibles si hay teléfono cargado.</span>
+              </div>
+              <div class="form-grupo">
+                <label class="form-label" for="humano-medio">Medio de Contacto *</label>
+                <select class="form-select" id="humano-medio" required>
+                  <option value="MAIL">MAIL</option>
+                  <option disabled id="opt-sms-humano" value="SMS">SMS (requiere teléfono cargado)</option>
+                  <option disabled id="opt-wsp-humano" value="WHATSAPP">WHATSAPP (requiere teléfono cargado)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: var(--space-md);">
+              <button class="btn btn-primary" type="submit">
+                <span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span>
+                <span>Registrar Donante Humano</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Formulario Donante Jurídico -->
+          <form class="hidden" id="form-donante-juridico" onsubmit="guardarDonanteJuridico(event)">
+            <div class="md-grid-2" style="display: grid; grid-template-columns: 1fr; gap: var(--space-md);">
+              <div class="form-grupo">
+                <label class="form-label" for="juridico-razon">Razón Social *</label>
+                <input class="form-input" id="juridico-razon" placeholder="Ej: Alimentos del Cono Sur S.A." required type="text" />
+              </div>
+              <div class="form-grupo">
+                <label class="form-label" for="juridico-cuit">CUIT *</label>
+                <input class="form-input" id="juridico-cuit" placeholder="Ej: 30-71029381-9" required type="text" />
+              </div>
+            </div>
+
+            <div class="md-grid-2" style="display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-md);">
+              <div class="form-grupo">
+                <label class="form-label" for="juridico-tipo">Tipo (Texto) *</label>
+                <input class="form-input" id="juridico-tipo" placeholder="Ej: Sociedad Anónima / Cooperativa / SRL" required type="text" />
+              </div>
+              <div class="form-grupo">
+                <label class="form-label" for="juridico-rubro">Rubro (Texto) *</label>
+                <input class="form-input" id="juridico-rubro" placeholder="Ej: Producción y Distribución de Alimentos" required type="text" />
+              </div>
+            </div>
+
+            <div class="md-grid-3" style="display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-md);">
+              <div class="form-grupo">
+                <label class="form-label" for="juridico-email">Email *</label>
+                <input class="form-input" id="juridico-email" placeholder="Ej: contacto@conosur.com.ar" required type="email" />
+              </div>
+              <div class="form-grupo">
+                <label class="form-label" for="juridico-telefono">Teléfono *</label>
+                <input class="form-input" id="juridico-telefono" oninput="validarTelefonoJuridico()" placeholder="Ej: +54 11 5566-7788" required type="tel" />
+                <span id="juridico-telefono-hint" style="font-size: 0.6875rem; color: var(--on-surface-variant); display: block; margin-top: 4px;">SMS y WhatsApp solo disponibles si hay teléfono cargado.</span>
+              </div>
+              <div class="form-grupo">
+                <label class="form-label" for="juridico-medio">Medio de Contacto *</label>
+                <select class="form-select" id="juridico-medio" required>
+                  <option value="MAIL">MAIL</option>
+                  <option disabled id="opt-sms-juridico" value="SMS">SMS (requiere teléfono cargado)</option>
+                  <option disabled id="opt-wsp-juridico" value="WHATSAPP">WHATSAPP (requiere teléfono cargado)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: var(--space-md);">
+              <button class="btn btn-primary" type="submit">
+                <span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span>
+                <span>Registrar Donante Jurídico</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- PANEL REGISTRO ENTIDAD BENEFICIARIA -->
+        <div class="hidden" id="panel-registro-entidad" style="margin-top: var(--space-md);">
+          <form id="form-entidad-beneficiaria" onsubmit="guardarEntidadBeneficiaria(event)">
+            <div class="form-grupo">
+              <label class="form-label" for="entidad-razon">Razón Social *</label>
+              <input class="form-input" id="entidad-razon" placeholder="Ej: Comedor Infantil Rayito de Sol" required type="text" />
+            </div>
+
+            <div class="md-grid-2" style="display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-md);">
+              <div class="form-grupo">
+                <label class="form-label" for="entidad-direccion">Dirección *</label>
+                <input class="form-input" id="entidad-direccion" placeholder="Ej: Calle Mitre 1450, Quilmes" required type="text" />
+              </div>
+              <div class="form-grupo">
+                <label class="form-label" for="entidad-telefono">Teléfono *</label>
+                <input class="form-input" id="entidad-telefono" placeholder="Ej: +54 11 4789-0123" required type="tel" />
+              </div>
+            </div>
+
+            <!-- Lista de Emails Dinámica -->
+            <div class="form-grupo" style="margin-top: var(--space-md);">
+              <label class="form-label">Lista de Emails *</label>
+              <div style="display: flex; gap: var(--space-xs);">
+                <input class="form-input" id="entidad-nuevo-email" placeholder="Ingresa un correo (ej: direccion@comedor.org)" type="email" />
+                <button class="btn btn-tonal" onclick="agregarEmailEntidad()" style="flex-shrink: 0;" type="button">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+                  <span>Agregar Email</span>
+                </button>
+              </div>
+              <div id="entidad-emails-tags" style="display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-top: var(--space-xs);">
+                <!-- Emails cargados -->
+              </div>
+              <span id="entidad-emails-error" style="display: none; font-size: 0.75rem; color: var(--error); margin-top: 4px;">Debes ingresar al menos un correo electrónico en la lista.</span>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: var(--space-md);">
+              <button class="btn btn-primary" type="submit">
+                <span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span>
+                <span>Registrar Entidad Beneficiaria</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
     </div>
 
     <!-- MODAL: INGRESAR DONACIÓN RECIBIDA EN DEPÓSITO -->
     <div class="modal-overlay hidden" id="modal-ingreso">
-      <div class="modal-contenedor" style="max-width: 680px;">
+      <div class="modal-contenedor" style="max-width: 740px; max-height: 85vh; overflow-y: auto;">
         <div class="modal-header">
           <div style="display: flex; align-items: center; gap: var(--space-sm);">
             <div class="kpi-icon-pill kpi-icon-primary">
@@ -827,7 +1039,7 @@
             </div>
             <div>
               <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--on-surface); margin: 0;">Ingresar Donación Recibida en Depósito</h3>
-              <p style="font-size: 0.8125rem; color: var(--on-surface-variant); margin: 2px 0 0 0;">Generación de lote con pesaje de báscula y ubicación física.</p>
+              <p style="font-size: 0.8125rem; color: var(--on-surface-variant); margin: 2px 0 0 0;">Carga realizada por el Administrador al recibir la entrega física del Donante.</p>
             </div>
           </div>
           <button class="modal-cerrar" onclick="document.getElementById('modal-ingreso').classList.add('hidden')" type="button">
@@ -836,9 +1048,9 @@
         </div>
 
         <form id="form-ingreso-donacion" onsubmit="guardarNuevaDonacion(event)">
-          <!-- Buscador Autocompletable de Donante -->
+          <!-- 1. usuario: Donante (Buscador Autocompletable de Donante) -->
           <div class="form-grupo">
-            <label class="form-label">Asociar Persona o Entidad Donante *</label>
+            <label class="form-label" for="buscador-donante">Usuario / Donante *</label>
             <div style="position: relative;">
               <input autocomplete="off" class="form-input" id="buscador-donante" oninput="buscarDonantePredictivo(this.value)" placeholder="Escribe DNI, CUIT o Nombre (ej: Mateo, Molinos, 30-50...)" required="" type="text"/>
               <span class="material-symbols-outlined" style="position: absolute; right: 12px; top: 12px; color: var(--on-surface-variant); font-size: 18px; pointer-events: none;">person_search</span>
@@ -862,63 +1074,37 @@
             <p class="hidden" id="donante-seleccionado-info" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); margin-top: 4px;">Donante vinculado correctamente</p>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-md);" class="md-grid-2">
-            <!-- Tipo de bien -->
-            <div class="form-grupo">
-              <label class="form-label">Descripción del Bien / Alimento *</label>
-              <input class="form-input" placeholder="Ej: Arroz largo fino 1kg" required="" type="text"/>
+          <!-- 2. descripcion: String -->
+          <div class="form-grupo" style="margin-top: var(--space-sm);">
+            <label class="form-label" for="donacion-descripcion">Descripción General de la Donación *</label>
+            <textarea class="form-textarea" id="donacion-descripcion" placeholder="Ej: Donación recibida en depósito con víveres secos, leche y artículos de abrigo..." required rows="2"></textarea>
+          </div>
+
+          <!-- 3. listaDeBienes: Múltiples bienes dinámicos -->
+          <div class="form-grupo" style="margin-top: var(--space-md);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xs);">
+              <div>
+                <label class="form-label" style="margin: 0; font-weight: 700;">Lista de Bienes *</label>
+                <span style="font-size: 0.75rem; color: var(--on-surface-variant);">Permite registrar uno o más bienes con sus datos específicos.</span>
+              </div>
+              <button class="btn btn-tonal btn-sm" onclick="agregarBienADonacion()" type="button">
+                <span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+                <span>+ Agregar Bien</span>
+              </button>
             </div>
-            <!-- Categoría -->
-            <div class="form-grupo">
-              <label class="form-label">Categoría Nutricional *</label>
-              <select class="form-select">
-                <option>Alimentos Secos / Granos</option>
-                <option>Lácteos y Derivados</option>
-                <option>Enlatados y Conservas</option>
-                <option>Aceites y Grasas</option>
-                <option>Higiene y Limpieza</option>
-              </select>
+
+            <div id="contenedor-lista-bienes" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+              <!-- Los bienes se insertan dinámicamente -->
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-md);" class="md-grid-3">
-            <!-- Cantidad Unidades -->
-            <div class="form-grupo">
-              <label class="form-label">Unidades de Envase *</label>
-              <input class="form-input" placeholder="Ej: 500" required="" type="number"/>
-            </div>
-            <!-- Peso en Kg -->
-            <div class="form-grupo">
-              <label class="form-label">Peso Total Balanza (Kg) *</label>
-              <input class="form-input" placeholder="Ej: 500.0" required="" step="0.1" type="number"/>
-            </div>
-            <!-- Lote Interno Generado -->
-            <div class="form-grupo">
-              <label class="form-label">Lote Interno Generado</label>
-              <input class="form-input" readonly="" style="background-color: var(--surface-container); font-family: var(--font-mono); font-weight: 700;" type="text" value="LT-2025-1049"/>
-            </div>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-md);" class="md-grid-2">
-            <!-- Ubicación Estantería/Pallet -->
-            <div class="form-grupo">
-              <label class="form-label">Ubicación Rack / Estantería / Pallet *</label>
-              <input class="form-input" placeholder="Ej: Rack Norte N-B09 (Pallet 14)" required="" type="text"/>
-            </div>
-            <!-- Fecha de Vencimiento Estricta -->
-            <div class="form-grupo">
-              <label class="form-label" style="color: var(--error);">Fecha de Vencimiento (Control Estricto) *</label>
-              <input class="form-input" required="" type="date"/>
-            </div>
-          </div>
-
-          <div style="display: flex; align-items: center; justify-content: flex-end; gap: var(--space-sm); margin-top: var(--space-md);">
+          <div style="display: flex; align-items: center; justify-content: flex-end; gap: var(--space-sm); margin-top: var(--space-md); padding-top: var(--space-sm); border-top: 1px solid var(--surface-container);">
             <button class="btn btn-tonal" onclick="document.getElementById('modal-ingreso').classList.add('hidden')" type="button">
               Cancelar
             </button>
             <button class="btn btn-primary" type="submit">
               <span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span>
-              <span>Registrar Ingreso en Inventario</span>
+              <span>Registrar Donación en Depósito</span>
             </button>
           </div>
         </form>
@@ -1137,7 +1323,6 @@
         <div class="footer-col">
           <span class="footer-col-titulo">Gobernanza &amp; Legal</span>
           <div class="footer-col-lista">
-            <a class="footer-link" href="../index.html#transparencia">Transparencia</a>
             <a class="footer-link" href="#">Términos de Servicio</a>
             <a class="footer-link" href="#">Política de Privacidad</a>
             <a class="footer-link" href="#">Seguridad y Cumplimiento</a>
@@ -1146,7 +1331,7 @@
       </div>
 
       <div class="footer-bottom">
-        <span style="font-size: 0.8125rem;">© 2025 DonaTrack - Sistema Nacional de Trazabilidad Humanitaria. Todos los derechos reservados.</span>
+        <span style="font-size: 0.8125rem;">© 2026 DonaTrack - Sistema Nacional de Trazabilidad Humanitaria. Todos los derechos reservados.</span>
         <div style="display: flex; align-items: center; gap: var(--space-md); font-size: 0.8125rem;">
           <span style="display: inline-flex; align-items: center; gap: 4px;">
             <span class="pulse-dot" style="width: 6px; height: 6px;"></span> Red Operativa Activa
@@ -1196,13 +1381,337 @@
       info.classList.remove('hidden');
     }
 
-    // 3. Guardar Donación
+    // 3. Gestión Dinámica de Bienes en Donación
+    const subcategoriasDonacion = {
+      "Alimentos": ["No perecederos", "Frescos", "Lácteos", "Bebidas", "Enlatados", "Harinas y Legumbres"],
+      "Ropa y Calzado": ["Abrigo", "Ropa de niños", "Ropa de adultos", "Calzado", "Mantas y Frazadas"],
+      "Salud e Higiene": ["Medicamentos", "Higiene personal", "Primeros auxilios", "Insumos médicos"],
+      "Muebles y Equipamiento": ["Sillas y Sillones", "Mesas", "Camas y Colchones", "Electrodomésticos", "Armarios"],
+      "Tecnología y Educación": ["Computadoras", "Útiles escolares", "Libros", "Celulares y Tablets"],
+      "Construcción y Reparación": ["Herramientas", "Pintura", "Materiales", "Ferretería"]
+    };
+
+    let bienItemCounter = 0;
+
+    function agregarBienADonacion() {
+      bienItemCounter++;
+      const container = document.getElementById('contenedor-lista-bienes');
+      const bienCard = document.createElement('div');
+      bienCard.className = 'bien-item-card';
+      bienCard.id = `bien-item-${bienItemCounter}`;
+      bienCard.style.cssText = 'background-color: var(--surface-container-lowest); border: 1px solid var(--outline-variant); border-radius: var(--radius-md); padding: var(--space-sm); position: relative;';
+
+      const categoriasOptions = Object.keys(subcategoriasDonacion).map(cat => `<option value="${cat}">${cat}</option>`).join('');
+
+      bienCard.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xs);">
+          <span style="font-size: 0.8125rem; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 4px;">
+            <span class="material-symbols-outlined" style="font-size: 16px;">inventory_2</span>
+            Bien #${container.children.length + 1}
+          </span>
+          <button type="button" class="btn btn-tonal btn-sm" onclick="eliminarBienDeDonacion(${bienItemCounter})" style="padding: 2px 6px; font-size: 0.75rem; color: var(--error);" title="Eliminar este bien">
+            <span class="material-symbols-outlined" style="font-size: 14px;">delete</span>
+          </button>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-xs);">
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Categoría *</label>
+            <select class="form-select select-categoria-bien" required onchange="actualizarSubcategoriaBien(this)">
+              <option value="">Seleccionar</option>
+              ${categoriasOptions}
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Subcategoría *</label>
+            <select class="form-select select-subcategoria-bien" required disabled>
+              <option value="">Primero elija categoría</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Cantidad *</label>
+            <input class="form-input bien-cantidad" type="number" min="1" step="1" placeholder="Ej: 50" required />
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Peso (kg) *</label>
+            <input class="form-input bien-peso" type="number" min="0.1" step="0.1" placeholder="Ej: 25.5" required />
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Volumen (m³) *</label>
+            <input class="form-input bien-volumen" type="number" min="0.01" step="0.01" placeholder="Ej: 0.8" required />
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Estado *</label>
+            <select class="form-select bien-es-nuevo" required>
+              <option value="true">Nuevo</option>
+              <option value="false">Usado en buen estado</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Caducidad (Opcional)</label>
+            <input class="form-input bien-caducidad" type="date" />
+          </div>
+        </div>
+      `;
+
+      container.appendChild(bienCard);
+      renumerarBienes();
+    }
+
+    function eliminarBienDeDonacion(id) {
+      const item = document.getElementById(`bien-item-${id}`);
+      if (item) {
+        const container = document.getElementById('contenedor-lista-bienes');
+        if (container.children.length <= 1) {
+          alert('La donación debe contener al menos un bien.');
+          return;
+        }
+        item.remove();
+        renumerarBienes();
+      }
+    }
+
+    function renumerarBienes() {
+      const items = document.querySelectorAll('#contenedor-lista-bienes .bien-item-card');
+      items.forEach((card, index) => {
+        const label = card.querySelector('span');
+        if (label) {
+          label.innerHTML = `<span class="material-symbols-outlined" style="font-size: 16px;">inventory_2</span> Bien #${index + 1}`;
+        }
+      });
+    }
+
+    function actualizarSubcategoriaBien(catSelect) {
+      const parentCard = catSelect.closest('.bien-item-card');
+      const subSelect = parentCard.querySelector('.select-subcategoria-bien');
+      const cat = catSelect.value;
+
+      if (cat && subcategoriasDonacion[cat]) {
+        subSelect.disabled = false;
+        subSelect.innerHTML = '<option value="">Seleccionar subcategoría</option>' + 
+          subcategoriasDonacion[cat].map(sub => `<option value="${sub}">${sub}</option>`).join('');
+      } else {
+        subSelect.disabled = true;
+        subSelect.innerHTML = '<option value="">Primero elija categoría</option>';
+      }
+    }
+
     function guardarNuevaDonacion(e) {
       e.preventDefault();
+      const donante = document.getElementById('buscador-donante').value;
+      const itemsCards = document.querySelectorAll('#contenedor-lista-bienes .bien-item-card');
+
+      if (itemsCards.length === 0) {
+        alert('Debe agregar al menos un bien a la donación.');
+        return;
+      }
+
+      const listaDeBienes = [];
+      itemsCards.forEach(card => {
+        listaDeBienes.push({
+          categoria: card.querySelector('.select-categoria-bien').value,
+          subcategoria: card.querySelector('.select-subcategoria-bien').value,
+          cantidad: parseInt(card.querySelector('.bien-cantidad').value, 10),
+          peso: parseFloat(card.querySelector('.bien-peso').value),
+          volumen: parseFloat(card.querySelector('.bien-volumen').value),
+          esNuevo: card.querySelector('.bien-es-nuevo').value === 'true',
+          fechaCaducidad: card.querySelector('.bien-caducidad').value || null
+        });
+      });
+
       document.getElementById('modal-ingreso').classList.add('hidden');
-      mostrarToast('Lote Ingresado al Depósito', 'Lote #LT-2025-1049 registrado correctamente en Rack Norte. Control de caducidad iniciado.', 'inventory_2');
+      mostrarToast('Donación Ingresada al Depósito', `Carga con ${listaDeBienes.length} bien(es) recibida de ${donante}. Registro de inventario y lote completado.`, 'inventory_2');
       e.target.reset();
       document.getElementById('donante-seleccionado-info').classList.add('hidden');
+      document.getElementById('contenedor-lista-bienes').innerHTML = '';
+      agregarBienADonacion();
+    }
+
+    // Inicializar primer bien por defecto
+    document.addEventListener('DOMContentLoaded', () => {
+      if (document.getElementById('contenedor-lista-bienes') && document.getElementById('contenedor-lista-bienes').children.length === 0) {
+        agregarBienADonacion();
+      }
+    });
+
+    // 3.1 Funciones de Registro (Donante Humano / Jurídico y Entidad Beneficiaria)
+    function conmutarTabRegistro(tipo) {
+      const btnDonante = document.getElementById('tab-btn-donante');
+      const btnEntidad = document.getElementById('tab-btn-entidad');
+      const panelDonante = document.getElementById('panel-registro-donante');
+      const panelEntidad = document.getElementById('panel-registro-entidad');
+
+      if (tipo === 'donante') {
+        btnDonante.className = 'btn btn-primary btn-sm';
+        btnEntidad.className = 'btn btn-tonal btn-sm';
+        panelDonante.classList.remove('hidden');
+        panelEntidad.classList.add('hidden');
+      } else {
+        btnDonante.className = 'btn btn-tonal btn-sm';
+        btnEntidad.className = 'btn btn-primary btn-sm';
+        panelDonante.classList.add('hidden');
+        panelEntidad.classList.remove('hidden');
+      }
+    }
+
+    function conmutarTipoDonante(subtipo) {
+      const formHumano = document.getElementById('form-donante-humano');
+      const formJuridico = document.getElementById('form-donante-juridico');
+
+      if (subtipo === 'humano') {
+        formHumano.classList.remove('hidden');
+        formJuridico.classList.add('hidden');
+      } else {
+        formHumano.classList.add('hidden');
+        formJuridico.classList.remove('hidden');
+      }
+    }
+
+    function validarTelefonoHumano() {
+      const telInput = document.getElementById('humano-telefono');
+      const medioSelect = document.getElementById('humano-medio');
+      const optSms = document.getElementById('opt-sms-humano');
+      const optWsp = document.getElementById('opt-wsp-humano');
+      const hint = document.getElementById('humano-telefono-hint');
+
+      const tieneTel = telInput.value.trim().length > 0;
+      optSms.disabled = !tieneTel;
+      optWsp.disabled = !tieneTel;
+
+      if (tieneTel) {
+        optSms.textContent = 'SMS';
+        optWsp.textContent = 'WHATSAPP';
+        if (hint) hint.textContent = 'Canales telefónicos (SMS/WhatsApp) habilitados.';
+      } else {
+        optSms.textContent = 'SMS (requiere teléfono cargado)';
+        optWsp.textContent = 'WHATSAPP (requiere teléfono cargado)';
+        if (hint) hint.textContent = 'SMS y WhatsApp solo disponibles si hay teléfono cargado.';
+        if (medioSelect.value === 'SMS' || medioSelect.value === 'WHATSAPP') {
+          medioSelect.value = 'MAIL';
+        }
+      }
+    }
+
+    function validarTelefonoJuridico() {
+      const telInput = document.getElementById('juridico-telefono');
+      const medioSelect = document.getElementById('juridico-medio');
+      const optSms = document.getElementById('opt-sms-juridico');
+      const optWsp = document.getElementById('opt-wsp-juridico');
+      const hint = document.getElementById('juridico-telefono-hint');
+
+      const tieneTel = telInput.value.trim().length > 0;
+      optSms.disabled = !tieneTel;
+      optWsp.disabled = !tieneTel;
+
+      if (tieneTel) {
+        optSms.textContent = 'SMS';
+        optWsp.textContent = 'WHATSAPP';
+        if (hint) hint.textContent = 'Canales telefónicos (SMS/WhatsApp) habilitados.';
+      } else {
+        optSms.textContent = 'SMS (requiere teléfono cargado)';
+        optWsp.textContent = 'WHATSAPP (requiere teléfono cargado)';
+        if (hint) hint.textContent = 'SMS y WhatsApp solo disponibles si hay teléfono cargado.';
+        if (medioSelect.value === 'SMS' || medioSelect.value === 'WHATSAPP') {
+          medioSelect.value = 'MAIL';
+        }
+      }
+    }
+
+    let listaEmailsEntidad = [];
+
+    function renderizarEmailsEntidad() {
+      const container = document.getElementById('entidad-emails-tags');
+      const errorMsg = document.getElementById('entidad-emails-error');
+      container.innerHTML = '';
+      
+      if (listaEmailsEntidad.length > 0 && errorMsg) {
+        errorMsg.style.display = 'none';
+      }
+
+      listaEmailsEntidad.forEach((email, index) => {
+        const chip = document.createElement('div');
+        chip.style.cssText = 'display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background-color: var(--surface-container-high); border-radius: var(--radius-full); font-size: 0.8125rem; color: var(--on-surface); border: 1px solid var(--outline-variant);';
+        chip.innerHTML = `
+          <span>${email}</span>
+          <button type="button" onclick="eliminarEmailEntidad(${index})" style="background: none; border: none; cursor: pointer; display: inline-flex; align-items: center; color: var(--on-surface-variant); padding: 0;">
+            <span class="material-symbols-outlined" style="font-size: 14px;">close</span>
+          </button>
+        `;
+        container.appendChild(chip);
+      });
+    }
+
+    function agregarEmailEntidad() {
+      const input = document.getElementById('entidad-nuevo-email');
+      const val = input.value.trim();
+      const errorMsg = document.getElementById('entidad-emails-error');
+
+      if (!val || !val.includes('@') || !val.includes('.')) {
+        alert('Por favor ingrese una dirección de correo válida.');
+        input.focus();
+        return;
+      }
+
+      if (listaEmailsEntidad.includes(val)) {
+        alert('Este correo ya fue agregado a la lista.');
+        input.focus();
+        return;
+      }
+
+      listaEmailsEntidad.push(val);
+      input.value = '';
+      renderizarEmailsEntidad();
+    }
+
+    function eliminarEmailEntidad(index) {
+      listaEmailsEntidad.splice(index, 1);
+      renderizarEmailsEntidad();
+    }
+
+    function guardarDonanteHumano(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('humano-nombre').value;
+      const apellido = document.getElementById('humano-apellido').value;
+      const dni = document.getElementById('humano-dni').value;
+      const medio = document.getElementById('humano-medio').value;
+
+      mostrarToast('Donante Humano Registrado', `${nombre} ${apellido} (DNI ${dni}) fue incorporado con canal preferente ${medio}.`, 'person_add');
+      e.target.reset();
+      validarTelefonoHumano();
+    }
+
+    function guardarDonanteJuridico(e) {
+      e.preventDefault();
+      const razon = document.getElementById('juridico-razon').value;
+      const cuit = document.getElementById('juridico-cuit').value;
+      const medio = document.getElementById('juridico-medio').value;
+
+      mostrarToast('Donante Jurídico Registrado', `${razon} (CUIT ${cuit}) fue registrado con canal preferente ${medio}.`, 'domain_add');
+      e.target.reset();
+      validarTelefonoJuridico();
+    }
+
+    function guardarEntidadBeneficiaria(e) {
+      e.preventDefault();
+      if (listaEmailsEntidad.length === 0) {
+        const errorMsg = document.getElementById('entidad-emails-error');
+        if (errorMsg) errorMsg.style.display = 'block';
+        document.getElementById('entidad-nuevo-email').focus();
+        return;
+      }
+
+      const razon = document.getElementById('entidad-razon').value;
+
+      mostrarToast('Entidad Beneficiaria Registrada', `${razon} ha sido dada de alta con ${listaEmailsEntidad.length} email(s) registrados.`, 'foundation');
+      e.target.reset();
+      listaEmailsEntidad = [];
+      renderizarEmailsEntidad();
     }
 
     // 4. Modal Estado Técnico
