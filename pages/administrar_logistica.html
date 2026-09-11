@@ -22,11 +22,11 @@
     <header class="header-principal">
       <div class="header-contenedor">
         <div class="header-brand">
-          <a href="index.html" style="display: flex; align-items: center">
+          <a href="../index.html" style="display: flex; align-items: center">
             <img
               alt="DonaTrack Logo"
               class="header-logo"
-              src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q"
+              src="../images/logo.svg"
             />
           </a>
         </div>
@@ -76,18 +76,12 @@
       <div class="admin-sub-header">
         <div class="admin-sub-header-container">
           <div class="admin-status-cluster">
-            <div class="pulse-dot"></div>
             <div style="display: flex; flex-direction: column">
               <div class="admin-header-title-row">
                 <h1 class="admin-header-title">
                   Centro Operativo de Logística
                 </h1>
-                <span class="admin-hub-badge">HUB-SUR-AR</span>
               </div>
-              <span class="admin-header-subtitle"
-                >Auditoría criptográfica activa • Nodo Validador #842 en
-                sincronía</span
-              >
             </div>
           </div>
           <div class="admin-sub-header-actions">
@@ -102,118 +96,21 @@
               <span class="material-symbols-outlined">local_shipping</span>
               <span>+ Nuevo Camión</span>
             </button>
+            <button
+              class="btn btn-tonal"
+              onclick="
+                document
+                  .getElementById('modal-chofer')
+                  .classList.remove('hidden')
+              "
+            >
+              <span class="material-symbols-outlined">person_add</span>
+              <span>Registrar Chofer</span>
+            </button>
           </div>
         </div>
       </div>
       <div class="admin-main-content">
-        <section class="admin-kpi-grid">
-          <!-- Métrica 1: Total Donaciones -->
-          <div class="admin-kpi-card">
-            <div>
-              <div class="kpi-top-row">
-                <div>
-                  <span class="kpi-label">Flota Total</span>
-                  <div class="kpi-value-row">
-                    <span class="kpi-number">8</span>
-                    <span class="kpi-unit">vehículos</span>
-                  </div>
-                </div>
-                <div class="kpi-icon-pill kpi-icon-primary">
-                  <span class="material-symbols-outlined">local_shipping</span>
-                </div>
-              </div>
-              <div class="kpi-meta-row">
-                <span>6 en ruta • 1 disponible • 1 mantenimiento</span>
-              </div>
-            </div>
-            <div class="progress-track">
-              <div
-                class="progress-bar-fill progress-bar-primary"
-                style="width: 100%"
-              ></div>
-            </div>
-          </div>
-          <!-- Métrica 2: Pendientes de Asignación -->
-          <div class="admin-kpi-card">
-            <div>
-              <div class="kpi-top-row">
-                <div>
-                  <span class="kpi-label">En Ruta</span>
-                  <div class="kpi-value-row">
-                    <span class="kpi-number">6</span>
-                    <span class="kpi-unit kpi-unit-secondary"
-                      >vehículos activos</span
-                    >
-                  </div>
-                </div>
-                <div class="kpi-icon-pill kpi-icon-secondary">
-                  <span class="material-symbols-outlined">navigation</span>
-                </div>
-              </div>
-              <div class="kpi-meta-row">
-                <span>Telemetría GPS: 100% OK</span>
-              </div>
-            </div>
-            <div class="progress-track">
-              <div
-                class="progress-bar-fill progress-bar-tertiary"
-                style="width: 75%"
-              ></div>
-            </div>
-          </div>
-          <!-- Métrica 3: Próximas a Caducar -->
-          <div class="admin-kpi-card">
-            <div>
-              <div class="kpi-top-row">
-                <div>
-                  <span class="kpi-label kpi-label-error">Disponibles</span>
-                  <div class="kpi-value-row">
-                    <span class="kpi-number kpi-number-error">1</span>
-                    <span class="kpi-unit kpi-unit-error">vehículo</span>
-                  </div>
-                </div>
-                <div class="kpi-icon-pill kpi-icon-error">
-                  <span class="material-symbols-outlined">check_circle</span>
-                </div>
-              </div>
-              <div class="kpi-meta-row kpi-meta-error">
-                <span>Listo para asignación inmediata</span>
-              </div>
-            </div>
-            <div class="progress-track progress-track-error">
-              <div
-                class="progress-bar-fill progress-bar-error"
-                style="width: 12.5%"
-              ></div>
-            </div>
-          </div>
-          <!-- Métrica 4: Flota en Calle -->
-          <div class="admin-kpi-card">
-            <div>
-              <div class="kpi-top-row">
-                <div>
-                  <span class="kpi-label">En Mantenimiento</span>
-                  <div class="kpi-value-row">
-                    <span class="kpi-number">1</span>
-                    <span class="kpi-unit">vehículo</span>
-                  </div>
-                </div>
-                <div class="kpi-icon-pill kpi-icon-accent">
-                  <span class="material-symbols-outlined">build</span>
-                </div>
-              </div>
-              <div class="kpi-meta-row">
-                <span>Reincorporación estimada: mañana 09:00</span>
-              </div>
-            </div>
-            <div class="progress-track">
-              <div
-                class="progress-bar-fill progress-bar-primary"
-                style="width: 12.5%"
-              ></div>
-            </div>
-          </div>
-        </section>
         <section
           class="admin-card-section"
           style="display: flex; flex-direction: column; gap: var(--space-md)"
@@ -237,33 +134,14 @@
                   color: var(--on-surface);
                 "
               >
-                <span class="material-symbols-outlined"
-                  >directions_boat_filled</span
-                >
+                <span class="material-symbols-outlined">local_shipping</span>
               </div>
               <div>
                 <h2 class="section-title">
                   Administración de Flota y Logística de Distribución
                 </h2>
-                <p class="section-subtitle">
-                  Telemetría satelital, hojas de ruta y capacidad de carga en
-                  tiempo real.
-                </p>
               </div>
             </div>
-            <button
-              class="btn btn-tonal"
-              onclick="
-                document
-                  .getElementById('modal-camion')
-                  .classList.remove('hidden')
-              "
-            >
-              <span class="material-symbols-outlined" style="font-size: 16px"
-                >add_circle</span
-              >
-              <span>+ Agregar Nuevo Camión a la Flota</span>
-            </button>
           </div>
           <!-- Cuadrícula de Camiones -->
           <div class="fleet-grid">
@@ -341,13 +219,13 @@
                   padding-top: var(--space-sm);
                 "
               >
-                <button class="btn btn-tonal" style="width: 100%">
+                <button class="btn btn-tonal" onclick="asignarChofer('01')" style="width: 100%">
                   <span
                     class="material-symbols-outlined"
                     style="font-size: 16px"
-                    >schedule_send</span
+                    >person_add</span
                   >
-                  <span>Asignar a Despacho Inmediato</span>
+                  <span>Asignar chofer</span>
                 </button>
               </div>
             </div>
@@ -460,7 +338,7 @@
                     style="font-size: 16px"
                     >satellite_alt</span
                   >
-                  <span>Ver Telemetría y Hoja de Ruta</span>
+                  <span>Ver Ruta</span>
                 </button>
               </div>
             </div>
@@ -533,217 +411,13 @@
                   padding-top: var(--space-sm);
                 "
               >
-                <button class="btn btn-tonal" style="width: 100%">
+                <button class="btn btn-tonal" onclick="asignarChofer('07')" style="width: 100%">
                   <span
                     class="material-symbols-outlined"
                     style="font-size: 16px"
-                    >cloud_upload</span
+                    >person_add</span
                   >
-                  <span>Historial de Mantenimiento</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
-          class="admin-card-section"
-          style="display: flex; flex-direction: column; gap: var(--space-md)"
-        >
-          <div
-            class="sm-flex-row"
-            style="
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              gap: var(--space-sm);
-            "
-          >
-            <div
-              style="display: flex; align-items: center; gap: var(--space-sm)"
-            >
-              <div class="kpi-icon-pill kpi-icon-primary">
-                <span class="material-symbols-outlined">route</span>
-              </div>
-              <div>
-                <h2 class="section-title">Despachos y Hojas de Ruta</h2>
-                <p class="section-subtitle">
-                  Seguimiento de entregas asignadas a camiones y estado
-                  operativo de cada despacho.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="fleet-grid">
-            <div class="fleet-card active-route">
-              <div class="fleet-card-accent-bar"></div>
-              <div>
-                <div
-                  style="
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                  "
-                >
-                  <span class="rack-badge" style="font-weight: 700"
-                    >DESPACHO #DON-9042</span
-                  >
-                  <span
-                    class="badge badge-tertiary"
-                    style="display: inline-flex; align-items: center; gap: 4px"
-                  >
-                    <span
-                      class="pulse-dot pulse-dot-tertiary"
-                      style="width: 8px; height: 8px"
-                    ></span>
-                    En Ruta
-                  </span>
-                </div>
-                <div style="margin-top: var(--space-sm)">
-                  <h3
-                    style="
-                      font-size: 1.0625rem;
-                      font-weight: 600;
-                      color: var(--on-surface);
-                      margin: 0;
-                    "
-                  >
-                    Hogar Niños San José
-                  </h3>
-                  <p
-                    style="
-                      font-size: 0.8125rem;
-                      color: var(--on-surface-variant);
-                      margin: 2px 0 0 0;
-                    "
-                  >
-                    Quilmes Centro • Unidad #04
-                  </p>
-                </div>
-                <div class="fleet-spec-list">
-                  <div class="fleet-spec-row">
-                    <span>Carga:</span>
-                    <strong class="fleet-spec-val">1.100 kg Alimentos</strong>
-                  </div>
-                  <div class="fleet-spec-row">
-                    <span>Chofer:</span>
-                    <strong class="fleet-spec-val">Mariana Gómez</strong>
-                  </div>
-                  <div class="fleet-spec-row">
-                    <span>ETA:</span>
-                    <span style="color: var(--primary); font-weight: 600"
-                      >14 minutos</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                style="
-                  margin-top: var(--space-md);
-                  padding-top: var(--space-sm);
-                "
-              >
-                <button
-                  class="btn btn-primary"
-                  onclick="
-                    verTelemetria(
-                      '04',
-                      'Mercedes Sprinter',
-                      'AF 404 TR',
-                      '#DON-9042',
-                      'Mariana Gómez',
-                    )
-                  "
-                  style="width: 100%"
-                >
-                  <span
-                    class="material-symbols-outlined"
-                    style="font-size: 16px"
-                    >satellite_alt</span
-                  >
-                  <span>Ver Telemetría y Hoja de Ruta</span>
-                </button>
-              </div>
-            </div>
-            <div class="fleet-card">
-              <div>
-                <div
-                  style="
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                  "
-                >
-                  <span class="rack-badge" style="font-weight: 700"
-                    >DESPACHO #DON-9037</span
-                  >
-                  <span
-                    class="badge badge-primary"
-                    style="display: inline-flex; align-items: center; gap: 4px"
-                  >
-                    <span
-                      style="
-                        width: 8px;
-                        height: 8px;
-                        border-radius: 50%;
-                        background-color: var(--primary);
-                      "
-                    ></span>
-                    Programado
-                  </span>
-                </div>
-                <div style="margin-top: var(--space-sm)">
-                  <h3
-                    style="
-                      font-size: 1.0625rem;
-                      font-weight: 600;
-                      color: var(--on-surface);
-                      margin: 0;
-                    "
-                  >
-                    Merendero Los Bajitos
-                  </h3>
-                  <p
-                    style="
-                      font-size: 0.8125rem;
-                      color: var(--on-surface-variant);
-                      margin: 2px 0 0 0;
-                    "
-                  >
-                    Avellaneda • Unidad #01
-                  </p>
-                </div>
-                <div class="fleet-spec-list">
-                  <div class="fleet-spec-row">
-                    <span>Carga:</span>
-                    <strong class="fleet-spec-val"
-                      >350 kg Polenta y Legumbres</strong
-                    >
-                  </div>
-                  <div class="fleet-spec-row">
-                    <span>Chofer:</span>
-                    <strong class="fleet-spec-val">Alberto Paz</strong>
-                  </div>
-                  <div class="fleet-spec-row">
-                    <span>Salida:</span>
-                    <span style="color: var(--primary); font-weight: 600"
-                      >Hoy, 11:30 hs</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                style="
-                  margin-top: var(--space-md);
-                  padding-top: var(--space-sm);
-                "
-              >
-                <button class="btn btn-tonal" style="width: 100%">
-                  <span
-                    class="material-symbols-outlined"
-                    style="font-size: 16px"
-                    >schedule_send</span
-                  >
-                  <span>Preparar Despacho</span>
+                  <span>Asignar chofer</span>
                 </button>
               </div>
             </div>
@@ -1072,6 +746,119 @@
           </form>
         </div>
       </div>
+      <div class="modal-overlay hidden" id="modal-chofer">
+        <div class="modal-contenedor" style="max-width: 480px">
+          <div class="modal-header">
+            <div
+              style="display: flex; align-items: center; gap: var(--space-sm)"
+            >
+              <div class="kpi-icon-pill kpi-icon-primary">
+                <span class="material-symbols-outlined">person_add</span>
+              </div>
+              <div>
+                <h3
+                  style="
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: var(--on-surface);
+                    margin: 0;
+                  "
+                >
+                  Registrar Chofer
+                </h3>
+                <p
+                  style="
+                    font-size: 0.8125rem;
+                    color: var(--on-surface-variant);
+                    margin: 2px 0 0 0;
+                  "
+                >
+                  Alta de nuevo conductor en el sistema logístico.
+                </p>
+              </div>
+            </div>
+            <button
+              class="modal-cerrar"
+              onclick="
+                document.getElementById('modal-chofer').classList.add('hidden')
+              "
+              type="button"
+            >
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <form onsubmit="guardarNuevoChofer(event)">
+            <div class="form-grupo">
+              <label class="form-label">Nombre y Apellido *</label>
+              <input
+                class="form-input"
+                placeholder="Ej: Roberto Carlos Mendoza"
+                required=""
+                type="text"
+              />
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-sm);
+              "
+            >
+              <div class="form-grupo">
+                <label class="form-label">DNI *</label>
+                <input
+                  class="form-input"
+                  placeholder="Ej: 34.567.890"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="form-grupo">
+                <label class="form-label">Licencia *</label>
+                <input
+                  class="form-input"
+                  placeholder="Ej: Clase E1 (Cargas)"
+                  required=""
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="form-grupo">
+              <label class="form-label">Teléfono de Contacto *</label>
+              <input
+                class="form-input"
+                placeholder="Ej: +54 9 11 4455-6677"
+                required=""
+                type="tel"
+              />
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: var(--space-sm);
+                margin-top: var(--space-md);
+              "
+            >
+              <button
+                class="btn btn-tonal"
+                onclick="
+                  document
+                    .getElementById('modal-chofer')
+                    .classList.add('hidden')
+                "
+                type="button"
+              >
+                Cancelar
+              </button>
+              <button class="btn btn-primary" type="submit">
+                <span>Registrar Chofer</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
       <div class="toast-container" id="toast-notificacion">
         <div class="toast-box">
           <span
@@ -1101,9 +888,8 @@
               <img
                 alt="DonaTrack Logo"
                 class="footer-logo"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q"
+                src="../images/logo.svg"
               />
-              <span class="footer-nombre">DonaTrack</span>
             </div>
             <p class="footer-desc">
               Infraestructura de trazabilidad humanitaria basada en verificación
@@ -1179,9 +965,6 @@
               <span class="pulse-dot" style="width: 6px; height: 6px"></span>
               Red Operativa Activa
             </span>
-            <a class="footer-link" href="../index.html#transparencia"
-              >Reportes de Impacto</a
-            >
           </div>
         </div>
       </div>
@@ -1215,6 +998,25 @@
           "local_shipping",
         );
         e.target.reset();
+      }
+
+      function guardarNuevoChofer(e) {
+        e.preventDefault();
+        document.getElementById("modal-chofer").classList.add("hidden");
+        mostrarToast(
+          "Chofer Registrado",
+          "El chofer fue dado de alta con éxito en el sistema logístico.",
+          "person_add",
+        );
+        e.target.reset();
+      }
+
+      function asignarChofer(unidad) {
+        mostrarToast(
+          "Asignar Chofer",
+          `Selección de chofer iniciada para la Unidad #${unidad}.`,
+          "person_add",
+        );
       }
     </script>
   </body>

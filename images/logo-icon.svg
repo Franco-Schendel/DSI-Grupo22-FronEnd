@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" fill="none">
+  <defs>
+    <linearGradient id="dtIconGrad" x1="2" y1="2" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#008378" />
+      <stop offset="100%" stop-color="#004d46" />
+    </linearGradient>
+  </defs>
+
+  <rect x="2" y="2" width="40" height="40" rx="11" fill="url(#dtIconGrad)" />
+  
+  <path d="M13 18.5L22 13.5L31 18.5L22 23.5L13 18.5Z" fill="white" fill-opacity="0.9" />
+  <path d="M13 20.5V28.5L22 33.5V25.5L13 20.5Z" fill="white" fill-opacity="0.75" />
+  <path d="M31 20.5V28.5L22 33.5V25.5L31 20.5Z" fill="white" fill-opacity="0.6" />
+
+  <circle cx="22" cy="13.5" r="3.2" fill="#9bf2e4" />
+  <circle cx="22" cy="13.5" r="1.6" fill="#004d46" />
+</svg>

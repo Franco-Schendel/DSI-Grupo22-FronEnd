@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 44" width="180" height="44" fill="none">
+  <defs>
+    <linearGradient id="dtGrad" x1="2" y1="2" x2="40" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#008378" />
+      <stop offset="100%" stop-color="#004d46" />
+    </linearGradient>
+  </defs>
+
+  <!-- Isotipo: Contenedor con esquinas redondeadas -->
+  <rect x="2" y="3" width="38" height="38" rx="11" fill="url(#dtGrad)" />
+  
+  <!-- Símbolo: Caja de donación isométrica con nodo de trazabilidad -->
+  <path d="M12 18.5L21 13.5L30 18.5L21 23.5L12 18.5Z" fill="white" fill-opacity="0.9" />
+  <path d="M12 20.5V28.5L21 33.5V25.5L12 20.5Z" fill="white" fill-opacity="0.75" />
+  <path d="M30 20.5V28.5L21 33.5V25.5L30 20.5Z" fill="white" fill-opacity="0.6" />
+
+  <!-- Pulso / Pin de Trazabilidad centrado superior -->
+  <circle cx="21" cy="13.5" r="3" fill="#9bf2e4" />
+  <circle cx="21" cy="13.5" r="1.5" fill="#004d46" />
+
+  <!-- Tipografía: DonaTrack -->
+  <text x="48" y="29" font-family="'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.03em">
+    <tspan fill="#191c1d">Dona</tspan><tspan fill="#00685f">Track</tspan>
+  </text>
+</svg>

@@ -21,8 +21,8 @@
  <header class="header-principal">
     <div class="header-contenedor">
       <div class="header-brand">
-        <a href="index.html" style="display: flex; align-items: center;">
-          <img alt="DonaTrack Logo" class="header-logo" src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q" />
+        <a href="../index.html" style="display: flex; align-items: center;">
+          <img alt="DonaTrack Logo" class="header-logo" src="../images/logo.svg" />
         </a>
       </div>
 
@@ -69,10 +69,6 @@
           <div class="identidad-datos">
             <div class="identidad-titulos-fila">
               <h1 class="identidad-nombre">Merendero Los Bajitos</h1>
-              <span class="badge badge-code badge-secondary">#BEN-4029</span>
-              <span class="badge badge-primary">
-                <span class="material-symbols-outlined" style="font-size: 14px;">verified</span> Verificada Oficial
-              </span>
             </div>
             <p class="identidad-responsable">
               <span class="material-symbols-outlined" style="font-size: 16px;">badge</span>
@@ -80,156 +76,26 @@
             </p>
           </div>
         </div>
-
-        <!-- Métricas resumidas en vivo -->
-        <div class="metricas-resumen-banner">
-          <div class="metrica-banner-col">
-            <span class="metrica-banner-label">Capacidad diaria</span>
-            <span class="metrica-banner-valor">180 <span style="font-size: 12px; font-weight: 400; color: var(--on-surface-variant);">niños/día</span></span>
-          </div>
-
-          <div class="metrica-banner-col">
-            <span class="metrica-banner-label">Stock de Alimentos</span>
-            <span class="metrica-banner-valor" style="color: var(--tertiary);">
-              <span class="dot-live" style="background-color: var(--tertiary);"></span> Crítico (3 días)
-            </span>
-          </div>
-
-          <div class="metrica-banner-col">
-            <button class="btn btn-primary" id="open-need-modal-btn">
-              <span class="material-symbols-outlined" style="font-size: 18px;">add_circle</span>
-              <span>+ Nueva Necesidad</span>
-            </button>
-          </div>
-        </div>
       </section>
 
-      <!-- 2. Área Principal de Trabajo (2 Columnas) -->
-      <div class="workspace-grid">
-
-        <!-- Columna Izquierda (7 cols): Necesidades y Telemetría -->
-        <div class="col-principal">
-
-          <!-- Necesidades Materiales Activas -->
-          <section class="seccion-tarjeta">
-            <div class="seccion-tarjeta-header">
-              <div>
-                <h2 class="seccion-tarjeta-titulo">Necesidades Materiales Activas</h2>
-                <p class="seccion-tarjeta-bajada">Requerimientos visibles a la red solidaria para despacho y apadrinamiento</p>
-              </div>
-              <span class="badge badge-secondary">4 abiertas</span>
+      <!-- 2. Sección: Donaciones Asignadas (Mapa a la izquierda, Donaciones a la derecha) -->
+      <section class="seccion-bloque">
+        <div class="seccion-subtitulo-header">
+          <div style="display: flex; align-items: center; gap: var(--space-sm);">
+            <div class="seccion-subtitulo-icono">
+              <span class="material-symbols-outlined">move_to_inbox</span>
             </div>
-
-            <div class="lista-necesidades" id="needs-list-container">
-              <!-- Necesidad 1 -->
-              <div class="tarjeta-necesidad">
-                <div class="tarjeta-necesidad-info">
-                  <div class="tarjeta-necesidad-icono icono-tertiary">
-                    <span class="material-symbols-outlined" style="font-size: 20px;">nutrition</span>
-                  </div>
-                  <div class="tarjeta-necesidad-cuerpo">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                      <span class="tarjeta-necesidad-titulo">Leche entera larga vida</span>
-                      <span class="badge" style="background-color: var(--error-container); color: var(--on-error-container);">
-                        <span class="material-symbols-outlined" style="font-size: 12px;">priority_high</span> Urgencia Crítica
-                      </span>
-                    </div>
-                    <span style="font-size: 12px; color: var(--on-surface-variant);">Solicitado: <strong>250 litros</strong> • Límite: 28 Oct 2025</span>
-                    <div class="barra-progreso-contenedor">
-                      <div class="barra-progreso-relleno" style="width: 48%;"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tarjeta-necesidad-estado">
-                  <span class="badge badge-tertiary">
-                    <span class="dot-live" style="background-color: var(--tertiary);"></span> En proceso de donación
-                  </span>
-                  <span style="font-family: var(--font-code); font-size: 11px; color: var(--on-surface-variant);">120L asignados (#DON-9042)</span>
-                </div>
-              </div>
-
-              <!-- Necesidad 2 -->
-              <div class="tarjeta-necesidad">
-                <div class="tarjeta-necesidad-info">
-                  <div class="tarjeta-necesidad-icono">
-                    <span class="material-symbols-outlined" style="font-size: 20px;">bakery_dining</span>
-                  </div>
-                  <div class="tarjeta-necesidad-cuerpo">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                      <span class="tarjeta-necesidad-titulo">Harina de Trigo 000</span>
-                      <span class="badge badge-tertiary">Alta Urgencia</span>
-                    </div>
-                    <span style="font-size: 12px; color: var(--on-surface-variant);">Solicitado: <strong>150 kg</strong> • Límite: 02 Nov 2025</span>
-                    <div class="barra-progreso-contenedor">
-                      <div class="barra-progreso-relleno" style="width: 15%; background-color: var(--outline);"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tarjeta-necesidad-estado">
-                  <span class="badge badge-secondary">
-                    <span class="material-symbols-outlined" style="font-size: 12px;">search</span> Buscando asignación
-                  </span>
-                  <span style="font-family: var(--font-code); font-size: 11px; color: var(--on-surface-variant);">0/150 kg cubiertos</span>
-                </div>
-              </div>
-
-              <!-- Necesidad 3 -->
-              <div class="tarjeta-necesidad">
-                <div class="tarjeta-necesidad-info">
-                  <div class="tarjeta-necesidad-icono">
-                    <span class="material-symbols-outlined" style="font-size: 20px;">skillet</span>
-                  </div>
-                  <div class="tarjeta-necesidad-cuerpo">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                      <span class="tarjeta-necesidad-titulo">Ollas industriales 40L (Aluminio)</span>
-                      <span class="badge badge-secondary">Media</span>
-                    </div>
-                    <span style="font-size: 12px; color: var(--on-surface-variant);">Solicitado: <strong>2 unidades</strong> • Cocina comunitaria</span>
-                  </div>
-                </div>
-                <div class="tarjeta-necesidad-estado">
-                  <span class="badge badge-secondary">Buscando asignación</span>
-                  <span style="font-family: var(--font-code); font-size: 11px; color: var(--on-surface-variant);">Equipamiento fijo</span>
-                </div>
-              </div>
-
-              <!-- Necesidad 4 -->
-              <div class="tarjeta-necesidad" style="opacity: 0.9;">
-                <div class="tarjeta-necesidad-info">
-                  <div class="tarjeta-necesidad-icono icono-success">
-                    <span class="material-symbols-outlined" style="font-size: 20px;">apparel</span>
-                  </div>
-                  <div class="tarjeta-necesidad-cuerpo">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                      <span class="tarjeta-necesidad-titulo">Frazadas polares &amp; Calzado Talles 28-36</span>
-                      <span class="badge badge-success">Completada</span>
-                    </div>
-                    <span style="font-size: 12px; color: var(--on-surface-variant);">Recibido: <strong>60 packs</strong> • Espera confirmación recepción</span>
-                  </div>
-                </div>
-                <div class="tarjeta-necesidad-estado">
-                  <span class="badge badge-success">
-                    <span class="material-symbols-outlined" style="font-size: 12px;">done_all</span> En punto de entrega
-                  </span>
-                  <span style="font-family: var(--font-code); font-size: 11px; color: var(--success);">Listo para acta</span>
-                </div>
-              </div>
+            <div>
+              <h2 class="seccion-subtitulo">Donaciones Asignadas</h2>
+              <p class="seccion-subtitulo-bajada">Seguimiento de donaciones recibidas y en camino hacia la entidad</p>
             </div>
-          </section>
+          </div>
+          <span class="badge badge-primary">2 En Proceso</span>
+        </div>
 
-          <!-- Telemetría de Última Milla en Vivo -->
-          <section class="seccion-tarjeta">
-            <div class="seccion-tarjeta-header">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span class="telemetria-pulso">
-                  <span class="telemetria-pulso-ping"></span>
-                  <span class="telemetria-pulso-dot"></span>
-                </span>
-                <h2 class="seccion-tarjeta-titulo">Telemetría de Última Milla en Vivo</h2>
-              </div>
-              <span style="font-family: var(--font-code); font-size: 12px; font-weight: 600; color: var(--primary);">GPS Activo: Camión #04</span>
-            </div>
-
+        <div class="donaciones-asignadas-grid">
+          <!-- Mapa a la izquierda -->
+          <div class="donaciones-mapa-wrapper">
             <div class="hud-mapa-contenedor">
               <div class="hud-mapa-bg" data-location="Avenida San Martín y Calle Mitre, Córdoba, Argentina" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkziLKCW8w5WF1jcJCAIs3lC7xmjUHSZ93tY6ZxJeraFmB1wIS_zhQYPBveGs3Gx1-DtB1-Fn3uRVzJ1VHeXC9e-9NcUwxBbEjgsmllPBRFWsy1PNr0Lk6E9TogbQ9plE8W6-4VUYTU8fy1SmcufHSj_Fcx3uPWQ8BPmYKDviKLwSvZiqe1x85RWqe5lds5YCyRB0aa7DDmpGOGMb3t_ZBzoN9wzndqNXovI90km_ftzm0owJxm8EAsw')"></div>
 
@@ -269,201 +135,273 @@
                 <span style="font-size: 11px; color: var(--on-surface-variant); text-align: right;">A 2.4 km del merendero</span>
               </div>
             </div>
-          </section>
+          </div>
 
+          <!-- Lista de Donaciones a la derecha -->
+          <div class="donaciones-lista-wrapper">
+            <!-- Donación 1 (En tránsito con botón Confirmar recepción) -->
+            <div class="tarjeta-donacion-asignada">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-family: var(--font-code); font-weight: 700; color: var(--primary);">#DON-9042</span>
+                <span class="badge badge-tertiary">
+                  <span class="dot-live" style="background-color: var(--tertiary);"></span> En tránsito
+                </span>
+              </div>
+              <div>
+                <span style="font-size: 14px; font-weight: 600; color: var(--on-surface); display: block;">120 kg Leche Entera Larga Vida</span>
+                <span style="font-size: 12px; color: var(--on-surface-variant);">Donante: <strong>Mateo Rodríguez</strong> (Verificado)</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 6px; font-size: 12px; color: var(--on-surface-variant);">
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <span class="material-symbols-outlined" style="font-size: 14px;">directions_car</span> Camión #04
+                </span>
+                <span style="color: var(--primary); font-weight: 600;">Llegando ~11:45 hs</span>
+              </div>
+              <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--surface-container);">
+                <button class="btn btn-primary" onclick="abrirModalActa('DON-9042')" style="width: 100%;" type="button">
+                  <span class="material-symbols-outlined" style="font-size: 18px;">fact_check</span>
+                  <span>Confirmar recepción</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Donación 2 (Asignada) -->
+            <div class="tarjeta-donacion-asignada">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-family: var(--font-code); font-weight: 700; color: var(--on-surface);">#DON-9115</span>
+                <span class="badge badge-secondary">Asignada</span>
+              </div>
+              <div>
+                <span style="font-size: 14px; font-weight: 600; color: var(--on-surface); display: block;">80 kg Azúcar común &amp; Galletitas</span>
+                <span style="font-size: 12px; color: var(--on-surface-variant);">Donante: Grupo Solidario Belgrano</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 6px; font-size: 12px; color: var(--on-surface-variant);">
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <span class="material-symbols-outlined" style="font-size: 14px;">inventory</span> Preparación de carga
+                </span>
+                <span>Despacho: 15:00 hs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Sección: Necesidades Materiales Activas (A todo lo ancho) -->
+      <section class="seccion-bloque">
+        <div class="seccion-subtitulo-header">
+          <div style="display: flex; align-items: center; gap: var(--space-sm);">
+            <div class="seccion-subtitulo-icono">
+              <span class="material-symbols-outlined">format_list_bulleted</span>
+            </div>
+            <div>
+              <h2 class="seccion-subtitulo">Necesidades Materiales Activas</h2>
+              <p class="seccion-subtitulo-bajada">Requerimientos visibles a la red solidaria para despacho y apadrinamiento</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="badge badge-secondary">4 abiertas</span>
+            <button class="btn btn-primary" id="open-need-modal-btn" type="button">
+              <span class="material-symbols-outlined" style="font-size: 18px;">add_circle</span>
+              <span>+ Nueva Necesidad</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Columna Derecha (5 cols): Donaciones Asignadas, Acta y Notificaciones -->
-        <div class="col-lateral">
-
-          <!-- Donaciones Asignadas & en Ruta -->
-          <section class="seccion-tarjeta">
-            <div class="seccion-tarjeta-header">
-              <h2 class="seccion-tarjeta-titulo">
-                <span class="material-symbols-outlined" style="color: var(--primary);">move_to_inbox</span>
-                <span>Donaciones Asignadas &amp; en Ruta</span>
-              </h2>
-              <span class="badge badge-primary">2 En Camino</span>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-              <!-- Donación 1 -->
-              <div class="tarjeta-donacion-asignada">
-                <div style="display: flex; align-items: center; justify-content: space-between;">
-                  <span style="font-family: var(--font-code); font-weight: 700; color: var(--primary);">#DON-9042</span>
-                  <span class="badge badge-tertiary">
-                    <span class="dot-live" style="background-color: var(--tertiary);"></span> En tránsito
-                  </span>
-                </div>
-                <div>
-                  <span style="font-size: 14px; font-weight: 600; color: var(--on-surface); display: block;">120 kg Leche Entera Larga Vida</span>
-                  <span style="font-size: 12px; color: var(--on-surface-variant);">Donante: <strong>Mateo Rodríguez</strong> (Verificado)</span>
-                </div>
-                <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 6px; font-size: 12px; color: var(--on-surface-variant);">
-                  <span style="display: flex; align-items: center; gap: 4px;">
-                    <span class="material-symbols-outlined" style="font-size: 14px;">directions_car</span> Camión #04
-                  </span>
-                  <span style="color: var(--primary); font-weight: 600;">Llegando ~11:45 hs</span>
-                </div>
+        <div class="lista-necesidades" id="needs-list-container">
+          <!-- Necesidad 1 -->
+          <div class="tarjeta-necesidad">
+            <div class="tarjeta-necesidad-info">
+              <div class="tarjeta-necesidad-icono icono-tertiary">
+                <span class="material-symbols-outlined" style="font-size: 20px;">nutrition</span>
               </div>
-
-              <!-- Donación 2 -->
-              <div class="tarjeta-donacion-asignada">
-                <div style="display: flex; align-items: center; justify-content: space-between;">
-                  <span style="font-family: var(--font-code); font-weight: 700; color: var(--on-surface);">#DON-9115</span>
-                  <span class="badge badge-secondary">Asignada</span>
-                </div>
-                <div>
-                  <span style="font-size: 14px; font-weight: 600; color: var(--on-surface); display: block;">80 kg Azúcar común &amp; Galletitas</span>
-                  <span style="font-size: 12px; color: var(--on-surface-variant);">Donante: Grupo Solidario Belgrano</span>
-                </div>
-                <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 6px; font-size: 12px; color: var(--on-surface-variant);">
-                  <span style="display: flex; align-items: center; gap: 4px;">
-                    <span class="material-symbols-outlined" style="font-size: 14px;">inventory</span> Preparación de carga
+              <div class="tarjeta-necesidad-cuerpo">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="tarjeta-necesidad-titulo">Leche entera larga vida</span>
+                  <span class="badge" style="background-color: var(--error-container); color: var(--on-error-container);">
+                    <span class="material-symbols-outlined" style="font-size: 12px;">priority_high</span> Urgencia Crítica
                   </span>
-                  <span>Despacho: 15:00 hs</span>
+                </div>
+                <span style="font-size: 12px; color: var(--on-surface-variant);">Solicitado: <strong>250 litros</strong> • Límite: 28 Oct 2025</span>
+                <div class="barra-progreso-contenedor">
+                  <div class="barra-progreso-relleno" style="width: 48%;"></div>
                 </div>
               </div>
             </div>
-          </section>
+            <div class="tarjeta-necesidad-estado">
+              <span class="badge badge-tertiary">
+                <span class="dot-live" style="background-color: var(--tertiary);"></span> En proceso de donación
+              </span>
+              <span style="font-family: var(--font-code); font-size: 11px; color: var(--on-surface-variant);">120L asignados (#DON-9042)</span>
+            </div>
+          </div>
 
-          <!-- Acta de Recepción & Carga Fotográfica -->
-          <section class="seccion-tarjeta">
-            <div class="seccion-tarjeta-header">
+          <!-- Necesidad 2 -->
+          <div class="tarjeta-necesidad">
+            <div class="tarjeta-necesidad-info">
+              <div class="tarjeta-necesidad-icono">
+                <span class="material-symbols-outlined" style="font-size: 20px;">bakery_dining</span>
+              </div>
+              <div class="tarjeta-necesidad-cuerpo">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="tarjeta-necesidad-titulo">Harina de Trigo 000</span>
+                  <span class="badge badge-tertiary">Alta Urgencia</span>
+                </div>
+                <span style="font-size: 12px; color: var(--on-surface-variant);">Solicitado: <strong>150 kg</strong> • Límite: 02 Nov 2025</span>
+                <div class="barra-progreso-contenedor">
+                  <div class="barra-progreso-relleno" style="width: 15%; background-color: var(--outline);"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tarjeta-necesidad-estado">
+              <span class="badge badge-secondary">
+                <span class="material-symbols-outlined" style="font-size: 12px;">search</span> Buscando asignación
+              </span>
+              <span style="font-family: var(--font-code); font-size: 11px; color: var(--on-surface-variant);">0/150 kg cubiertos</span>
+            </div>
+          </div>
+
+          <!-- Necesidad 3 -->
+          <div class="tarjeta-necesidad">
+            <div class="tarjeta-necesidad-info">
+              <div class="tarjeta-necesidad-icono">
+                <span class="material-symbols-outlined" style="font-size: 20px;">skillet</span>
+              </div>
+              <div class="tarjeta-necesidad-cuerpo">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="tarjeta-necesidad-titulo">Ollas industriales 40L (Aluminio)</span>
+                  <span class="badge badge-secondary">Media</span>
+                </div>
+                <span style="font-size: 12px; color: var(--on-surface-variant);">Solicitado: <strong>2 unidades</strong> • Cocina comunitaria</span>
+              </div>
+            </div>
+            <div class="tarjeta-necesidad-estado">
+              <span class="badge badge-secondary">Buscando asignación</span>
+              <span style="font-family: var(--font-code); font-size: 11px; color: var(--on-surface-variant);">Equipamiento fijo</span>
+            </div>
+          </div>
+
+          <!-- Necesidad 4 -->
+          <div class="tarjeta-necesidad" style="opacity: 0.9;">
+            <div class="tarjeta-necesidad-info">
+              <div class="tarjeta-necesidad-icono icono-success">
+                <span class="material-symbols-outlined" style="font-size: 20px;">apparel</span>
+              </div>
+              <div class="tarjeta-necesidad-cuerpo">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="tarjeta-necesidad-titulo">Frazadas polares &amp; Calzado Talles 28-36</span>
+                  <span class="badge badge-success">Completada</span>
+                </div>
+                <span style="font-size: 12px; color: var(--on-surface-variant);">Recibido: <strong>60 packs</strong> • Espera confirmación recepción</span>
+              </div>
+            </div>
+            <div class="tarjeta-necesidad-estado">
+              <span class="badge badge-success">
+                <span class="material-symbols-outlined" style="font-size: 12px;">done_all</span> En punto de entrega
+              </span>
+              <span style="font-family: var(--font-code); font-size: 11px; color: var(--success);">Listo para acta</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Modal Emergente: Acta de Recepción & Carga Fotográfica -->
+    <div class="modal-overlay hidden" id="modal-acta-recepcion">
+      <div class="modal-contenedor" style="max-width: 640px;">
+        <div class="modal-header">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div class="seccion-subtitulo-icono" style="width: 36px; height: 36px;">
+              <span class="material-symbols-outlined" style="font-size: 20px;">fact_check</span>
+            </div>
+            <div>
+              <h3 style="font-size: 16px; font-weight: 700; color: var(--on-surface); margin: 0;">Acta de Recepción &amp; Carga Fotográfica</h3>
+              <span style="font-size: 12px; color: var(--on-surface-variant);">Emite el comprobante y el certificado criptográfico de impacto</span>
+            </div>
+          </div>
+          <button class="modal-cerrar" onclick="cerrarModalActa()" type="button">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+
+        <form class="form-grupo" id="reception-form" onsubmit="event.preventDefault(); triggerImpactCertification();">
+          <div class="form-grupo">
+            <label class="form-label" for="donation-select">Seleccionar Donación Recibida</label>
+            <select class="form-select" id="donation-select">
+              <option value="DON-9042" selected>#DON-9042: 120 kg Leche Entera Larga Vida (En tránsito)</option>
+              <option value="DON-8991">#DON-8991: 60 Frazadas y Calzado Infantil (Despachado)</option>
+              <option value="DON-9115">#DON-9115: 80 kg Azúcar común &amp; Galletitas (Asignada)</option>
+            </select>
+          </div>
+
+          <!-- Checklist de Control de Calidad -->
+          <div class="checklist-control">
+            <span style="font-size: 13px; font-weight: 600; color: var(--on-surface);">Control de Calidad en Descarga</span>
+            <label class="checklist-item">
+              <input checked type="checkbox" />
+              <span>Cantidad física coincide con el manifiesto (60 bultos)</span>
+            </label>
+            <label class="checklist-item">
+              <input checked type="checkbox" />
+              <span>Embalajes sellados, limpios y en óptimo estado higiénico</span>
+            </label>
+            <label class="checklist-item">
+              <input checked type="checkbox" />
+              <span>Firma de conformidad de la transportista / chofer</span>
+            </label>
+          </div>
+
+          <!-- Subida de Fotos -->
+          <div class="form-grupo">
+            <label class="form-label">Evidencia Fotográfica de Entrega (Requerido para Certificación)</label>
+            <div class="area-subir-foto">
+              <div class="notif-icono" style="background-color: rgba(0, 104, 95, 0.12); color: var(--primary);">
+                <span class="material-symbols-outlined" style="font-size: 24px;">add_photo_alternate</span>
+              </div>
               <div>
-                <h2 class="seccion-tarjeta-titulo">
-                  <span class="material-symbols-outlined" style="color: var(--primary);">fact_check</span>
-                  <span>Acta de Recepción &amp; Carga Fotográfica</span>
-                </h2>
-                <p class="seccion-tarjeta-bajada">Emite el comprobante y el certificado criptográfico de impacto</p>
-              </div>
-              <span class="badge badge-tertiary">1 Pendiente</span>
-            </div>
-
-            <form class="form-grupo" id="reception-form" onsubmit="event.preventDefault(); triggerImpactCertification();">
-              <div class="form-grupo">
-                <label class="form-label" for="donation-select">Seleccionar Donación Recibida</label>
-                <select class="form-select" id="donation-select">
-                  <option selected value="DON-8991">#DON-8991: 60 Frazadas y Calzado Infantil (Despachado)</option>
-                  <option value="DON-9042">#DON-9042: 120 kg Leche Entera (En descarga)</option>
-                </select>
-              </div>
-
-              <!-- Checklist de Control de Calidad -->
-              <div class="checklist-control">
-                <span style="font-size: 13px; font-weight: 600; color: var(--on-surface);">Control de Calidad en Descarga</span>
-                <label class="checklist-item">
-                  <input checked type="checkbox" />
-                  <span>Cantidad física coincide con el manifiesto (60 bultos)</span>
-                </label>
-                <label class="checklist-item">
-                  <input checked type="checkbox" />
-                  <span>Embalajes sellados, limpios y en óptimo estado higiénico</span>
-                </label>
-                <label class="checklist-item">
-                  <input checked type="checkbox" />
-                  <span>Firma de conformidad de la transportista / chofer</span>
-                </label>
-              </div>
-
-              <!-- Subida de Fotos -->
-              <div class="form-grupo">
-                <label class="form-label">Evidencia Fotográfica de Entrega (Requerido para Certificación)</label>
-                <div class="area-subir-foto">
-                  <div class="notif-icono" style="background-color: rgba(0, 104, 95, 0.12); color: var(--primary);">
-                    <span class="material-symbols-outlined" style="font-size: 24px;">add_photo_alternate</span>
-                  </div>
-                  <div>
-                    <span style="font-size: 13px; font-weight: 600; color: var(--on-surface); display: block;">Haz clic o arrastra fotos aquí</span>
-                    <span style="font-size: 12px; color: var(--on-surface-variant);">Fotos de cajas descargadas con voluntarias y firma de remito</span>
-                  </div>
-                </div>
-
-                <!-- Miniaturas Previas -->
-                <div class="thumbs-previa-grid">
-                  <div class="thumb-previa">
-                    <img alt="Descarga comunitaria" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCP6gk1YADulmDj0Gq_hRpDsgFfh3nZZ3Cu_VOYVrn-Fik60-Xd_-K0O5-qyN49pEW8f4Wg4pkKefax6D44HDtn3QgTTZdykBmJueyE_npvqTDD4qjx4kUy0_uFlFXAQHYvgL2-M5zNQ-RnEfYwxjCjdJ8Dl3ADrV6T39u5Q0BwKrEoy8x9kCW1-N5QjqVuk23hDq2nk5nhuWbA9VxJNvOjklW8drRI8F_81M349PxGdIt9gqNAyR4iQ" />
-                    <span class="thumb-previa-tag">Foto 1</span>
-                  </div>
-                  <div class="thumb-previa">
-                    <img alt="Inspección de bultos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmvT5TOcwbWwnAEds2ICREwAiI882rLV9AwzhFhgSqYgbrLRpQpaUWmGY779uNnJV2MVNgrqI5eUtw5cavC7y82hzluThwYDz2RMTe2avQ46CmX8QFxzAvlXaWKxPWO7iEDT63HS4zQw3h94S50Xb0qBo4zjGOCwWznx4sg_InJyThejRde1CvppJCHaLbCUbh1smCtgXe_om8vjvawjUuaeuIngYYJ4dSBQLP7T0MU2m4kP9Via18Tw" />
-                    <span class="thumb-previa-tag">Foto 2</span>
-                  </div>
-                  <div class="thumb-previa">
-                    <img alt="Voluntarios en comedor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmjceaTNJ15ynrnMWmvqXUnTvIGqfkgFCz7Vg-JEEzu2wAPtMdP0uHIN7B9Y_7pn6i3MiQPNJ6Yu4OyVUlciMo-YFItsoawzNk26CWC_wPJ_OxOPutOwaA2aLb8q766ZoAcyHwRYBSCw9giVnnWQ8hmj-0nmglcOE4fGIIV_Scn8v6rvltgzzMI-q9iy9EgVPuB6GvfPLfaSl9VAXFZX_0q1woWzkDQM7Ncil-COQnc9J2YqG3FjyO_w" />
-                    <span class="thumb-previa-tag">Foto 3</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Observaciones -->
-              <div class="form-grupo">
-                <label class="form-label" for="reception-notes">Comentarios / Mensaje para el Donante</label>
-                <textarea class="form-textarea" id="reception-notes" placeholder="Ej: Las frazadas fueron distribuidas inmediatamente a las familias del barrio. ¡Muchísimas gracias!" rows="2"></textarea>
-              </div>
-
-              <button class="btn btn-primary btn-lg" id="confirm-reception-btn" style="width: 100%; margin-top: 8px;" type="submit">
-                <span class="material-symbols-outlined" style="font-size: 20px;">verified_user</span>
-                <span>Confirmar Recepción y Emitir Certificado</span>
-              </button>
-            </form>
-
-            <!-- Alerta de Éxito -->
-            <div class="alerta-exito-certificacion hidden" id="certification-success">
-              <span class="material-symbols-outlined">task_alt</span>
-              <div>
-                <span style="font-size: 14px; font-weight: 700; color: var(--on-success); display: block;">¡Acta Validada y Certificado Creado!</span>
-                <p style="font-size: 12px; color: var(--on-success); margin-top: 4px;">El comprobante criptográfico #CERT-9982 ha sido notificado y transferido a la billetera de impacto del donante en tiempo real.</p>
+                <span style="font-size: 13px; font-weight: 600; color: var(--on-surface); display: block;">Haz clic o arrastra fotos aquí</span>
+                <span style="font-size: 12px; color: var(--on-surface-variant);">Fotos de cajas descargadas con voluntarias y firma de remito</span>
               </div>
             </div>
-          </section>
 
-          <!-- Centro de Notificaciones -->
-          <section class="seccion-tarjeta">
-            <div class="seccion-tarjeta-header">
-              <h2 class="seccion-tarjeta-titulo">
-                <span class="material-symbols-outlined" style="color: var(--primary);">notifications_active</span>
-                <span>Centro de Notificaciones</span>
-              </h2>
-              <span class="badge badge-secondary">Hoy</span>
-            </div>
-
-            <div class="lista-notificaciones">
-              <div class="item-notificacion notif-unread">
-                <div class="notif-icono" style="background-color: rgba(0, 104, 95, 0.12); color: var(--primary);">
-                  <span class="material-symbols-outlined" style="font-size: 18px;">volunteer_activism</span>
-                </div>
-                <div style="display: flex; flex-direction: column;">
-                  <span style="font-size: 13px; font-weight: 600; color: var(--on-surface);">Nueva donación asignada</span>
-                  <span style="font-size: 12px; color: var(--on-surface-variant);">Mateo Rodríguez ha cubierto 120 kg de leche entera correspondientes al requerimiento prioritario.</span>
-                  <span style="font-size: 11px; color: var(--outline); margin-top: 4px;">Hace 2 horas</span>
-                </div>
+            <!-- Miniaturas Previas -->
+            <div class="thumbs-previa-grid">
+              <div class="thumb-previa">
+                <img alt="Descarga comunitaria" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCP6gk1YADulmDj0Gq_hRpDsgFfh3nZZ3Cu_VOYVrn-Fik60-Xd_-K0O5-qyN49pEW8f4Wg4pkKefax6D44HDtn3QgTTZdykBmJueyE_npvqTDD4qjx4kUy0_uFlFXAQHYvgL2-M5zNQ-RnEfYwxjCjdJ8Dl3ADrV6T39u5Q0BwKrEoy8x9kCW1-N5QjqVuk23hDq2nk5nhuWbA9VxJNvOjklW8drRI8F_81M349PxGdIt9gqNAyR4iQ" />
+                <span class="thumb-previa-tag">Foto 1</span>
               </div>
-
-              <div class="item-notificacion">
-                <div class="notif-icono" style="background-color: rgba(130, 81, 0, 0.12); color: var(--tertiary);">
-                  <span class="material-symbols-outlined" style="font-size: 18px;">local_shipping</span>
-                </div>
-                <div style="display: flex; flex-direction: column;">
-                  <span style="font-size: 13px; font-weight: 600; color: var(--on-surface);">Despacho de camión confirmado</span>
-                  <span style="font-size: 12px; color: var(--on-surface-variant);">El Camión #04 inició trayecto desde el Centro Logístico Norte con destino a Calle Las Heras 890.</span>
-                  <span style="font-size: 11px; color: var(--outline); margin-top: 4px;">Hace 45 min</span>
-                </div>
+              <div class="thumb-previa">
+                <img alt="Inspección de bultos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmvT5TOcwbWwnAEds2ICREwAiI882rLV9AwzhFhgSqYgbrLRpQpaUWmGY779uNnJV2MVNgrqI5eUtw5cavC7y82hzluThwYDz2RMTe2avQ46CmX8QFxzAvlXaWKxPWO7iEDT63HS4zQw3h94S50Xb0qBo4zjGOCwWznx4sg_InJyThejRde1CvppJCHaLbCUbh1smCtgXe_om8vjvawjUuaeuIngYYJ4dSBQLP7T0MU2m4kP9Via18Tw" />
+                <span class="thumb-previa-tag">Foto 2</span>
               </div>
-
-              <div class="item-notificacion">
-                <div class="notif-icono" style="background-color: var(--success-container); color: var(--on-success);">
-                  <span class="material-symbols-outlined" style="font-size: 18px;">verified</span>
-                </div>
-                <div style="display: flex; flex-direction: column;">
-                  <span style="font-size: 13px; font-weight: 600; color: var(--on-surface);">Recepción validada en trazabilidad</span>
-                  <span style="font-size: 12px; color: var(--on-surface-variant);">La entrega #DON-8991 cuenta con pre-aprobación del auditor logístico en blockchain DonaTrack.</span>
-                  <span style="font-size: 11px; color: var(--outline); margin-top: 4px;">Ayer 18:20 hs</span>
-                </div>
+              <div class="thumb-previa">
+                <img alt="Voluntarios en comedor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmjceaTNJ15ynrnMWmvqXUnTvIGqfkgFCz7Vg-JEEzu2wAPtMdP0uHIN7B9Y_7pn6i3MiQPNJ6Yu4OyVUlciMo-YFItsoawzNk26CWC_wPJ_OxOPutOwaA2aLb8q766ZoAcyHwRYBSCw9giVnnWQ8hmj-0nmglcOE4fGIIV_Scn8v6rvltgzzMI-q9iy9EgVPuB6GvfPLfaSl9VAXFZX_0q1woWzkDQM7Ncil-COQnc9J2YqG3FjyO_w" />
+                <span class="thumb-previa-tag">Foto 3</span>
               </div>
             </div>
-          </section>
+          </div>
 
+          <!-- Observaciones -->
+          <div class="form-grupo">
+            <label class="form-label" for="reception-notes">Comentarios / Mensaje para el Donante</label>
+            <textarea class="form-textarea" id="reception-notes" placeholder="Ej: Las donaciones fueron distribuidas inmediatamente a las familias del barrio. ¡Muchísimas gracias!" rows="2"></textarea>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-top: 12px;">
+            <button class="btn btn-outline" onclick="cerrarModalActa()" type="button">Cancelar</button>
+            <button class="btn btn-primary btn-lg" id="confirm-reception-btn" type="submit">
+              <span class="material-symbols-outlined" style="font-size: 20px;">verified_user</span>
+              <span>Confirmar Recepción y Emitir Certificado</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Alerta de Éxito -->
+        <div class="alerta-exito-certificacion hidden" id="certification-success" style="margin-top: 16px;">
+          <span class="material-symbols-outlined">task_alt</span>
+          <div>
+            <span style="font-size: 14px; font-weight: 700; color: var(--on-success); display: block;">¡Acta Validada y Certificado Creado!</span>
+            <p style="font-size: 12px; color: var(--on-success); margin-top: 4px;">El comprobante criptográfico #CERT-9982 ha sido notificado y transferido a la billetera de impacto del donante en tiempo real.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -549,8 +487,7 @@
       <div class="footer-grid">
         <div class="footer-col-brand">
           <div class="footer-brand-header">
-            <img alt="DonaTrack Logo" class="footer-logo" src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q" />
-            <span class="footer-nombre">DonaTrack</span>
+            <img alt="DonaTrack Logo" class="footer-logo" src="../images/logo.svg" />
           </div>
           <p class="footer-desc">
             Infraestructura de trazabilidad humanitaria basada en verificación criptográfica y telemetría de última milla. Garantizamos transparencia total y auditoría pública para donaciones de impacto social.
@@ -596,7 +533,6 @@
         <span>© 2026 DonaTrack - Sistema Nacional de Trazabilidad Humanitaria. Todos los derechos reservados.</span>
         <div style="display: flex; align-items: center; gap: 16px;">
           <span class="footer-live-indicator"><span class="dot-live"></span>Red Operativa Activa</span>
-          <a class="footer-link" data-path="transparencia" href="#">Reportes de Impacto</a>
         </div>
       </div>
     </div>
@@ -688,6 +624,31 @@
       toggleModal(false);
     }
 
+    function abrirModalActa(donacionId) {
+      const modalActa = document.getElementById('modal-acta-recepcion');
+      if (donacionId) {
+        const select = document.getElementById('donation-select');
+        if (select) select.value = donacionId;
+      }
+      modalActa.classList.remove('hidden');
+    }
+
+    function cerrarModalActa() {
+      const modalActa = document.getElementById('modal-acta-recepcion');
+      modalActa.classList.add('hidden');
+      const successAlert = document.getElementById('certification-success');
+      const btn = document.getElementById('confirm-reception-btn');
+      if (successAlert) successAlert.classList.add('hidden');
+      if (btn) {
+        btn.classList.remove('hidden');
+        btn.disabled = false;
+        btn.innerHTML = `
+          <span class="material-symbols-outlined" style="font-size: 20px;">verified_user</span>
+          <span>Confirmar Recepción y Emitir Certificado</span>
+        `;
+      }
+    }
+
     function triggerImpactCertification() {
       const btn = document.getElementById('confirm-reception-btn');
       const successAlert = document.getElementById('certification-success');
@@ -701,6 +662,10 @@
       setTimeout(() => {
         btn.classList.add('hidden');
         successAlert.classList.remove('hidden');
+        setTimeout(() => {
+          cerrarModalActa();
+          alert('¡Acta validada y certificado emitido exitosamente!');
+        }, 2500);
       }, 1200);
     }
   </script>
