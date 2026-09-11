@@ -308,6 +308,126 @@
         </div>
       </section>
 
+      <section class="analitica-donante-seccion" id="estadisticas-donante" style="display: flex; flex-direction: column; gap: var(--space-md);">
+        
+        <!-- Encabezado de la Sección y Selector de Período -->
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-sm);">
+          <div>
+            <span style="font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.08em;">Auditoría de Impacto</span>
+            <h2 style="font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--on-surface); margin: 0;">Evolución y Estadísticas del Donante</h2>
+            <p style="font-size: 13px; color: var(--on-surface-variant); margin-top: 2px;">Totales históricos, evolución temporal, comparaciones mensuales y ranking comunitario activo.</p>
+          </div>
+          
+          <!-- Selector de Período -->
+          <div style="display: flex; gap: var(--space-2xs); background-color: var(--surface-container-low); padding: 4px; border-radius: var(--radius-lg); border: 1px solid var(--surface-container);">
+            <button class="filter-btn active-state" id="periodo-btn-6m" onclick="cambiarPeriodoEvolucion('6m', this)" type="button">Últimos 6 Meses</button>
+            <button class="filter-btn" id="periodo-btn-año" onclick="cambiarPeriodoEvolucion('año', this)" type="button">Año 2026</button>
+            <button class="filter-btn" id="periodo-btn-todo" onclick="cambiarPeriodoEvolucion('todo', this)" type="button">Histórico Total</button>
+          </div>
+        </div>
+
+        <!-- Fila 1: Gráfico de Evolución Temporal + Comparaciones Mensuales -->
+        <div class="md-grid-evolucion">
+          
+          <!-- Tarjeta: Gráfico de Evolución por Período -->
+          <div style="background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: var(--space-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--surface-container); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="material-symbols-outlined" style="color: var(--primary); font-size: 20px;">monitoring</span>
+                  <h3 style="font-size: 15px; font-weight: 700; color: var(--on-surface); margin: 0;">Gráfico de Evolución por Período</h3>
+                </div>
+                <span class="badge badge-primary" id="label-periodo-grafico">Abril 2026 - Septiembre 2026</span>
+              </div>
+              <p style="font-size: 12px; color: var(--on-surface-variant); margin-bottom: var(--space-md);">Frecuencia de donaciones entregadas en depósitos logísticos a lo largo del tiempo.</p>
+              
+              <!-- Gráfico de Barras Estilizado y Responsivo -->
+              <div id="grafico-barras-contenedor" style="height: 180px; display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-sm); padding-top: var(--space-md); border-bottom: 2px solid var(--surface-container-high); position: relative;">
+                <!-- Rellenado dinámicamente por JavaScript -->
+              </div>
+            </div>
+
+            <!-- Leyenda y Métricas del Gráfico -->
+            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--on-surface-variant); margin-top: var(--space-md); padding-top: var(--space-xs); border-top: 1px solid var(--surface-container-low);">
+              <span style="display: inline-flex; align-items: center; gap: 4px;">
+                <span style="width: 10px; height: 10px; border-radius: 2px; background: linear-gradient(180deg, var(--primary), var(--primary-container));"></span> Donaciones del ciclo
+              </span>
+              <span id="promedio-periodo-texto" style="font-family: var(--font-code); color: var(--primary); font-weight: 700;">Promedio: 2.8 donaciones / mes</span>
+            </div>
+          </div>
+
+          <!-- Tarjeta: Comparaciones Mensuales -->
+          <div style="background-color: var(--surface-container-lowest); border-radius: var(--radius-xl); padding: var(--space-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--surface-container); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="material-symbols-outlined" style="color: var(--tertiary); font-size: 20px;">compare_arrows</span>
+                  <h3 style="font-size: 15px; font-weight: 700; color: var(--on-surface); margin: 0;">Comparaciones Mensuales</h3>
+                </div>
+                <span class="badge badge-tertiary">Septiembre vs Agosto 2026</span>
+              </div>
+              <p style="font-size: 12px; color: var(--on-surface-variant); margin-bottom: var(--space-md);">Balance comparativo del ciclo en curso frente al mes inmediato anterior.</p>
+
+              <!-- Comparativas Específicas -->
+              <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                
+                <!-- Comparativa 1: Donaciones -->
+                <div style="padding: var(--space-sm); border-radius: var(--radius-md); background-color: var(--surface-container-low); border: 1px solid var(--surface-container);">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">Volumen de Donaciones</span>
+                    <span style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 2px;">
+                      <span class="material-symbols-outlined" style="font-size: 14px;">trending_up</span> +33.3%
+                    </span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; justify-content: space-between;">
+                    <span style="font-size: 18px; font-weight: 700; color: var(--on-surface); font-family: var(--font-display);">4 donaciones <span style="font-size: 11px; font-weight: 400; color: var(--on-surface-variant);">(Sep 2026)</span></span>
+                    <span style="font-size: 13px; color: var(--on-surface-variant); font-family: var(--font-code);">3 donaciones (Ago)</span>
+                  </div>
+                  <div style="height: 6px; width: 100%; background-color: var(--surface-container-high); border-radius: var(--radius-full); margin-top: 6px; overflow: hidden;">
+                    <div style="height: 100%; width: 100%; background: linear-gradient(90deg, var(--secondary) 75%, var(--primary) 100%); border-radius: var(--radius-full);"></div>
+                  </div>
+                </div>
+
+                <!-- Comparativa 2: Organizaciones Alcanzadas -->
+                <div style="padding: var(--space-sm); border-radius: var(--radius-md); background-color: var(--surface-container-low); border: 1px solid var(--surface-container);">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">Organizaciones Alcanzadas</span>
+                    <span style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 2px;">
+                      <span class="material-symbols-outlined" style="font-size: 14px;">trending_up</span> +50.0%
+                    </span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; justify-content: space-between;">
+                    <span style="font-size: 18px; font-weight: 700; color: var(--on-surface); font-family: var(--font-display);">3 comedores <span style="font-size: 11px; font-weight: 400; color: var(--on-surface-variant);">(Sep 2026)</span></span>
+                    <span style="font-size: 13px; color: var(--on-surface-variant); font-family: var(--font-code);">2 comedores (Ago)</span>
+                  </div>
+                </div>
+
+                <!-- Comparativa 3: Rapidez de Asignación y Despacho -->
+                <div style="padding: var(--space-sm); border-radius: var(--radius-md); background-color: var(--surface-container-low); border: 1px solid var(--surface-container);">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                    <span style="font-size: 12px; font-weight: 600; color: var(--on-surface);">Tiempo Promedio Despacho</span>
+                    <span style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 2px;">
+                      <span class="material-symbols-outlined" style="font-size: 14px;">speed</span> 16% más ágil
+                    </span>
+                  </div>
+                  <div style="display: flex; align-items: baseline; justify-content: space-between;">
+                    <span style="font-size: 18px; font-weight: 700; color: var(--on-surface); font-family: var(--font-display);">4.2 horas <span style="font-size: 11px; font-weight: 400; color: var(--on-surface-variant);">(Sep)</span></span>
+                    <span style="font-size: 13px; color: var(--on-surface-variant); font-family: var(--font-code);">5.0 horas (Ago)</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-sm); padding-top: var(--space-xs); border-top: 1px solid var(--surface-container-low); font-size: 11px; color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 4px;">
+              <span class="material-symbols-outlined" style="font-size: 16px;">verified</span>
+              <span>Tendencia creciente en donaciones y organizaciones beneficiadas consecutivamente.</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </div>
   </main>
 
@@ -369,6 +489,90 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const datosEvolucion = {
+      '6m': {
+        label: 'Abril 2026 - Septiembre 2026',
+        promedio: 'Promedio: 2.8 donaciones / mes',
+        meses: [
+          { mes: 'Abr', cant: 2, pct: 50 },
+          { mes: 'May', cant: 3, pct: 75 },
+          { mes: 'Jun', cant: 2, pct: 50 },
+          { mes: 'Jul', cant: 3, pct: 75 },
+          { mes: 'Ago', cant: 3, pct: 75 },
+          { mes: 'Sep', cant: 4, pct: 100, actual: true }
+        ]
+      },
+      'año': {
+        label: 'Enero 2026 - Septiembre 2026',
+        promedio: 'Promedio: 2.0 donaciones / mes',
+        meses: [
+          { mes: 'Ene', cant: 1, pct: 25 },
+          { mes: 'Feb', cant: 1, pct: 25 },
+          { mes: 'Mar', cant: 2, pct: 50 },
+          { mes: 'Abr', cant: 2, pct: 50 },
+          { mes: 'May', cant: 3, pct: 75 },
+          { mes: 'Jun', cant: 2, pct: 50 },
+          { mes: 'Jul', cant: 3, pct: 75 },
+          { mes: 'Ago', cant: 3, pct: 75 },
+          { mes: 'Sep', cant: 4, pct: 100, actual: true }
+        ]
+      },
+      'todo': {
+        label: 'Histórico Total (2024 - 2026)',
+        promedio: 'Total: 18 donaciones registradas',
+        meses: [
+          { mes: 'Q1-25', cant: 2, pct: 35 },
+          { mes: 'Q2-25', cant: 3, pct: 50 },
+          { mes: 'Q3-25', cant: 2, pct: 35 },
+          { mes: 'Q4-25', cant: 3, pct: 50 },
+          { mes: 'Q1-26', cant: 4, pct: 65 },
+          { mes: 'Q2-26', cant: 7, pct: 90 },
+          { mes: 'Q3-26', cant: 7, pct: 100, actual: true }
+        ]
+      }
+    };
+
+    function renderizarGraficoBarras(periodoKey) {
+      const data = datosEvolucion[periodoKey];
+      if (!data) return;
+
+      const labelElem = document.getElementById('label-periodo-grafico');
+      const promedioElem = document.getElementById('promedio-periodo-texto');
+      const container = document.getElementById('grafico-barras-contenedor');
+
+      if (labelElem) labelElem.innerText = data.label;
+      if (promedioElem) promedioElem.innerText = data.promedio;
+      if (!container) return;
+
+      container.innerHTML = '';
+
+      data.meses.forEach(item => {
+        const col = document.createElement('div');
+        col.style.cssText = 'flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 6px;';
+        
+        col.innerHTML = `
+          <span style="font-family: var(--font-code); font-size: 11px; font-weight: 700; color: ${item.actual ? 'var(--primary)' : 'var(--on-surface)'};">${item.cant}</span>
+          <div style="width: 100%; max-width: 38px; height: ${item.pct}%; background: ${item.actual ? 'linear-gradient(180deg, var(--primary), var(--primary-container))' : 'var(--surface-container-high)'}; border-radius: var(--radius-sm) var(--radius-sm) 0 0; transition: height 0.4s ease; border: 1px solid ${item.actual ? 'var(--primary)' : 'var(--outline-variant)'};"></div>
+          <span style="font-size: 11px; font-weight: ${item.actual ? '700' : '500'}; color: ${item.actual ? 'var(--primary)' : 'var(--on-surface-variant)'};">${item.mes}</span>
+        `;
+        container.appendChild(col);
+      });
+    }
+
+    function cambiarPeriodoEvolucion(periodo, btn) {
+      document.querySelectorAll('#estadisticas-donante .filter-btn').forEach(b => b.classList.remove('active-state'));
+      if (btn) btn.classList.add('active-state');
+      renderizarGraficoBarras(periodo);
+    }
+
+    // Inicializar gráfico de evolución
+    document.addEventListener('DOMContentLoaded', () => {
+      renderizarGraficoBarras('6m');
+    });
+    renderizarGraficoBarras('6m');
+  </script>
 
 </body>
 </html>

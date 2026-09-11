@@ -17,7 +17,6 @@
 
 .banner-perfil-donante {
   position: relative;
-  overflow: hidden;
   border-radius: var(--radius-xl);
   background-color: var(--surface-container-lowest);
   padding: var(--space-xl);
@@ -102,6 +101,7 @@
 .donante-header-acciones {
   display: flex;
   align-items: center;
+  justify-content: end;
   gap: var(--space-sm);
   flex-shrink: 0;
 }
@@ -186,6 +186,10 @@
    2. PANEL DESPLEGABLE DE NOTIFICACIONES
    -------------------------------------------------------------------------- */
 .panel-notificaciones-overlay {
+  position: absolute;
+  top: 105%;
+  right: 0;
+  width: 50%; 
   background-color: var(--surface-container-lowest);
   border-radius: var(--radius-xl);
   padding: var(--space-md);
@@ -197,8 +201,8 @@
 }
 
 .notificaciones-grid-donante {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-sm);
 }
 
@@ -231,13 +235,7 @@
 /* --------------------------------------------------------------------------
    3. SECCIÓN DE TELEMETRÍA GPS EN VIVO (MAPA + MANIFIESTO)
    -------------------------------------------------------------------------- */
-.telemetria-gps-tarjeta {
-  border-radius: var(--radius-xl);
-  background-color: var(--surface-container-lowest);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--surface-container);
-}
+
 
 .telemetria-gps-header {
   padding: var(--space-md) var(--space-lg);
@@ -255,19 +253,9 @@
   }
 }
 
-.telemetria-gps-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 1024px) {
-  .telemetria-gps-grid {
-    grid-template-columns: 7fr 5fr;
-  }
-}
-
 .telemetria-mapa-canvas {
   position: relative;
+  width: 100%;
   min-height: 380px;
   background-color: var(--surface-container);
   overflow: hidden;
@@ -292,6 +280,22 @@
   box-shadow: var(--shadow-md);
   max-width: 280px;
   border: 1px solid var(--surface-container);
+}
+
+.ubicacionUltimaDonacion {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
+  font-family: var(--font-code); 
+  font-size: 12px; 
+  color: var(--primary); 
+  background-color: var(--surface-container-lowest);
+  padding: 6px 12px; 
+  border-radius: var(--radius-md); 
+  box-shadow: var(--shadow-sm);
 }
 
 .telemetria-hud-sensores {
@@ -421,8 +425,8 @@
 }
 
 .donaciones-donante-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-md);
 }
 
@@ -432,14 +436,23 @@
   padding: var(--space-md);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--surface-container);
   transition: box-shadow var(--transition-fast);
+  background-color: rgba(239, 244, 255, 0.6);
+  max-width: 500px;
+  flex: 1 1 200px;
+  min-width: 250px;
+  width: 250px;
 }
 
 .card-donacion-historial:hover {
   box-shadow: var(--shadow-md);
+}
+
+.form-select, .form-input {
+  min-width: 350px;
 }
 
 /* --------------------------------------------------------------------------
