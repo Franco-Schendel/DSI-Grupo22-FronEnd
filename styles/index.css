@@ -696,6 +696,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-lg);
+  background-color: white;
+  padding: 16px;
+  border-radius: 16px;
 }
 
 .tarjeta-donacion {
