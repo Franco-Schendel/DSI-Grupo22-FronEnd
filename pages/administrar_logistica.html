@@ -1,0 +1,1221 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DonaTrack - Centro Operativo de Almacén &amp; Logística</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="../styles/common.css" rel="stylesheet" />
+    <link href="../styles/administrador.css" rel="stylesheet" />
+    <title>DonaTrack - Administración de Logística</title>
+  </head>
+  <body>
+    <header class="header-principal">
+      <div class="header-contenedor">
+        <div class="header-brand">
+          <a href="index.html" style="display: flex; align-items: center">
+            <img
+              alt="DonaTrack Logo"
+              class="header-logo"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q"
+            />
+          </a>
+        </div>
+        <nav class="header-nav">
+          <a class="nav-enlace" href="../index.html">Inicio</a>
+          <a class="nav-enlace" href="entidadBeneficiaria.html"
+            >Mi perfil (entidad)</a
+          >
+          <a class="nav-enlace" href="donante.html">Mi perfil (donante)</a
+          ><a class="nav-enlace" href="incentivos.html">Incentivos (donante)</a>
+          <a class="nav-enlace" href="administrar_donaciones.html"
+            >Donaciones (admin)</a
+          >
+          <a class="nav-enlace active" href="administrar_logistica.html"
+            >Logística (admin)</a
+          >
+        </nav>
+        <div class="header-acciones">
+          <button
+            aria-label="Notificaciones"
+            class="header-icon-btn"
+            onclick="
+              alert('Centro de notificaciones: No tienes alertas pendientes.')
+            "
+            title="Notificaciones"
+            type="button"
+          >
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notif-badge-dot"></span>
+          </button>
+          <a
+            class="header-avatar-link"
+            href="javascript:void(0)"
+            style="cursor: default"
+            title="Mi perfil (admin)"
+          >
+            <img
+              alt="Perfil de usuario"
+              class="header-avatar"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhqPjFvmlcUBOxYvu424LTe_v0mhvqZtK1osakepjZFEzc79YT5D1kboTVdVdToTDrk6yWCa5Ik9vUP1us_XVECr36H35bemt3nAEh7vac3oL-Y28DU-zMSOzVekI_bg5i8tsFCft1xrvCMwH6vXzyYaUog6Q-3Pe4qTuXlhYiZkhlg3nVrRv305VTHpnLR2sozrJ7zM6RdAOSem3hY6GE_uaNuXaunmsN7bSrKxLOmd5Vr1oCHCHQAQ"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+    <main style="padding-top: 64px; min-height: 100vh">
+      <div class="admin-sub-header">
+        <div class="admin-sub-header-container">
+          <div class="admin-status-cluster">
+            <div class="pulse-dot"></div>
+            <div style="display: flex; flex-direction: column">
+              <div class="admin-header-title-row">
+                <h1 class="admin-header-title">
+                  Centro Operativo de Logística
+                </h1>
+                <span class="admin-hub-badge">HUB-SUR-AR</span>
+              </div>
+              <span class="admin-header-subtitle"
+                >Auditoría criptográfica activa • Nodo Validador #842 en
+                sincronía</span
+              >
+            </div>
+          </div>
+          <div class="admin-sub-header-actions">
+            <button
+              class="btn btn-primary"
+              onclick="
+                document
+                  .getElementById('modal-camion')
+                  .classList.remove('hidden')
+              "
+            >
+              <span class="material-symbols-outlined">local_shipping</span>
+              <span>+ Nuevo Camión</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="admin-main-content">
+        <section class="admin-kpi-grid">
+          <!-- Métrica 1: Total Donaciones -->
+          <div class="admin-kpi-card">
+            <div>
+              <div class="kpi-top-row">
+                <div>
+                  <span class="kpi-label">Flota Total</span>
+                  <div class="kpi-value-row">
+                    <span class="kpi-number">8</span>
+                    <span class="kpi-unit">vehículos</span>
+                  </div>
+                </div>
+                <div class="kpi-icon-pill kpi-icon-primary">
+                  <span class="material-symbols-outlined">local_shipping</span>
+                </div>
+              </div>
+              <div class="kpi-meta-row">
+                <span>6 en ruta • 1 disponible • 1 mantenimiento</span>
+              </div>
+            </div>
+            <div class="progress-track">
+              <div
+                class="progress-bar-fill progress-bar-primary"
+                style="width: 100%"
+              ></div>
+            </div>
+          </div>
+          <!-- Métrica 2: Pendientes de Asignación -->
+          <div class="admin-kpi-card">
+            <div>
+              <div class="kpi-top-row">
+                <div>
+                  <span class="kpi-label">En Ruta</span>
+                  <div class="kpi-value-row">
+                    <span class="kpi-number">6</span>
+                    <span class="kpi-unit kpi-unit-secondary"
+                      >vehículos activos</span
+                    >
+                  </div>
+                </div>
+                <div class="kpi-icon-pill kpi-icon-secondary">
+                  <span class="material-symbols-outlined">navigation</span>
+                </div>
+              </div>
+              <div class="kpi-meta-row">
+                <span>Telemetría GPS: 100% OK</span>
+              </div>
+            </div>
+            <div class="progress-track">
+              <div
+                class="progress-bar-fill progress-bar-tertiary"
+                style="width: 75%"
+              ></div>
+            </div>
+          </div>
+          <!-- Métrica 3: Próximas a Caducar -->
+          <div class="admin-kpi-card">
+            <div>
+              <div class="kpi-top-row">
+                <div>
+                  <span class="kpi-label kpi-label-error">Disponibles</span>
+                  <div class="kpi-value-row">
+                    <span class="kpi-number kpi-number-error">1</span>
+                    <span class="kpi-unit kpi-unit-error">vehículo</span>
+                  </div>
+                </div>
+                <div class="kpi-icon-pill kpi-icon-error">
+                  <span class="material-symbols-outlined">check_circle</span>
+                </div>
+              </div>
+              <div class="kpi-meta-row kpi-meta-error">
+                <span>Listo para asignación inmediata</span>
+              </div>
+            </div>
+            <div class="progress-track progress-track-error">
+              <div
+                class="progress-bar-fill progress-bar-error"
+                style="width: 12.5%"
+              ></div>
+            </div>
+          </div>
+          <!-- Métrica 4: Flota en Calle -->
+          <div class="admin-kpi-card">
+            <div>
+              <div class="kpi-top-row">
+                <div>
+                  <span class="kpi-label">En Mantenimiento</span>
+                  <div class="kpi-value-row">
+                    <span class="kpi-number">1</span>
+                    <span class="kpi-unit">vehículo</span>
+                  </div>
+                </div>
+                <div class="kpi-icon-pill kpi-icon-accent">
+                  <span class="material-symbols-outlined">build</span>
+                </div>
+              </div>
+              <div class="kpi-meta-row">
+                <span>Reincorporación estimada: mañana 09:00</span>
+              </div>
+            </div>
+            <div class="progress-track">
+              <div
+                class="progress-bar-fill progress-bar-primary"
+                style="width: 12.5%"
+              ></div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="admin-card-section"
+          style="display: flex; flex-direction: column; gap: var(--space-md)"
+        >
+          <div
+            class="sm-flex-row"
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              gap: var(--space-sm);
+            "
+          >
+            <div
+              style="display: flex; align-items: center; gap: var(--space-sm)"
+            >
+              <div
+                class="kpi-icon-pill"
+                style="
+                  background-color: var(--surface-container);
+                  color: var(--on-surface);
+                "
+              >
+                <span class="material-symbols-outlined"
+                  >directions_boat_filled</span
+                >
+              </div>
+              <div>
+                <h2 class="section-title">
+                  Administración de Flota y Logística de Distribución
+                </h2>
+                <p class="section-subtitle">
+                  Telemetría satelital, hojas de ruta y capacidad de carga en
+                  tiempo real.
+                </p>
+              </div>
+            </div>
+            <button
+              class="btn btn-tonal"
+              onclick="
+                document
+                  .getElementById('modal-camion')
+                  .classList.remove('hidden')
+              "
+            >
+              <span class="material-symbols-outlined" style="font-size: 16px"
+                >add_circle</span
+              >
+              <span>+ Agregar Nuevo Camión a la Flota</span>
+            </button>
+          </div>
+          <!-- Cuadrícula de Camiones -->
+          <div class="fleet-grid">
+            <!-- Camión #01 -->
+            <div class="fleet-card">
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  "
+                >
+                  <span class="rack-badge" style="font-weight: 700"
+                    >UNIDAD #01</span
+                  >
+                  <span
+                    class="badge badge-primary"
+                    style="display: inline-flex; align-items: center; gap: 4px"
+                  >
+                    <span
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: var(--primary);
+                      "
+                    ></span>
+                    Disponible
+                  </span>
+                </div>
+                <div style="margin-top: var(--space-sm)">
+                  <h3
+                    style="
+                      font-size: 1.0625rem;
+                      font-weight: 600;
+                      color: var(--on-surface);
+                      margin: 0;
+                    "
+                  >
+                    Scania 320 Heavy Hauler
+                  </h3>
+                  <p
+                    style="
+                      font-size: 0.8125rem;
+                      color: var(--on-surface-variant);
+                      margin: 2px 0 0 0;
+                    "
+                  >
+                    Patente: AE 912 OP • Caja Térmica
+                  </p>
+                </div>
+                <div class="fleet-spec-list">
+                  <div class="fleet-spec-row">
+                    <span>Capacidad Nominal:</span>
+                    <strong class="fleet-spec-val">5.000 kg</strong>
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>Chofer Asignado:</span>
+                    <strong class="fleet-spec-val"
+                      >Alberto Paz (Lic. E1)</strong
+                    >
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>Ubicación Actual:</span>
+                    <span style="color: var(--primary); font-weight: 600"
+                      >Base Central Depósito</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: var(--space-md);
+                  padding-top: var(--space-sm);
+                "
+              >
+                <button class="btn btn-tonal" style="width: 100%">
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 16px"
+                    >schedule_send</span
+                  >
+                  <span>Asignar a Despacho Inmediato</span>
+                </button>
+              </div>
+            </div>
+            <!-- Camión #04 (En Ruta) -->
+            <div class="fleet-card active-route">
+              <div class="fleet-card-accent-bar"></div>
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  "
+                >
+                  <span class="rack-badge" style="font-weight: 700"
+                    >UNIDAD #04</span
+                  >
+                  <span
+                    class="badge badge-tertiary"
+                    style="display: inline-flex; align-items: center; gap: 4px"
+                  >
+                    <span
+                      class="pulse-dot pulse-dot-tertiary"
+                      style="width: 8px; height: 8px"
+                    ></span>
+                    En Ruta (Despacho Activo)
+                  </span>
+                </div>
+                <div style="margin-top: var(--space-sm)">
+                  <h3
+                    style="
+                      font-size: 1.0625rem;
+                      font-weight: 600;
+                      color: var(--on-surface);
+                      margin: 0;
+                    "
+                  >
+                    Mercedes Benz Sprinter 516
+                  </h3>
+                  <p
+                    style="
+                      font-size: 0.8125rem;
+                      color: var(--on-surface-variant);
+                      margin: 2px 0 0 0;
+                    "
+                  >
+                    Patente: AF 404 TR • Furgón Refrigerado
+                  </p>
+                </div>
+                <div class="fleet-spec-list">
+                  <div class="fleet-spec-row">
+                    <span>Capacidad de Carga:</span>
+                    <strong class="fleet-spec-val"
+                      >1.500 kg (1.100 kg en carga)</strong
+                    >
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>Entrega Asociada:</span>
+                    <span
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.8125rem;
+                        font-weight: 700;
+                        color: var(--primary);
+                      "
+                      >#DON-9042</span
+                    >
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>Chofer Asignado:</span>
+                    <strong class="fleet-spec-val">Mariana Gómez</strong>
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>Destino:</span>
+                    <span
+                      style="
+                        color: var(--on-surface);
+                        font-weight: 500;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 160px;
+                      "
+                      >Hogar San José, Quilmes</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: var(--space-md);
+                  padding-top: var(--space-sm);
+                "
+              >
+                <button
+                  class="btn btn-primary"
+                  onclick="
+                    verTelemetria(
+                      '04',
+                      'Mercedes Sprinter',
+                      'AF 404 TR',
+                      '#DON-9042',
+                      'Mariana Gómez',
+                    )
+                  "
+                  style="width: 100%"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 16px"
+                    >satellite_alt</span
+                  >
+                  <span>Ver Telemetría y Hoja de Ruta</span>
+                </button>
+              </div>
+            </div>
+            <!-- Camión #07 (Mantenimiento) -->
+            <div class="fleet-card in-maintenance">
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  "
+                >
+                  <span class="rack-badge" style="font-weight: 700"
+                    >UNIDAD #07</span
+                  >
+                  <span
+                    class="badge badge-secondary"
+                    style="display: inline-flex; align-items: center; gap: 4px"
+                  >
+                    <span
+                      class="material-symbols-outlined"
+                      style="font-size: 14px"
+                      >build</span
+                    >
+                    En Mantenimiento
+                  </span>
+                </div>
+                <div style="margin-top: var(--space-sm)">
+                  <h3
+                    style="
+                      font-size: 1.0625rem;
+                      font-weight: 600;
+                      color: var(--on-surface);
+                      margin: 0;
+                    "
+                  >
+                    Iveco Daily 70C17
+                  </h3>
+                  <p
+                    style="
+                      font-size: 0.8125rem;
+                      color: var(--on-surface-variant);
+                      margin: 2px 0 0 0;
+                    "
+                  >
+                    Patente: AD 772 JJ • Servicio de Frenos
+                  </p>
+                </div>
+                <div class="fleet-spec-list">
+                  <div class="fleet-spec-row">
+                    <span>Capacidad:</span>
+                    <strong class="fleet-spec-val">3.800 kg</strong>
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>Taller Mecánico:</span>
+                    <span class="fleet-spec-val">Taller Oficial Iveco Sur</span>
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>Reincorporación Estimada:</span>
+                    <span style="color: var(--tertiary); font-weight: 600"
+                      >Mañana, 09:00 hs</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: var(--space-md);
+                  padding-top: var(--space-sm);
+                "
+              >
+                <button class="btn btn-tonal" style="width: 100%">
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 16px"
+                    >cloud_upload</span
+                  >
+                  <span>Historial de Mantenimiento</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="admin-card-section"
+          style="display: flex; flex-direction: column; gap: var(--space-md)"
+        >
+          <div
+            class="sm-flex-row"
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              gap: var(--space-sm);
+            "
+          >
+            <div
+              style="display: flex; align-items: center; gap: var(--space-sm)"
+            >
+              <div class="kpi-icon-pill kpi-icon-primary">
+                <span class="material-symbols-outlined">route</span>
+              </div>
+              <div>
+                <h2 class="section-title">Despachos y Hojas de Ruta</h2>
+                <p class="section-subtitle">
+                  Seguimiento de entregas asignadas a camiones y estado
+                  operativo de cada despacho.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="fleet-grid">
+            <div class="fleet-card active-route">
+              <div class="fleet-card-accent-bar"></div>
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  "
+                >
+                  <span class="rack-badge" style="font-weight: 700"
+                    >DESPACHO #DON-9042</span
+                  >
+                  <span
+                    class="badge badge-tertiary"
+                    style="display: inline-flex; align-items: center; gap: 4px"
+                  >
+                    <span
+                      class="pulse-dot pulse-dot-tertiary"
+                      style="width: 8px; height: 8px"
+                    ></span>
+                    En Ruta
+                  </span>
+                </div>
+                <div style="margin-top: var(--space-sm)">
+                  <h3
+                    style="
+                      font-size: 1.0625rem;
+                      font-weight: 600;
+                      color: var(--on-surface);
+                      margin: 0;
+                    "
+                  >
+                    Hogar Niños San José
+                  </h3>
+                  <p
+                    style="
+                      font-size: 0.8125rem;
+                      color: var(--on-surface-variant);
+                      margin: 2px 0 0 0;
+                    "
+                  >
+                    Quilmes Centro • Unidad #04
+                  </p>
+                </div>
+                <div class="fleet-spec-list">
+                  <div class="fleet-spec-row">
+                    <span>Carga:</span>
+                    <strong class="fleet-spec-val">1.100 kg Alimentos</strong>
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>Chofer:</span>
+                    <strong class="fleet-spec-val">Mariana Gómez</strong>
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>ETA:</span>
+                    <span style="color: var(--primary); font-weight: 600"
+                      >14 minutos</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: var(--space-md);
+                  padding-top: var(--space-sm);
+                "
+              >
+                <button
+                  class="btn btn-primary"
+                  onclick="
+                    verTelemetria(
+                      '04',
+                      'Mercedes Sprinter',
+                      'AF 404 TR',
+                      '#DON-9042',
+                      'Mariana Gómez',
+                    )
+                  "
+                  style="width: 100%"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 16px"
+                    >satellite_alt</span
+                  >
+                  <span>Ver Telemetría y Hoja de Ruta</span>
+                </button>
+              </div>
+            </div>
+            <div class="fleet-card">
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  "
+                >
+                  <span class="rack-badge" style="font-weight: 700"
+                    >DESPACHO #DON-9037</span
+                  >
+                  <span
+                    class="badge badge-primary"
+                    style="display: inline-flex; align-items: center; gap: 4px"
+                  >
+                    <span
+                      style="
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: var(--primary);
+                      "
+                    ></span>
+                    Programado
+                  </span>
+                </div>
+                <div style="margin-top: var(--space-sm)">
+                  <h3
+                    style="
+                      font-size: 1.0625rem;
+                      font-weight: 600;
+                      color: var(--on-surface);
+                      margin: 0;
+                    "
+                  >
+                    Merendero Los Bajitos
+                  </h3>
+                  <p
+                    style="
+                      font-size: 0.8125rem;
+                      color: var(--on-surface-variant);
+                      margin: 2px 0 0 0;
+                    "
+                  >
+                    Avellaneda • Unidad #01
+                  </p>
+                </div>
+                <div class="fleet-spec-list">
+                  <div class="fleet-spec-row">
+                    <span>Carga:</span>
+                    <strong class="fleet-spec-val"
+                      >350 kg Polenta y Legumbres</strong
+                    >
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>Chofer:</span>
+                    <strong class="fleet-spec-val">Alberto Paz</strong>
+                  </div>
+                  <div class="fleet-spec-row">
+                    <span>Salida:</span>
+                    <span style="color: var(--primary); font-weight: 600"
+                      >Hoy, 11:30 hs</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: var(--space-md);
+                  padding-top: var(--space-sm);
+                "
+              >
+                <button class="btn btn-tonal" style="width: 100%">
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 16px"
+                    >schedule_send</span
+                  >
+                  <span>Preparar Despacho</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="modal-overlay hidden" id="modal-telemetria">
+        <div class="modal-contenedor" style="max-width: 780px">
+          <div class="modal-header">
+            <div
+              style="display: flex; align-items: center; gap: var(--space-sm)"
+            >
+              <div class="kpi-icon-pill kpi-icon-primary">
+                <span class="material-symbols-outlined">satellite_alt</span>
+              </div>
+              <div>
+                <h3
+                  id="telemetria-titulo"
+                  style="
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: var(--on-surface);
+                    margin: 0;
+                  "
+                >
+                  Telemetría Camión #04
+                </h3>
+                <p
+                  id="telemetria-sub"
+                  style="
+                    font-size: 0.8125rem;
+                    color: var(--on-surface-variant);
+                    margin: 2px 0 0 0;
+                  "
+                >
+                  Mercedes Benz Sprinter 516 • Hoja de Ruta Activa
+                </p>
+              </div>
+            </div>
+            <button
+              class="modal-cerrar"
+              onclick="
+                document
+                  .getElementById('modal-telemetria')
+                  .classList.add('hidden')
+              "
+              type="button"
+            >
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <!-- Mapa Telemetría simulado con data-location -->
+          <div
+            class="telemetry-map-display"
+            data-location="Quilmes, Buenos Aires, Argentina"
+            style="
+              background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC_S2yowTgMdZtcjjQpX79ZMOGXuVi6X7HWNUnlD9Mr1C3gF001iCxCz-HJ96KhBAW0aMMa_jLUsLgfxYPfggwOxPhAuXmIM-uEz0DzdoKWb0RTJg5dyEcS314p0fPr32uNgdu14byvxZYFMsulultUsxw0TbIXpFc45ITfFrrZrlqsURwH-Cw9uph3ismX76VyFCrsJvF62BscM-R0ubXbVWjQhL-2LvH9L3KigYxV5W1suuX3n_dCvQ&quot;);
+            "
+          >
+            <div class="telemetry-hud-badge">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 4px;
+                  color: var(--primary);
+                  font-weight: 600;
+                  font-family: var(--font-mono);
+                  font-size: 0.75rem;
+                "
+              >
+                <span class="pulse-dot" style="width: 8px; height: 8px"></span>
+                GPS LIVE: -34.7241, -58.2520
+              </div>
+              <div style="color: var(--on-surface); font-size: 0.8125rem">
+                Velocidad: <strong>48 km/h</strong> • ETA Destino:
+                <strong>14 minutos</strong>
+              </div>
+            </div>
+          </div>
+          <!-- Datos de Hoja de Ruta -->
+          <div
+            class="md-grid-3"
+            style="
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: var(--space-sm);
+              margin: var(--space-sm) 0;
+            "
+          >
+            <div
+              style="
+                padding: var(--space-sm);
+                border-radius: var(--radius-lg);
+                background-color: var(--surface-container-low);
+              "
+            >
+              <span
+                style="
+                  color: var(--on-surface-variant);
+                  font-size: 0.6875rem;
+                  text-transform: uppercase;
+                  font-weight: 600;
+                  display: block;
+                "
+                >Punto de Origen</span
+              >
+              <span style="font-weight: 600; color: var(--on-surface)"
+                >Depósito Central Lanús</span
+              >
+              <span
+                style="
+                  font-size: 0.75rem;
+                  color: var(--on-surface-variant);
+                  display: block;
+                "
+                >Salida: Hoy 10:15 hs</span
+              >
+            </div>
+            <div
+              style="
+                padding: var(--space-sm);
+                border-radius: var(--radius-lg);
+                background-color: var(--surface-container-low);
+              "
+            >
+              <span
+                style="
+                  color: var(--on-surface-variant);
+                  font-size: 0.6875rem;
+                  text-transform: uppercase;
+                  font-weight: 600;
+                  display: block;
+                "
+                >Punto de Destino</span
+              >
+              <span style="font-weight: 600; color: var(--on-surface)"
+                >Hogar Niños San José</span
+              >
+              <span
+                style="
+                  font-size: 0.75rem;
+                  color: var(--on-surface-variant);
+                  display: block;
+                "
+                >Quilmes Centro</span
+              >
+            </div>
+            <div
+              style="
+                padding: var(--space-sm);
+                border-radius: var(--radius-lg);
+                background-color: var(--surface-container-low);
+              "
+            >
+              <span
+                style="
+                  color: var(--on-surface-variant);
+                  font-size: 0.6875rem;
+                  text-transform: uppercase;
+                  font-weight: 600;
+                  display: block;
+                "
+                >Carga Transportada</span
+              >
+              <span style="font-weight: 600; color: var(--on-surface)"
+                >1.100 kg Alimentos</span
+              >
+              <span
+                style="
+                  font-size: 0.75rem;
+                  color: var(--primary);
+                  font-family: var(--font-mono);
+                  font-weight: 700;
+                  display: block;
+                "
+                >Entrega #DON-9042</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              margin-top: var(--space-md);
+            "
+          >
+            <button
+              class="btn btn-tonal"
+              onclick="
+                document
+                  .getElementById('modal-telemetria')
+                  .classList.add('hidden')
+              "
+              type="button"
+            >
+              Cerrar Panel de Ruta
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-overlay hidden" id="modal-camion">
+        <div class="modal-contenedor" style="max-width: 480px">
+          <div class="modal-header">
+            <div
+              style="display: flex; align-items: center; gap: var(--space-sm)"
+            >
+              <div class="kpi-icon-pill kpi-icon-primary">
+                <span class="material-symbols-outlined">local_shipping</span>
+              </div>
+              <div>
+                <h3
+                  style="
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: var(--on-surface);
+                    margin: 0;
+                  "
+                >
+                  Agregar Nuevo Camión
+                </h3>
+                <p
+                  style="
+                    font-size: 0.8125rem;
+                    color: var(--on-surface-variant);
+                    margin: 2px 0 0 0;
+                  "
+                >
+                  Alta en parque automotor y telemetría.
+                </p>
+              </div>
+            </div>
+            <button
+              class="modal-cerrar"
+              onclick="
+                document.getElementById('modal-camion').classList.add('hidden')
+              "
+              type="button"
+            >
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <form onsubmit="guardarNuevoCamion(event)">
+            <div class="form-grupo">
+              <label class="form-label">Modelo y Marca *</label>
+              <input
+                class="form-input"
+                placeholder="Ej: Scania P360 / Ford Cargo 1722"
+                required=""
+                type="text"
+              />
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-sm);
+              "
+            >
+              <div class="form-grupo">
+                <label class="form-label">Patente / Dominio *</label>
+                <input
+                  class="form-input"
+                  placeholder="Ej: AG 344 PL"
+                  required=""
+                  style="text-transform: uppercase"
+                  type="text"
+                />
+              </div>
+              <div class="form-grupo">
+                <label class="form-label">Capacidad (Kg) *</label>
+                <input
+                  class="form-input"
+                  placeholder="Ej: 4500"
+                  required=""
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="form-grupo">
+              <label class="form-label">Chofer Asignado *</label>
+              <input
+                class="form-input"
+                placeholder="Nombre completo y DNI del chofer"
+                required=""
+                type="text"
+              />
+            </div>
+            <div class="form-grupo">
+              <label class="form-label"
+                >Dispositivo GPS / Telemetría ID *</label
+              >
+              <input
+                class="form-input"
+                placeholder="Ej: GPS-TELTONIKA-9941"
+                required=""
+                style="font-family: var(--font-mono)"
+                type="text"
+              />
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: var(--space-sm);
+                margin-top: var(--space-md);
+              "
+            >
+              <button
+                class="btn btn-tonal"
+                onclick="
+                  document
+                    .getElementById('modal-camion')
+                    .classList.add('hidden')
+                "
+                type="button"
+              >
+                Cancelar
+              </button>
+              <button class="btn btn-primary" type="submit">
+                <span>Incorporar a Flota</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="toast-container" id="toast-notificacion">
+        <div class="toast-box">
+          <span
+            class="material-symbols-outlined"
+            id="toast-icon"
+            style="color: var(--primary-fixed); font-size: 24px"
+            >task_alt</span
+          >
+          <div style="display: flex; flex-direction: column">
+            <span
+              id="toast-titulo"
+              style="font-size: 0.875rem; font-weight: 600"
+              >Acción Completada</span
+            >
+            <span id="toast-desc" style="font-size: 0.8125rem; opacity: 0.85"
+              >Detalle de la acción realizada.</span
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer-principal">
+      <div class="footer-contenedor">
+        <div class="footer-grid">
+          <div class="footer-col-brand">
+            <div class="footer-brand-header">
+              <img
+                alt="DonaTrack Logo"
+                class="footer-logo"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q"
+              />
+              <span class="footer-nombre">DonaTrack</span>
+            </div>
+            <p class="footer-desc">
+              Infraestructura de trazabilidad humanitaria basada en verificación
+              criptográfica y telemetría de última milla. Garantizamos
+              transparencia total y auditoría pública para donaciones de impacto
+              social.
+            </p>
+            <div class="footer-auditoria-pill">
+              <span class="material-symbols-outlined" style="font-size: 16px"
+                >verified_user</span
+              >
+              <span>Auditoría abierta y verificable en tiempo real</span>
+            </div>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-titulo">Operaciones &amp; Datos</span>
+            <div class="footer-col-lista">
+              <a class="footer-link" href="../index.html#mapa-en-vivo"
+                >Mapa en Vivo</a
+              >
+              <a class="footer-link" href="../index.html#galeria-de-entregas"
+                >Galería de Entregas</a
+              >
+              <a class="footer-link" href="../index.html#auditoria"
+                >Auditoría de Entregas</a
+              >
+              <a class="footer-link" href="../index.html#api"
+                >API de Datos Abiertos</a
+              >
+            </div>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-titulo">Entidades &amp; Actores</span>
+            <div class="footer-col-lista">
+              <a class="footer-link" href="donante.html">Mi Perfil (Donante)</a>
+              <a class="footer-link" href="incentivos.html"
+                >Incentivos (Donante)</a
+              >
+              <a class="footer-link" href="../index.html#registro"
+                >Registro Entidades y ONGs</a
+              >
+              <a class="footer-link" href="entidadBeneficiaria.html"
+                >Portal Beneficiario</a
+              >
+              <a class="footer-link" href="administrador.html"
+                >Acceso Institucional</a
+              >
+            </div>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-titulo">Gobernanza &amp; Legal</span>
+            <div class="footer-col-lista">
+              <a class="footer-link" href="#">Términos de Servicio</a>
+              <a class="footer-link" href="#">Política de Privacidad</a>
+              <a class="footer-link" href="#">Seguridad y Cumplimiento</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span style="font-size: 0.8125rem"
+            >© 2026 DonaTrack - Sistema Nacional de Trazabilidad Humanitaria.
+            Todos los derechos reservados.</span
+          >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: var(--space-md);
+              font-size: 0.8125rem;
+            "
+          >
+            <span style="display: inline-flex; align-items: center; gap: 4px">
+              <span class="pulse-dot" style="width: 6px; height: 6px"></span>
+              Red Operativa Activa
+            </span>
+            <a class="footer-link" href="../index.html#transparencia"
+              >Reportes de Impacto</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function mostrarToast(titulo, desc, icono = "task_alt") {
+        const toast = document.getElementById("toast-notificacion");
+        document.getElementById("toast-titulo").innerText = titulo;
+        document.getElementById("toast-desc").innerText = desc;
+        document.getElementById("toast-icon").innerText = icono;
+        toast.classList.add("active");
+        setTimeout(() => {
+          toast.classList.remove("active");
+        }, 4500);
+      }
+
+      function verTelemetria(numero, modelo, patente, despacho, chofer) {
+        document.getElementById("telemetria-titulo").innerText =
+          `Telemetría Camión #${numero} (${modelo})`;
+        document.getElementById("telemetria-sub").innerText =
+          `Patente: ${patente} • Chofer: ${chofer} • ${despacho}`;
+        document.getElementById("modal-telemetria").classList.remove("hidden");
+      }
+
+      function guardarNuevoCamion(e) {
+        e.preventDefault();
+        document.getElementById("modal-camion").classList.add("hidden");
+        mostrarToast(
+          "Nuevo Vehículo Agregado",
+          "Unidad agregada al inventario de flota con GPS conectado y listo para asignación.",
+          "local_shipping",
+        );
+        e.target.reset();
+      }
+    </script>
+  </body>
+</html>

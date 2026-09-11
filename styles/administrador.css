@@ -66,6 +66,44 @@
   }
 }
 
+.contenedor-matches {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 16px;
+  background-color: var(--surface-container-low);
+  overflow: hidden;
+  padding: 0 16px;
+}
+
+.match {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid var(--surface-container-high)
+}
+
+.donacion_match, .necesidad_match {
+  padding: 16px;
+  width: 50%;
+  height: 100%;
+}
+
+.formularioRegistro {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 740px;
+  height: 50vh;
+  border-radius: 16px;
+  padding: 32px;
+}
+
 .admin-header-title-row {
   display: flex;
   align-items: center;

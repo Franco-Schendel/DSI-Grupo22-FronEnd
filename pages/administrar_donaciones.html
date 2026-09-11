@@ -1,0 +1,2575 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DonaTrack - Centro Operativo de Almacén &amp; Logística</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="../styles/common.css" rel="stylesheet" />
+    <link href="../styles/administrador.css" rel="stylesheet" />
+    <title>DonaTrack - Administración de Donaciones</title>
+  </head>
+  <body>
+    <header class="header-principal">
+      <div class="header-contenedor">
+        <div class="header-brand">
+          <a href="index.html" style="display: flex; align-items: center">
+            <img
+              alt="DonaTrack Logo"
+              class="header-logo"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q"
+            />
+          </a>
+        </div>
+        <nav class="header-nav">
+          <a class="nav-enlace" href="../index.html">Inicio</a
+          ><a class="nav-enlace" href="entidadBeneficiaria.html"
+            >Mi perfil (entidad)</a
+          ><a class="nav-enlace" href="donante.html">Mi perfil (donante)</a
+          ><a class="nav-enlace" href="incentivos.html">Incentivos (donante)</a
+          ><a class="nav-enlace active" href="administrar_donaciones.html"
+            >Donaciones (admin)</a
+          ><a class="nav-enlace" href="administrar_logistica.html"
+            >Logística (admin)</a
+          >
+        </nav>
+        <div class="header-acciones">
+          <button
+            aria-label="Notificaciones"
+            class="header-icon-btn"
+            onclick="
+              alert('Centro de notificaciones: No tienes alertas pendientes.')
+            "
+            title="Notificaciones"
+            type="button"
+          >
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notif-badge-dot"></span>
+          </button>
+          <a
+            class="header-avatar-link"
+            href="javascript:void(0)"
+            style="cursor: default"
+            title="Mi perfil (admin)"
+          >
+            <img
+              alt="Perfil de usuario"
+              class="header-avatar"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhqPjFvmlcUBOxYvu424LTe_v0mhvqZtK1osakepjZFEzc79YT5D1kboTVdVdToTDrk6yWCa5Ik9vUP1us_XVECr36H35bemt3nAEh7vac3oL-Y28DU-zMSOzVekI_bg5i8tsFCft1xrvCMwH6vXzyYaUog6Q-3Pe4qTuXlhYiZkhlg3nVrRv305VTHpnLR2sozrJ7zM6RdAOSem3hY6GE_uaNuXaunmsN7bSrKxLOmd5Vr1oCHCHQAQ"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+    <main style="padding-top: 64px; min-height: 100vh">
+      <div class="admin-sub-header">
+        <div class="admin-sub-header-container">
+          <div class="admin-status-cluster">
+            <div style="display: flex; flex-direction: column">
+              <div class="admin-header-title-row">
+                <h1 class="admin-header-title">
+                  Administracion de Donaciones
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div class="admin-sub-header-actions">
+            <button
+              class="btn btn-primary"
+              onclick="
+                document
+                  .getElementById('modal-ingreso')
+                  .classList.remove('hidden')
+              "
+            >
+              <span class="material-symbols-outlined">add_box</span>
+              <span>+ Ingresar Donación Recibida</span>
+            </button>
+            <button class="btn btn-tonal" href="#registro" onclick="
+                document
+                  .getElementById('modal-registro')
+                  .classList.remove('hidden')
+              ">
+              <span class="material-symbols-outlined">person_add</span>
+              <span>+ Registrar Donante / Entidad</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="admin-main-content">
+        <section class="admin-card-section" id="modulo-matching">
+          <div class="section-header-flex">
+          <div class="section-header-info">
+            <div class="section-icon-large">
+              <span class="material-symbols-outlined" style="font-size: 28px"
+                >psychology</span
+              >
+            </div>
+            <div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: var(--space-xs);
+                  flex-wrap: wrap;
+                "
+              >
+                <h2 class="section-title">
+                  Asignacion de Donaciones
+                </h2>
+              </div>
+            </div>
+          </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: var(--space-xs);
+                flex-shrink: 0;
+              "
+            >
+              <span
+                style="
+                  font-family: var(--font-mono);
+                  font-size: 0.75rem;
+                  color: var(--on-surface-variant);
+                "
+                >Última optimización: Hace 4 min</span
+              >
+            </div>
+          </div>
+          
+          <div class="contenedor-matches">
+            <div class="match">
+              <div class="matching-rank-badge matching-rank-1">1°</div>
+              <div class="donacion_match">
+                <h3>Libros gastados</h3>
+                <p>15 libros de ingles</p>
+
+              </div>
+              <div class="necesidad_match">
+                <h3>Libros de ingles</h3>
+                <p>20 libros de ingles</p>
+              </div>
+              <button class="btn btn-primary" onclick="confirmarAsignacion('Merendero Los Bajitos', 'LT-2025-0988', '350 kg Polenta y Legumbres')">
+                <span class="material-symbols-outlined" style="font-size: 16px;">assignment_turned_in</span>
+                <span>Confirmar Asignación</span>
+              </button>
+            </div>
+            <div class="match">
+              <div class="matching-rank-badge matching-rank-2">2°</div>
+              <div class="donacion_match">
+                <h3>Pan de la panadería de la Sra Marta</h3>
+                <p>1kg de pan</p>
+              </div>
+              <div class="necesidad_match">
+                <h3>Panes para los chicos del oratorio</h3>
+                <p>3kg de pan</p>
+              </div>
+              <button class="btn btn-primary" onclick="confirmarAsignacion('Merendero Los Bajitos', 'LT-2025-0988', '350 kg Polenta y Legumbres')">
+                <span class="material-symbols-outlined" style="font-size: 16px;">assignment_turned_in</span>
+                <span>Confirmar Asignación</span>
+              </button>
+            </div>
+            <div class="match">
+              <div class="matching-rank-badge matching-rank-2">3°</div>
+              <div class="donacion_match">
+                <h3>Una notebook con un i3</h3>
+                <p>1 notebooks</p>
+
+              </div>
+              <div class="necesidad_match">
+                <h3>Notebooks para los alumnos del secundario</h3>
+                <p>5 notebooks</p>
+              </div>
+              <button class="btn btn-primary" onclick="confirmarAsignacion('Merendero Los Bajitos', 'LT-2025-0988', '350 kg Polenta y Legumbres')">
+                <span class="material-symbols-outlined" style="font-size: 16px;">assignment_turned_in</span>
+                <span>Confirmar Asignación</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section
+          class="admin-card-section"
+          style="display: flex; flex-direction: column; gap: var(--space-md)"
+        >
+          <div
+            class="md-flex-row"
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              gap: var(--space-sm);
+            "
+          >
+            <div>
+              <div
+                style="display: flex; align-items: center; gap: var(--space-xs)"
+              >
+                <h2 class="section-title">
+                  Inventario Físico en Depósito Central
+                </h2>
+                <span class="badge badge-secondary">1.420 kg totales</span>
+              </div>
+              <p class="section-subtitle">
+                Control de estanterías, pallets, trazabilidad criptográfica y
+                estado fitosanitario/caducidad.
+              </p>
+            </div>
+            <div class="inventory-controls">
+              <!-- Filtros Rápidos -->
+              <div class="inventory-search-wrap">
+                <input
+                  class="inventory-search-input"
+                  id="filtro-inventario"
+                  placeholder="Buscar por lote, alimento o donante..."
+                  type="text"
+                />
+                <span class="material-symbols-outlined search-icon-pos"
+                  >search</span
+                >
+              </div>
+              <button class="btn btn-tonal btn-sm">
+                <span class="material-symbols-outlined" style="font-size: 16px"
+                  >tune</span
+                >
+                <span>Filtros</span>
+              </button>
+            </div>
+          </div>
+          <!-- Tabla de Lotes -->
+          <div class="table-wrapper">
+            <table class="inventory-table">
+              <thead>
+                <tr>
+                  <th>Lote &amp; Donante</th>
+                  <th>Categoría / Bien</th>
+                  <th>Peso &amp; Unidades</th>
+                  <th>Fecha Vencimiento</th>
+                  <th>Estado Operativo</th>
+                  <th style="text-align: right">Acción Técnica</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Fila 1: Polenta (En Cuarentena / Pendiente) -->
+                <tr>
+                  <td>
+                    <div
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        font-weight: 700;
+                        color: var(--on-surface);
+                      "
+                    >
+                      LT-2025-0988
+                    </div>
+                    <div
+                      style="
+                        font-size: 0.8125rem;
+                        color: var(--on-surface-variant);
+                      "
+                    >
+                      Molinos Río de la Plata • CUIT 30-50001824-3
+                    </div>
+                  </td>
+                  <td>
+                    <div style="font-weight: 600; color: var(--on-surface)">
+                      Polenta &amp; Legumbres
+                    </div>
+                    <div
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                    >
+                      Alimentos Secos No Perecederos
+                    </div>
+                  </td>
+                  <td>
+                    <span style="font-weight: 600; color: var(--on-surface)"
+                      >350 kg</span
+                    >
+                    <span
+                      style="
+                        display: block;
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                      >700 bolsas x 500g</span
+                    >
+                  </td>
+                  <td>
+                    <span
+                      class="badge badge-error"
+                      style="
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 4px;
+                      "
+                    >
+                      <span
+                        class="pulse-dot pulse-dot-error"
+                        style="width: 6px; height: 6px"
+                      ></span>
+                      45 días (15/07/2025)
+                    </span>
+                  </td>
+                  <td>
+                    <span class="badge badge-secondary">Pendiente Asignar</span>
+                  </td>
+                  <td style="text-align: right">
+                    <button
+                      class="btn btn-tonal btn-sm"
+                      onclick="
+                        abrirModalEstado(
+                          'LT-2025-0988',
+                          'Polenta &amp; Legumbres',
+                          'Pendiente',
+                        )
+                      "
+                    >
+                      Actualizar Estado
+                    </button>
+                  </td>
+                </tr>
+                <!-- Fila 2: Leche Larga Vida -->
+                <tr>
+                  <td>
+                    <div
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        font-weight: 700;
+                        color: var(--on-surface);
+                      "
+                    >
+                      LT-2025-1002
+                    </div>
+                    <div
+                      style="
+                        font-size: 0.8125rem;
+                        color: var(--on-surface-variant);
+                      "
+                    >
+                      Empresa Alimentos Cono Sur • CUIT 30-71029381-9
+                    </div>
+                  </td>
+                  <td>
+                    <div style="font-weight: 600; color: var(--on-surface)">
+                      Leche Entera UHT
+                    </div>
+                    <div
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                    >
+                      Lácteos &amp; Bebidas
+                    </div>
+                  </td>
+                  <td>
+                    <span style="font-weight: 600; color: var(--on-surface)"
+                      >620 kg</span
+                    >
+                    <span
+                      style="
+                        display: block;
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                      >600 cajas tetra pack</span
+                    >
+                  </td>
+                  <td>
+                    <span
+                      style="
+                        color: var(--on-surface-variant);
+                        font-size: 0.8125rem;
+                      "
+                      >120 días (28/09/2025)</span
+                    >
+                  </td>
+                  <td>
+                    <span
+                      class="badge badge-primary"
+                      style="
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 4px;
+                      "
+                    >
+                      Disponible
+                    </span>
+                  </td>
+                  <td style="text-align: right">
+                    <button
+                      class="btn btn-tonal btn-sm"
+                      onclick="
+                        abrirModalEstado(
+                          'LT-2025-1002',
+                          'Leche Entera UHT',
+                          'Disponible',
+                        )
+                      "
+                    >
+                      Actualizar Estado
+                    </button>
+                  </td>
+                </tr>
+                <!-- Fila 3: Arroz Blanco Grano Largo -->
+                <tr>
+                  <td>
+                    <div
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        font-weight: 700;
+                        color: var(--on-surface);
+                      "
+                    >
+                      LT-2025-0814
+                    </div>
+                    <div
+                      style="
+                        font-size: 0.8125rem;
+                        color: var(--on-surface-variant);
+                      "
+                    >
+                      Mateo Rodríguez • DNI 34.209.118
+                    </div>
+                  </td>
+                  <td>
+                    <div style="font-weight: 600; color: var(--on-surface)">
+                      Arroz Grano Fino
+                    </div>
+                    <div
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                    >
+                      Granos Básicos
+                    </div>
+                  </td>
+                  <td>
+                    <span style="font-weight: 600; color: var(--on-surface)"
+                      >250 kg</span
+                    >
+                    <span
+                      style="
+                        display: block;
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                      >250 paquetes x 1kg</span
+                    >
+                  </td>
+                  <td>
+                    <span
+                      style="
+                        color: var(--on-surface-variant);
+                        font-size: 0.8125rem;
+                      "
+                      >300 días (10/03/2026)</span
+                    >
+                  </td>
+                  <td>
+                    <span
+                      class="badge badge-primary"
+                      style="
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 4px;
+                      "
+                    >
+                      Disponible
+                    </span>
+                  </td>
+                  <td style="text-align: right">
+                    <button
+                      class="btn btn-tonal btn-sm"
+                      onclick="
+                        abrirModalEstado(
+                          'LT-2025-0814',
+                          'Arroz Grano Fino',
+                          'Disponible',
+                        )
+                      "
+                    >
+                      Actualizar Estado
+                    </button>
+                  </td>
+                </tr>
+                <!-- Fila 4: Aceite de Girasol (En Cuarentena Técnica) -->
+                <tr>
+                  <td>
+                    <div
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        font-weight: 700;
+                        color: var(--on-surface);
+                      "
+                    >
+                      LT-2025-0720
+                    </div>
+                    <div
+                      style="
+                        font-size: 0.8125rem;
+                        color: var(--on-surface-variant);
+                      "
+                    >
+                      Distribuidora Sol • CUIT 33-68291044-9
+                    </div>
+                  </td>
+                  <td>
+                    <div style="font-weight: 600; color: var(--on-surface)">
+                      Aceite Girasol 900ml
+                    </div>
+                    <div
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                    >
+                      Aceites &amp; Grasas
+                    </div>
+                  </td>
+                  <td>
+                    <span style="font-weight: 600; color: var(--on-surface)"
+                      >200 kg</span
+                    >
+                    <span
+                      style="
+                        display: block;
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                      >220 botellas PET</span
+                    >
+                  </td>
+                  <td>
+                    <span
+                      style="
+                        color: var(--on-surface-variant);
+                        font-size: 0.8125rem;
+                      "
+                      >180 días (12/11/2025)</span
+                    >
+                  </td>
+                  <td>
+                    <span
+                      class="badge badge-tertiary"
+                      style="
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 4px;
+                      "
+                    >
+                      En deposito
+                    </span>
+                  </td>
+                  <td style="text-align: right">
+                    <button
+                      class="btn btn-tonal btn-sm"
+                      onclick="
+                        abrirModalEstado(
+                          'LT-2025-0720',
+                          'Aceite Girasol 900ml',
+                          'Cuarentena',
+                        )
+                      "
+                    >
+                      Actualizar Estado
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section
+          class="admin-card-section"
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          "
+        >
+          <div>
+            <div
+              class="sm-flex-row"
+              style="
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: var(--space-sm);
+                padding-bottom: var(--space-md);
+              "
+            >
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: var(--space-xs);
+                  "
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="color: var(--tertiary)"
+                    >military_tech</span
+                  >
+                  <h2 class="section-title">Ranking Mensual de Donantes</h2>
+                </div>
+                <p class="section-subtitle">
+                  Podio de impacto por volumen físico verificado en báscula.
+                </p>
+              </div>
+              <!-- Selector de Historial -->
+              <div>
+                <select
+                  class="form-select"
+                  id="select-ranking"
+                  onchange="cambiarRanking(this.value)"
+                  style="height: 40px; cursor: pointer"
+                >
+                  <option selected="" value="junio-2025">
+                    Mes en Curso (Junio 2025)
+                  </option>
+                  <option value="mayo-2025">Mayo 2025</option>
+                  <option value="abril-2025">Abril 2025</option>
+                  <option value="marzo-2025">Marzo 2025</option>
+                  <option value="anual-2024">Consolidado Año 2024</option>
+                </select>
+              </div>
+            </div>
+            <!-- Podio Cards -->
+            <div class="podium-list" id="contenedor-ranking">
+              <!-- 1° Lugar (Oro) -->
+              <div class="podium-card">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: var(--space-md);
+                  "
+                >
+                  <div class="podium-medal podium-gold">🥇</div>
+                  <div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: var(--space-2xs);
+                      "
+                    >
+                      <h3
+                        style="
+                          font-size: 1rem;
+                          font-weight: 600;
+                          color: var(--on-surface);
+                          margin: 0;
+                        "
+                      >
+                        Empresa Alimentos Cono Sur
+                      </h3>
+                      <span class="badge badge-secondary">Corporativo</span>
+                    </div>
+                    <p
+                      style="
+                        font-size: 0.8125rem;
+                        color: var(--on-surface-variant);
+                        margin: 2px 0 0 0;
+                      "
+                    >
+                      12 entregas logísticas completadas • CUIT 30-71029381-9
+                    </p>
+                  </div>
+                </div>
+                <div style="text-align: right; flex-shrink: 0">
+                  <span class="podium-kilos gold">15 misiones</span>
+                  <span
+                    style="
+                      display: block;
+                      font-size: 0.6875rem;
+                      color: var(--on-surface-variant);
+                    "
+                    >1° Lugar Oro</span
+                  >
+                </div>
+              </div>
+              <!-- 2° Lugar (Plata) -->
+              <div class="podium-card">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: var(--space-md);
+                  "
+                >
+                  <div class="podium-medal podium-silver">🥈</div>
+                  <div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: var(--space-2xs);
+                      "
+                    >
+                      <h3
+                        style="
+                          font-size: 1rem;
+                          font-weight: 600;
+                          color: var(--on-surface);
+                          margin: 0;
+                        "
+                      >
+                        Mateo Rodríguez
+                      </h3>
+                      <span class="badge badge-primary"
+                        >Donante Humano Destacado</span
+                      >
+                    </div>
+                    <p
+                      style="
+                        font-size: 0.8125rem;
+                        color: var(--on-surface-variant);
+                        margin: 2px 0 0 0;
+                      "
+                    >
+                      6 donaciones registradas • DNI 34.209.118
+                    </p>
+                  </div>
+                </div>
+                <div style="text-align: right; flex-shrink: 0">
+                  <span class="podium-kilos">8 misiones</span>
+                  <span
+                    style="
+                      display: block;
+                      font-size: 0.6875rem;
+                      color: var(--on-surface-variant);
+                    "
+                    >2° Lugar Plata</span
+                  >
+                </div>
+              </div>
+              <!-- 3° Lugar (Bronce) -->
+              <div class="podium-card">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: var(--space-md);
+                  "
+                >
+                  <div class="podium-medal podium-bronze">🥉</div>
+                  <div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: var(--space-2xs);
+                      "
+                    >
+                      <h3
+                        style="
+                          font-size: 1rem;
+                          font-weight: 600;
+                          color: var(--on-surface);
+                          margin: 0;
+                        "
+                      >
+                        Distribuidora Sol
+                      </h3>
+                      <span class="badge badge-secondary">Mayorista</span>
+                    </div>
+                    <p
+                      style="
+                        font-size: 0.8125rem;
+                        color: var(--on-surface-variant);
+                        margin: 2px 0 0 0;
+                      "
+                    >
+                      4 entregas coordinadas • CUIT 33-68291044-9
+                    </p>
+                  </div>
+                </div>
+                <div style="text-align: right; flex-shrink: 0">
+                  <span class="podium-kilos">3 misiones</span>
+                  <span
+                    style="
+                      display: block;
+                      font-size: 0.6875rem;
+                      color: var(--on-surface-variant);
+                    "
+                    >3° Lugar Bronce</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: var(--space-md);
+              padding-top: var(--space-sm);
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              font-size: 0.8125rem;
+              color: var(--on-surface-variant);
+            "
+          >
+            <span
+              >Insignias criptográficas emitidas a todos los ganadores.</span
+            >
+            <button
+              class="hover-underline"
+              style="
+                color: var(--primary);
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+              "
+            >
+              <span class="material-symbols-outlined" style="font-size: 16px"
+                >download</span
+              >
+              Descargar Certificados PDF
+            </button>
+          </div>
+        </section>
+        <section
+          class="admin-card-section"
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          "
+        >
+          <div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: var(--space-md);
+              "
+            >
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: var(--space-xs);
+                  "
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="color: var(--primary)"
+                    >cloud_upload</span
+                  >
+                  <h2 class="section-title">Importador Masivo de Donantes</h2>
+                </div>
+                <p class="section-subtitle">
+                  Soporte optimizado para lotes de más de 10.000 filas con
+                  streaming asíncrono.
+                </p>
+              </div>
+              <span class="badge badge-primary">CSV / TSV Fast-Stream</span>
+            </div>
+            <!-- Drag and drop zone -->
+            <div
+              class="csv-drop-zone"
+              id="drop-zone"
+              onclick="document.getElementById('file-csv').click()"
+            >
+              <div class="csv-upload-icon-circle">
+                <span class="material-symbols-outlined" style="font-size: 32px"
+                  >upload_file</span
+                >
+              </div>
+              <h3
+                style="
+                  font-size: 1rem;
+                  font-weight: 600;
+                  color: var(--on-surface);
+                  margin: 0;
+                "
+              >
+                Arrastra tu archivo CSV aquí o selecciona en el explorador
+              </h3>
+              <p
+                style="
+                  font-size: 0.8125rem;
+                  color: var(--on-surface-variant);
+                  margin-top: 4px;
+                  max-width: 360px;
+                "
+              >
+                Codificación UTF-8 recomendada. Límite máximo: 50MB (~100.000
+                registros por lote).
+              </p>
+              <input
+                accept=".csv"
+                class="hidden"
+                id="file-csv"
+                onchange="procesarCSV(this.files)"
+                type="file"
+              />
+              <button
+                class="btn btn-tonal btn-sm"
+                style="margin-top: var(--space-sm)"
+                type="button"
+              >
+                Seleccionar Archivo Local
+              </button>
+            </div>
+          <div
+            class="sm-flex-row"
+            style="
+              margin-top: var(--space-md);
+              padding-top: var(--space-sm);
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              gap: var(--space-sm);
+            "
+          >
+            <button class="btn btn-primary" onclick="ejecutarImportacion()">
+              <span class="material-symbols-outlined" style="font-size: 16px"
+                >person_add</span
+              >
+              <span>Importar &amp; Otorgar Credenciales Automáticamente</span>
+            </button>
+          </div>
+        </section>
+        <section
+          class="modal-overlay hidden"
+          id="modal-registro"
+        >
+          <div class="formularioRegistro">
+            <div
+              class="sm-flex-row"
+              style="
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: var(--space-sm);
+                padding-bottom: var(--space-md);
+                border-bottom: 1px solid var(--surface-container);
+              "
+            >
+              <div
+                style="display: flex; align-items: center; gap: var(--space-xs)"
+              >
+                <div class="kpi-icon-pill kpi-icon-primary">
+                  <span class="material-symbols-outlined">person_add</span>
+                </div>
+                <div>
+                  <h2 class="section-title">
+                    Registro de Donantes y Entidades Beneficiarias
+                  </h2>
+                </div>
+              </div>
+              <!-- Selector Principal: Donante vs Entidad Beneficiaria -->
+              <div
+                style="
+                  display: flex;
+                  gap: var(--space-xs);
+                  background-color: var(--surface-container-low);
+                  padding: 4px;
+                  border-radius: var(--radius-lg);
+                "
+              >
+                <button
+                  class="btn btn-primary btn-sm"
+                  id="tab-btn-donante"
+                  onclick="conmutarTabRegistro('donante')"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined" style="font-size: 16px"
+                    >volunteer_activism</span
+                  >
+                  <span>Donante</span>
+                </button>
+                <button
+                  class="btn btn-tonal btn-sm"
+                  id="tab-btn-entidad"
+                  onclick="conmutarTabRegistro('entidad')"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined" style="font-size: 16px"
+                    >foundation</span
+                  >
+                  <span>Entidad Beneficiaria</span>
+                </button>
+                
+              </div>
+              <button
+                  class="modal-cerrar"
+                  onclick="
+                    document.getElementById('modal-registro').classList.add('hidden')
+                  "
+                  type="button"> 
+                    <span class="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <!-- PANEL REGISTRO DONANTE -->
+            <div id="panel-registro-donante" style="margin-top: var(--space-md)">
+              <!-- Selector Subtipo: Humano vs Jurídico -->
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: var(--space-md);
+                  margin-bottom: var(--space-md);
+                  padding: var(--space-xs) var(--space-md);
+                  background-color: var(--surface-container);
+                  border-radius: var(--radius-md);
+                "
+              >
+                <span
+                  style="
+                    font-size: 0.8125rem;
+                    font-weight: 600;
+                    color: var(--on-surface);
+                  "
+                  >Tipo de Donante:</span
+                >
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    font-size: 0.8125rem;
+                    cursor: pointer;
+                  "
+                >
+                  <input
+                    checked=""
+                    name="tipo-donante"
+                    onchange="conmutarTipoDonante('humano')"
+                    type="radio"
+                    value="humano"
+                  />
+                  <span style="font-weight: 600">Humano</span>
+                </label>
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    font-size: 0.8125rem;
+                    cursor: pointer;
+                  "
+                >
+                  <input
+                    name="tipo-donante"
+                    onchange="conmutarTipoDonante('juridico')"
+                    type="radio"
+                    value="juridico"
+                  />
+                  <span style="font-weight: 600">Jurídico</span>
+                </label>
+              </div>
+              <!-- Formulario Donante Humano -->
+              <form
+                id="form-donante-humano"
+                onsubmit="guardarDonanteHumano(event)"
+              >
+                <div
+                  class="md-grid-2"
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--space-md);
+                  "
+                >
+                  <div class="form-grupo">
+                    <label class="form-label" for="humano-nombre">Nombre *</label>
+                    <input
+                      class="form-input"
+                      id="humano-nombre"
+                      placeholder="Ej: Mateo"
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                  <div class="form-grupo">
+                    <label class="form-label" for="humano-apellido"
+                      >Apellido *</label
+                    >
+                    <input
+                      class="form-input"
+                      id="humano-apellido"
+                      placeholder="Ej: Rodríguez"
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="md-grid-3"
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--space-md);
+                    margin-top: var(--space-md);
+                  "
+                >
+                  <div class="form-grupo">
+                    <label class="form-label" for="humano-edad"
+                      >Edad (Integer) *</label
+                    >
+                    <input
+                      class="form-input"
+                      id="humano-edad"
+                      min="1"
+                      placeholder="Ej: 34"
+                      required=""
+                      step="1"
+                      type="number"
+                    />
+                  </div>
+                  <div class="form-grupo">
+                    <label class="form-label" for="humano-dni">DNI *</label>
+                    <input
+                      class="form-input"
+                      id="humano-dni"
+                      placeholder="Ej: 34209118"
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                  <div class="form-grupo">
+                    <label class="form-label" for="humano-genero">Género *</label>
+                    <select class="form-select" id="humano-genero" required="">
+                      <option value="">Selecciona género</option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="No binario">No binario</option>
+                      <option value="Otro">Otro / Prefiero no decir</option>
+                    </select>
+                  </div>
+                </div>
+                <div
+                  class="md-grid-2"
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--space-md);
+                    margin-top: var(--space-md);
+                  "
+                >
+                  <div class="form-grupo">
+                    <label class="form-label" for="humano-direccion"
+                      >Dirección *</label
+                    >
+                    <input
+                      class="form-input"
+                      id="humano-direccion"
+                      placeholder="Ej: Av. San Martín 1234, CABA"
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                  <div class="form-grupo">
+                    <label class="form-label" for="humano-email">Email *</label>
+                    <input
+                      class="form-input"
+                      id="humano-email"
+                      placeholder="Ej: mateo.rodriguez@email.com"
+                      required=""
+                      type="email"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="md-grid-2"
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--space-md);
+                    margin-top: var(--space-md);
+                  "
+                >
+                  <div class="form-grupo">
+                    <label class="form-label" for="humano-telefono"
+                      >Teléfono (Opcional)</label
+                    >
+                    <input
+                      class="form-input"
+                      id="humano-telefono"
+                      oninput="validarTelefonoHumano()"
+                      placeholder="Ej: +54 11 4455-6677"
+                      type="tel"
+                    />
+                    <span
+                      id="humano-telefono-hint"
+                      style="
+                        font-size: 0.6875rem;
+                        color: var(--on-surface-variant);
+                        display: block;
+                        margin-top: 4px;
+                      "
+                      >SMS y WhatsApp solo disponibles si hay teléfono
+                      cargado.</span
+                    >
+                  </div>
+                  <div class="form-grupo">
+                    <label class="form-label" for="humano-medio"
+                      >Medio de Contacto *</label
+                    >
+                    <select class="form-select" id="humano-medio" required="">
+                      <option value="MAIL">MAIL</option>
+                      <option disabled="" id="opt-sms-humano" value="SMS">
+                        SMS (requiere teléfono cargado)
+                      </option>
+                      <option disabled="" id="opt-wsp-humano" value="WHATSAPP">
+                        WHATSAPP (requiere teléfono cargado)
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: var(--space-md);
+                  "
+                >
+                  <button class="btn btn-primary" type="submit">
+                    <span
+                      class="material-symbols-outlined"
+                      style="font-size: 16px"
+                      >check_circle</span
+                    >
+                    <span>Registrar Donante Humano</span>
+                  </button>
+                </div>
+              </form>
+              <!-- Formulario Donante Jurídico -->
+              <form
+                class="hidden"
+                id="form-donante-juridico"
+                onsubmit="guardarDonanteJuridico(event)"
+              >
+                <div
+                  class="md-grid-2"
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--space-md);
+                  "
+                >
+                  <div class="form-grupo">
+                    <label class="form-label" for="juridico-razon"
+                      >Razón Social *</label
+                    >
+                    <input
+                      class="form-input"
+                      id="juridico-razon"
+                      placeholder="Ej: Alimentos del Cono Sur S.A."
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                  <div class="form-grupo">
+                    <label class="form-label" for="juridico-cuit">CUIT *</label>
+                    <input
+                      class="form-input"
+                      id="juridico-cuit"
+                      placeholder="Ej: 30-71029381-9"
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="md-grid-2"
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--space-md);
+                    margin-top: var(--space-md);
+                  "
+                >
+                  <div class="form-grupo">
+                    <label class="form-label" for="juridico-tipo"
+                      >Tipo (Texto) *</label
+                    >
+                    <input
+                      class="form-input"
+                      id="juridico-tipo"
+                      placeholder="Ej: Sociedad Anónima / Cooperativa / SRL"
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                  <div class="form-grupo">
+                    <label class="form-label" for="juridico-rubro"
+                      >Rubro (Texto) *</label
+                    >
+                    <input
+                      class="form-input"
+                      id="juridico-rubro"
+                      placeholder="Ej: Producción y Distribución de Alimentos"
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="md-grid-3"
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--space-md);
+                    margin-top: var(--space-md);
+                  "
+                >
+                  <div class="form-grupo">
+                    <label class="form-label" for="juridico-email">Email *</label>
+                    <input
+                      class="form-input"
+                      id="juridico-email"
+                      placeholder="Ej: contacto@conosur.com.ar"
+                      required=""
+                      type="email"
+                    />
+                  </div>
+                  <div class="form-grupo">
+                    <label class="form-label" for="juridico-telefono"
+                      >Teléfono *</label
+                    >
+                    <input
+                      class="form-input"
+                      id="juridico-telefono"
+                      oninput="validarTelefonoJuridico()"
+                      placeholder="Ej: +54 11 5566-7788"
+                      required=""
+                      type="tel"
+                    />
+                    <span
+                      id="juridico-telefono-hint"
+                      style="
+                        font-size: 0.6875rem;
+                        color: var(--on-surface-variant);
+                        display: block;
+                        margin-top: 4px;
+                      "
+                      >SMS y WhatsApp solo disponibles si hay teléfono
+                      cargado.</span
+                    >
+                  </div>
+                  <div class="form-grupo">
+                    <label class="form-label" for="juridico-medio"
+                      >Medio de Contacto *</label
+                    >
+                    <select class="form-select" id="juridico-medio" required="">
+                      <option value="MAIL">MAIL</option>
+                      <option disabled="" id="opt-sms-juridico" value="SMS">
+                        SMS (requiere teléfono cargado)
+                      </option>
+                      <option disabled="" id="opt-wsp-juridico" value="WHATSAPP">
+                        WHATSAPP (requiere teléfono cargado)
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: var(--space-md);
+                  "
+                >
+                  <button class="btn btn-primary" type="submit">
+                    <span
+                      class="material-symbols-outlined"
+                      style="font-size: 16px"
+                      >check_circle</span
+                    >
+                    <span>Registrar Donante Jurídico</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <!-- PANEL REGISTRO ENTIDAD BENEFICIARIA -->
+            <div
+              class="hidden"
+              id="panel-registro-entidad"
+              style="margin-top: var(--space-md)"
+            >
+              <form
+                id="form-entidad-beneficiaria"
+                onsubmit="guardarEntidadBeneficiaria(event)"
+              >
+                <div class="form-grupo">
+                  <label class="form-label" for="entidad-razon"
+                    >Razón Social *</label
+                  >
+                  <input
+                    class="form-input"
+                    id="entidad-razon"
+                    placeholder="Ej: Comedor Infantil Rayito de Sol"
+                    required=""
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="md-grid-2"
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--space-md);
+                    margin-top: var(--space-md);
+                  "
+                >
+                  <div class="form-grupo">
+                    <label class="form-label" for="entidad-direccion"
+                      >Dirección *</label
+                    >
+                    <input
+                      class="form-input"
+                      id="entidad-direccion"
+                      placeholder="Ej: Calle Mitre 1450, Quilmes"
+                      required=""
+                      type="text"
+                    />
+                  </div>
+                  <div class="form-grupo">
+                    <label class="form-label" for="entidad-telefono"
+                      >Teléfono *</label
+                    >
+                    <input
+                      class="form-input"
+                      id="entidad-telefono"
+                      placeholder="Ej: +54 11 4789-0123"
+                      required=""
+                      type="tel"
+                    />
+                  </div>
+                </div>
+                <!-- Lista de Emails Dinámica -->
+                <div class="form-grupo" style="margin-top: var(--space-md)">
+                  <label class="form-label">Lista de Emails *</label>
+                  <div style="display: flex; gap: var(--space-xs)">
+                    <input
+                      class="form-input"
+                      id="entidad-nuevo-email"
+                      placeholder="Ingresa un correo (ej: direccion@comedor.org)"
+                      type="email"
+                    />
+                    <button
+                      class="btn btn-tonal"
+                      onclick="agregarEmailEntidad()"
+                      style="flex-shrink: 0"
+                      type="button"
+                    >
+                      <span
+                        class="material-symbols-outlined"
+                        style="font-size: 16px"
+                        >add</span
+                      >
+                      <span>Agregar Email</span>
+                    </button>
+                  </div>
+                  <div
+                    id="entidad-emails-tags"
+                    style="
+                      display: flex;
+                      flex-wrap: wrap;
+                      gap: var(--space-xs);
+                      margin-top: var(--space-xs);
+                    "
+                  >
+                    <!-- Emails cargados -->
+                  </div>
+                  <span
+                    id="entidad-emails-error"
+                    style="
+                      display: none;
+                      font-size: 0.75rem;
+                      color: var(--error);
+                      margin-top: 4px;
+                    "
+                    >Debes ingresar al menos un correo electrónico en la
+                    lista.</span
+                  >
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: var(--space-md);
+                  "
+                >
+                  <button class="btn btn-primary" type="submit">
+                    <span
+                      class="material-symbols-outlined"
+                      style="font-size: 16px"
+                      >check_circle</span
+                    >
+                    <span>Registrar Entidad Beneficiaria</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="modal-overlay hidden" id="modal-ingreso">
+        <div
+          class="modal-contenedor"
+          style="max-width: 740px; max-height: 85vh; overflow-y: auto"
+        >
+          <div class="modal-header">
+            <div
+              style="display: flex; align-items: center; gap: var(--space-sm)"
+            >
+              <div class="kpi-icon-pill kpi-icon-primary">
+                <span class="material-symbols-outlined">archive</span>
+              </div>
+              <div>
+                <h3
+                  style="
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    color: var(--on-surface);
+                    margin: 0;
+                  "
+                >
+                  Ingresar Donación Recibida en Depósito
+                </h3>
+                <p
+                  style="
+                    font-size: 0.8125rem;
+                    color: var(--on-surface-variant);
+                    margin: 2px 0 0 0;
+                  "
+                >
+                  Carga realizada por el Administrador al recibir la entrega
+                  física del Donante.
+                </p>
+              </div>
+            </div>
+            <button
+              class="modal-cerrar"
+              onclick="
+                document.getElementById('modal-ingreso').classList.add('hidden')
+              "
+              type="button"
+            >
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <form
+            id="form-ingreso-donacion"
+            onsubmit="guardarNuevaDonacion(event)"
+          >
+            <!-- 1. usuario: Donante (Buscador Autocompletable de Donante) -->
+            <div class="form-grupo">
+              <label class="form-label" for="buscador-donante"
+                >Usuario / Donante *</label
+              >
+              <div style="position: relative">
+                <input
+                  autocomplete="off"
+                  class="form-input"
+                  id="buscador-donante"
+                  oninput="buscarDonantePredictivo(this.value)"
+                  placeholder="Escribe DNI, CUIT o Nombre (ej: Mateo, Molinos, 30-50...)"
+                  required=""
+                  type="text"
+                />
+                <span
+                  class="material-symbols-outlined"
+                  style="
+                    position: absolute;
+                    right: 12px;
+                    top: 12px;
+                    color: var(--on-surface-variant);
+                    font-size: 18px;
+                    pointer-events: none;
+                  "
+                  >person_search</span
+                >
+                <!-- Lista desplegable predictiva -->
+                <div
+                  class="predictive-results-dropdown hidden"
+                  id="predictivo-donantes"
+                >
+                  <div
+                    class="predictive-item"
+                    onclick="
+                      seleccionarDonante(
+                        'Empresa Alimentos Cono Sur',
+                        '30-71029381-9',
+                      )
+                    "
+                  >
+                    <strong>Empresa Alimentos Cono Sur</strong>
+                    <span
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                      >CUIT 30-71029381-9</span
+                    >
+                  </div>
+                  <div
+                    class="predictive-item"
+                    onclick="
+                      seleccionarDonante('Mateo Rodríguez', '34.209.118')
+                    "
+                  >
+                    <strong>Mateo Rodríguez</strong>
+                    <span
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                      >DNI 34.209.118</span
+                    >
+                  </div>
+                  <div
+                    class="predictive-item"
+                    onclick="
+                      seleccionarDonante('Distribuidora Sol', '33-68291044-9')
+                    "
+                  >
+                    <strong>Distribuidora Sol</strong>
+                    <span
+                      style="
+                        font-family: var(--font-mono);
+                        font-size: 0.75rem;
+                        color: var(--on-surface-variant);
+                      "
+                      >CUIT 33-68291044-9</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <p
+                class="hidden"
+                id="donante-seleccionado-info"
+                style="
+                  font-family: var(--font-mono);
+                  font-size: 0.75rem;
+                  color: var(--primary);
+                  margin-top: 4px;
+                "
+              >
+                Donante vinculado correctamente
+              </p>
+            </div>
+            <!-- 2. descripcion: String -->
+            <div class="form-grupo" style="margin-top: var(--space-sm)">
+              <label class="form-label" for="donacion-descripcion"
+                >Descripción General de la Donación *</label
+              >
+              <textarea
+                class="form-textarea"
+                id="donacion-descripcion"
+                placeholder="Ej: Donación recibida en depósito con víveres secos, leche y artículos de abrigo..."
+                required=""
+                rows="2"
+              ></textarea>
+            </div>
+            <!-- 3. listaDeBienes: Múltiples bienes dinámicos -->
+            <div class="form-grupo" style="margin-top: var(--space-md)">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin-bottom: var(--space-xs);
+                "
+              >
+                <div>
+                  <label class="form-label" style="margin: 0; font-weight: 700"
+                    >Lista de Bienes *</label
+                  >
+                  <span
+                    style="font-size: 0.75rem; color: var(--on-surface-variant)"
+                    >Permite registrar uno o más bienes con sus datos
+                    específicos.</span
+                  >
+                </div>
+                <button
+                  class="btn btn-tonal btn-sm"
+                  onclick="agregarBienADonacion()"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 16px"
+                    >add</span
+                  >
+                  <span>+ Agregar Bien</span>
+                </button>
+              </div>
+              <div
+                id="contenedor-lista-bienes"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: var(--space-sm);
+                "
+              >
+                <!-- Los bienes se insertan dinámicamente -->
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: var(--space-sm);
+                margin-top: var(--space-md);
+                padding-top: var(--space-sm);
+                border-top: 1px solid var(--surface-container);
+              "
+            >
+              <button
+                class="btn btn-tonal"
+                onclick="
+                  document
+                    .getElementById('modal-ingreso')
+                    .classList.add('hidden')
+                "
+                type="button"
+              >
+                Cancelar
+              </button>
+              <button class="btn btn-primary" type="submit">
+                <span class="material-symbols-outlined" style="font-size: 16px"
+                  >check_circle</span
+                >
+                <span>Registrar Donación en Depósito</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-overlay hidden" id="modal-estado">
+        <div class="modal-contenedor" style="max-width: 520px">
+          <div class="modal-header">
+            <div>
+              <h3
+                style="
+                  font-size: 1.25rem;
+                  font-weight: 600;
+                  color: var(--on-surface);
+                  margin: 0;
+                "
+              >
+                Actualizar Estado Técnico de Lote
+              </h3>
+              <p
+                id="modal-estado-lote-id"
+                style="
+                  font-size: 0.8125rem;
+                  color: var(--on-surface-variant);
+                  margin: 2px 0 0 0;
+                "
+              >
+                Lote seleccionado
+              </p>
+            </div>
+            <button
+              class="modal-cerrar"
+              onclick="
+                document.getElementById('modal-estado').classList.add('hidden')
+              "
+              type="button"
+            >
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: var(--space-md);
+              margin-top: var(--space-xs);
+            "
+          >
+            <div class="form-grupo">
+              <label class="form-label">Nuevo Estado Operativo</label>
+              <select class="form-select" id="nuevo-estado-select">
+                <option value="Disponible">
+                  🟢 Disponible para Asignación Inmediata
+                </option>
+                <option value="Cuarentena">
+                  🟡 Cuarentena (Inspección Bromatológica)
+                </option>
+                <option value="Descarte">
+                  🔴 Vencida / Descarte Seguro (Baja de Inventario)
+                </option>
+              </select>
+            </div>
+            <div class="form-grupo">
+              <label class="form-label"
+                >Justificación Técnica Obligatoria (Auditoría Criptográfica)
+                *</label
+              >
+              <textarea
+                class="form-textarea"
+                id="justificacion-tecnica"
+                placeholder="Detalle el informe de inspección o motivo de recategorización..."
+                required=""
+                rows="3"
+              ></textarea>
+            </div>
+            <div
+              style="
+                padding: var(--space-xs) var(--space-sm);
+                border-radius: var(--radius-lg);
+                background-color: var(--surface-container-low);
+                display: flex;
+                align-items: center;
+                gap: var(--space-2xs);
+                font-family: var(--font-mono);
+                font-size: 0.75rem;
+                color: var(--on-surface-variant);
+              "
+            >
+              <span
+                class="material-symbols-outlined"
+                style="font-size: 16px; color: var(--primary)"
+                >security</span
+              >
+              <span
+                >El cambio dejará registro inmutable firmado con su clave de
+                administrador.</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: var(--space-sm);
+                margin-top: var(--space-sm);
+              "
+            >
+              <button
+                class="btn btn-tonal"
+                onclick="
+                  document
+                    .getElementById('modal-estado')
+                    .classList.add('hidden')
+                "
+                type="button"
+              >
+                Cancelar
+              </button>
+              <button
+                class="btn btn-primary"
+                onclick="guardarNuevoEstado()"
+                type="button"
+              >
+                <span>Confirmar Cambio de Estado</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="toast-container" id="toast-notificacion">
+        <div class="toast-box">
+          <span
+            class="material-symbols-outlined"
+            id="toast-icon"
+            style="color: var(--primary-fixed); font-size: 24px"
+            >task_alt</span
+          >
+          <div style="display: flex; flex-direction: column">
+            <span
+              id="toast-titulo"
+              style="font-size: 0.875rem; font-weight: 600"
+              >Acción Completada</span
+            >
+            <span id="toast-desc" style="font-size: 0.8125rem; opacity: 0.85"
+              >Detalle de la acción realizada.</span
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer-principal">
+      <div class="footer-contenedor">
+        <div class="footer-grid">
+          <div class="footer-col-brand">
+            <div class="footer-brand-header">
+              <img
+                alt="DonaTrack Logo"
+                class="footer-logo"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1Umt486ThrlM7X3mGv-u_appySSju9kS7bYwfftk2eq9d5X2MmbAkk-uHcbUg4b52jid7kUEvxpLi6Qqv2OsoZc5DzCg87c9pRYPPfeykWDRt3nCT6n7eZJIgh6zQMf6VXiZySeVqEQl4H9izhjWzOghEFKGcKRnIbBnObuhWE3saiR8wDfPKeYctRRppCGYhbH3F_nm3NrDegY9WGDNPgKpgFqEeulL2KeE6H9CCwRZYk49SI4k_wmtz3Q"
+              />
+              <span class="footer-nombre">DonaTrack</span>
+            </div>
+            <p class="footer-desc">
+              Infraestructura de trazabilidad humanitaria basada en verificación
+              criptográfica y telemetría de última milla. Garantizamos
+              transparencia total y auditoría pública para donaciones de impacto
+              social.
+            </p>
+            <div class="footer-auditoria-pill">
+              <span class="material-symbols-outlined" style="font-size: 16px"
+                >verified_user</span
+              >
+              <span>Auditoría abierta y verificable en tiempo real</span>
+            </div>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-titulo">Operaciones &amp; Datos</span>
+            <div class="footer-col-lista">
+              <a class="footer-link" href="../index.html#mapa-en-vivo"
+                >Mapa en Vivo</a
+              >
+              <a class="footer-link" href="../index.html#galeria-de-entregas"
+                >Galería de Entregas</a
+              >
+              <a class="footer-link" href="../index.html#auditoria"
+                >Auditoría de Entregas</a
+              >
+              <a class="footer-link" href="../index.html#api"
+                >API de Datos Abiertos</a
+              >
+            </div>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-titulo">Entidades &amp; Actores</span>
+            <div class="footer-col-lista">
+              <a class="footer-link" href="donante.html">Mi Perfil (Donante)</a>
+              <a class="footer-link" href="incentivos.html"
+                >Incentivos (Donante)</a
+              >
+              <a class="footer-link" href="../index.html#registro"
+                >Registro Entidades y ONGs</a
+              >
+              <a class="footer-link" href="entidadBeneficiaria.html"
+                >Portal Beneficiario</a
+              >
+              <a class="footer-link" href="administrador.html"
+                >Acceso Institucional</a
+              >
+            </div>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-titulo">Gobernanza &amp; Legal</span>
+            <div class="footer-col-lista">
+              <a class="footer-link" href="#">Términos de Servicio</a>
+              <a class="footer-link" href="#">Política de Privacidad</a>
+              <a class="footer-link" href="#">Seguridad y Cumplimiento</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span style="font-size: 0.8125rem"
+            >© 2026 DonaTrack - Sistema Nacional de Trazabilidad Humanitaria.
+            Todos los derechos reservados.</span
+          >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: var(--space-md);
+              font-size: 0.8125rem;
+            "
+          >
+            <span style="display: inline-flex; align-items: center; gap: 4px">
+              <span class="pulse-dot" style="width: 6px; height: 6px"></span>
+              Red Operativa Activa
+            </span>
+            <a class="footer-link" href="../index.html#transparencia"
+              >Reportes de Impacto</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function mostrarToast(titulo, desc, icono = "task_alt") {
+        const toast = document.getElementById("toast-notificacion");
+        document.getElementById("toast-titulo").innerText = titulo;
+        document.getElementById("toast-desc").innerText = desc;
+        document.getElementById("toast-icon").innerText = icono;
+        toast.classList.add("active");
+        setTimeout(() => {
+          toast.classList.remove("active");
+        }, 4500);
+      }
+
+      function confirmarAsignacion(entidad, lote, bien) {
+        if (
+          confirm(
+            `¿Confirma la asignación oficial de ${bien} (${lote}) a la entidad beneficiaria: ${entidad}?\n\nEsta acción firmará criptográficamente la orden de despacho.`,
+          )
+        ) {
+          mostrarToast(
+            "Asignación Confirmada con Firma Digital",
+            `Lote ${lote} asignado exitosamente a ${entidad}. Se notificó al equipo de choferes.`,
+            "verified",
+          );
+        }
+      }
+
+      function buscarDonantePredictivo(valor) {
+        const container = document.getElementById("predictivo-donantes");
+        if (valor.trim().length > 1) {
+          container.classList.remove("hidden");
+        } else {
+          container.classList.add("hidden");
+        }
+      }
+
+      function seleccionarDonante(nombre, documento) {
+        document.getElementById("buscador-donante").value =
+          `${nombre} (${documento})`;
+        document.getElementById("predictivo-donantes").classList.add("hidden");
+        const info = document.getElementById("donante-seleccionado-info");
+        info.innerText = `Asociado: ${nombre} • Doc: ${documento}`;
+        info.classList.remove("hidden");
+      }
+
+      const subcategoriasDonacion = {
+        Alimentos: [
+          "No perecederos",
+          "Frescos",
+          "Lácteos",
+          "Bebidas",
+          "Enlatados",
+          "Harinas y Legumbres",
+        ],
+        "Ropa y Calzado": [
+          "Abrigo",
+          "Ropa de niños",
+          "Ropa de adultos",
+          "Calzado",
+          "Mantas y Frazadas",
+        ],
+        "Salud e Higiene": [
+          "Medicamentos",
+          "Higiene personal",
+          "Primeros auxilios",
+          "Insumos médicos",
+        ],
+        "Muebles y Equipamiento": [
+          "Sillas y Sillones",
+          "Mesas",
+          "Camas y Colchones",
+          "Electrodomésticos",
+          "Armarios",
+        ],
+        "Tecnología y Educación": [
+          "Computadoras",
+          "Útiles escolares",
+          "Libros",
+          "Celulares y Tablets",
+        ],
+        "Construcción y Reparación": [
+          "Herramientas",
+          "Pintura",
+          "Materiales",
+          "Ferretería",
+        ],
+      };
+
+      let bienItemCounter = 0;
+
+      function agregarBienADonacion() {
+        bienItemCounter++;
+        const container = document.getElementById("contenedor-lista-bienes");
+        const bienCard = document.createElement("div");
+        bienCard.className = "bien-item-card";
+        bienCard.id = `bien-item-${bienItemCounter}`;
+        bienCard.style.cssText =
+          "background-color: var(--surface-container-lowest); border: 1px solid var(--outline-variant); border-radius: var(--radius-md); padding: var(--space-sm); position: relative;";
+
+        const categoriasOptions = Object.keys(subcategoriasDonacion)
+          .map((cat) => `<option value="${cat}">${cat}</option>`)
+          .join("");
+
+        bienCard.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-xs);">
+          <span style="font-size: 0.8125rem; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 4px;">
+            <span class="material-symbols-outlined" style="font-size: 16px;">inventory_2</span>
+            Bien #${container.children.length + 1}
+          </span>
+          <button type="button" class="btn btn-tonal btn-sm" onclick="eliminarBienDeDonacion(${bienItemCounter})" style="padding: 2px 6px; font-size: 0.75rem; color: var(--error);" title="Eliminar este bien">
+            <span class="material-symbols-outlined" style="font-size: 14px;">delete</span>
+          </button>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-xs);">
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Categoría *</label>
+            <select class="form-select select-categoria-bien" required onchange="actualizarSubcategoriaBien(this)">
+              <option value="">Seleccionar</option>
+              ${categoriasOptions}
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Subcategoría *</label>
+            <select class="form-select select-subcategoria-bien" required disabled>
+              <option value="">Primero elija categoría</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Cantidad *</label>
+            <input class="form-input bien-cantidad" type="number" min="1" step="1" placeholder="Ej: 50" required />
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Peso (kg) *</label>
+            <input class="form-input bien-peso" type="number" min="0.1" step="0.1" placeholder="Ej: 25.5" required />
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Volumen (m³) *</label>
+            <input class="form-input bien-volumen" type="number" min="0.01" step="0.01" placeholder="Ej: 0.8" required />
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Estado *</label>
+            <select class="form-select bien-es-nuevo" required>
+              <option value="true">Nuevo</option>
+              <option value="false">Usado en buen estado</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" style="font-size: 0.75rem;">Caducidad (Opcional)</label>
+            <input class="form-input bien-caducidad" type="date" />
+          </div>
+        </div>
+      `;
+
+        container.appendChild(bienCard);
+        renumerarBienes();
+      }
+
+      function eliminarBienDeDonacion(id) {
+        const item = document.getElementById(`bien-item-${id}`);
+        if (item) {
+          const container = document.getElementById("contenedor-lista-bienes");
+          if (container.children.length <= 1) {
+            alert("La donación debe contener al menos un bien.");
+            return;
+          }
+          item.remove();
+          renumerarBienes();
+        }
+      }
+
+      function renumerarBienes() {
+        const items = document.querySelectorAll(
+          "#contenedor-lista-bienes .bien-item-card",
+        );
+        items.forEach((card, index) => {
+          const label = card.querySelector("span");
+          if (label) {
+            label.innerHTML = `<span class="material-symbols-outlined" style="font-size: 16px;">inventory_2</span> Bien #${index + 1}`;
+          }
+        });
+      }
+
+      function actualizarSubcategoriaBien(catSelect) {
+        const parentCard = catSelect.closest(".bien-item-card");
+        const subSelect = parentCard.querySelector(".select-subcategoria-bien");
+        const cat = catSelect.value;
+
+        if (cat && subcategoriasDonacion[cat]) {
+          subSelect.disabled = false;
+          subSelect.innerHTML =
+            '<option value="">Seleccionar subcategoría</option>' +
+            subcategoriasDonacion[cat]
+              .map((sub) => `<option value="${sub}">${sub}</option>`)
+              .join("");
+        } else {
+          subSelect.disabled = true;
+          subSelect.innerHTML =
+            '<option value="">Primero elija categoría</option>';
+        }
+      }
+
+      function guardarNuevaDonacion(e) {
+        e.preventDefault();
+        const donante = document.getElementById("buscador-donante").value;
+        const itemsCards = document.querySelectorAll(
+          "#contenedor-lista-bienes .bien-item-card",
+        );
+
+        if (itemsCards.length === 0) {
+          alert("Debe agregar al menos un bien a la donación.");
+          return;
+        }
+
+        const listaDeBienes = [];
+        itemsCards.forEach((card) => {
+          listaDeBienes.push({
+            categoria: card.querySelector(".select-categoria-bien").value,
+            subcategoria: card.querySelector(".select-subcategoria-bien").value,
+            cantidad: parseInt(card.querySelector(".bien-cantidad").value, 10),
+            peso: parseFloat(card.querySelector(".bien-peso").value),
+            volumen: parseFloat(card.querySelector(".bien-volumen").value),
+            esNuevo: card.querySelector(".bien-es-nuevo").value === "true",
+            fechaCaducidad: card.querySelector(".bien-caducidad").value || null,
+          });
+        });
+
+        document.getElementById("modal-ingreso").classList.add("hidden");
+        mostrarToast(
+          "Donación Ingresada al Depósito",
+          `Carga con ${listaDeBienes.length} bien(es) recibida de ${donante}. Registro de inventario y lote completado.`,
+          "inventory_2",
+        );
+        e.target.reset();
+        document
+          .getElementById("donante-seleccionado-info")
+          .classList.add("hidden");
+        document.getElementById("contenedor-lista-bienes").innerHTML = "";
+        agregarBienADonacion();
+      }
+
+      function conmutarTabRegistro(tipo) {
+        const btnDonante = document.getElementById("tab-btn-donante");
+        const btnEntidad = document.getElementById("tab-btn-entidad");
+        const panelDonante = document.getElementById("panel-registro-donante");
+        const panelEntidad = document.getElementById("panel-registro-entidad");
+
+        if (tipo === "donante") {
+          btnDonante.className = "btn btn-primary btn-sm";
+          btnEntidad.className = "btn btn-tonal btn-sm";
+          panelDonante.classList.remove("hidden");
+          panelEntidad.classList.add("hidden");
+        } else {
+          btnDonante.className = "btn btn-tonal btn-sm";
+          btnEntidad.className = "btn btn-primary btn-sm";
+          panelDonante.classList.add("hidden");
+          panelEntidad.classList.remove("hidden");
+        }
+      }
+
+      function conmutarTipoDonante(subtipo) {
+        const formHumano = document.getElementById("form-donante-humano");
+        const formJuridico = document.getElementById("form-donante-juridico");
+
+        if (subtipo === "humano") {
+          formHumano.classList.remove("hidden");
+          formJuridico.classList.add("hidden");
+        } else {
+          formHumano.classList.add("hidden");
+          formJuridico.classList.remove("hidden");
+        }
+      }
+
+      function validarTelefonoHumano() {
+        const telInput = document.getElementById("humano-telefono");
+        const medioSelect = document.getElementById("humano-medio");
+        const optSms = document.getElementById("opt-sms-humano");
+        const optWsp = document.getElementById("opt-wsp-humano");
+        const hint = document.getElementById("humano-telefono-hint");
+
+        const tieneTel = telInput.value.trim().length > 0;
+        optSms.disabled = !tieneTel;
+        optWsp.disabled = !tieneTel;
+
+        if (tieneTel) {
+          optSms.textContent = "SMS";
+          optWsp.textContent = "WHATSAPP";
+          if (hint)
+            hint.textContent =
+              "Canales telefónicos (SMS/WhatsApp) habilitados.";
+        } else {
+          optSms.textContent = "SMS (requiere teléfono cargado)";
+          optWsp.textContent = "WHATSAPP (requiere teléfono cargado)";
+          if (hint)
+            hint.textContent =
+              "SMS y WhatsApp solo disponibles si hay teléfono cargado.";
+          if (medioSelect.value === "SMS" || medioSelect.value === "WHATSAPP") {
+            medioSelect.value = "MAIL";
+          }
+        }
+      }
+
+      function validarTelefonoJuridico() {
+        const telInput = document.getElementById("juridico-telefono");
+        const medioSelect = document.getElementById("juridico-medio");
+        const optSms = document.getElementById("opt-sms-juridico");
+        const optWsp = document.getElementById("opt-wsp-juridico");
+        const hint = document.getElementById("juridico-telefono-hint");
+
+        const tieneTel = telInput.value.trim().length > 0;
+        optSms.disabled = !tieneTel;
+        optWsp.disabled = !tieneTel;
+
+        if (tieneTel) {
+          optSms.textContent = "SMS";
+          optWsp.textContent = "WHATSAPP";
+          if (hint)
+            hint.textContent =
+              "Canales telefónicos (SMS/WhatsApp) habilitados.";
+        } else {
+          optSms.textContent = "SMS (requiere teléfono cargado)";
+          optWsp.textContent = "WHATSAPP (requiere teléfono cargado)";
+          if (hint)
+            hint.textContent =
+              "SMS y WhatsApp solo disponibles si hay teléfono cargado.";
+          if (medioSelect.value === "SMS" || medioSelect.value === "WHATSAPP") {
+            medioSelect.value = "MAIL";
+          }
+        }
+      }
+
+      let listaEmailsEntidad = [];
+
+      function renderizarEmailsEntidad() {
+        const container = document.getElementById("entidad-emails-tags");
+        const errorMsg = document.getElementById("entidad-emails-error");
+        container.innerHTML = "";
+
+        if (listaEmailsEntidad.length > 0 && errorMsg) {
+          errorMsg.style.display = "none";
+        }
+
+        listaEmailsEntidad.forEach((email, index) => {
+          const chip = document.createElement("div");
+          chip.style.cssText =
+            "display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background-color: var(--surface-container-high); border-radius: var(--radius-full); font-size: 0.8125rem; color: var(--on-surface); border: 1px solid var(--outline-variant);";
+          chip.innerHTML = `
+          <span>${email}</span>
+          <button type="button" onclick="eliminarEmailEntidad(${index})" style="background: none; border: none; cursor: pointer; display: inline-flex; align-items: center; color: var(--on-surface-variant); padding: 0;">
+            <span class="material-symbols-outlined" style="font-size: 14px;">close</span>
+          </button>
+        `;
+          container.appendChild(chip);
+        });
+      }
+
+      function agregarEmailEntidad() {
+        const input = document.getElementById("entidad-nuevo-email");
+        const val = input.value.trim();
+        const errorMsg = document.getElementById("entidad-emails-error");
+
+        if (!val || !val.includes("@") || !val.includes(".")) {
+          alert("Por favor ingrese una dirección de correo válida.");
+          input.focus();
+          return;
+        }
+
+        if (listaEmailsEntidad.includes(val)) {
+          alert("Este correo ya fue agregado a la lista.");
+          input.focus();
+          return;
+        }
+
+        listaEmailsEntidad.push(val);
+        input.value = "";
+        renderizarEmailsEntidad();
+      }
+
+      function eliminarEmailEntidad(index) {
+        listaEmailsEntidad.splice(index, 1);
+        renderizarEmailsEntidad();
+      }
+
+      function guardarDonanteHumano(e) {
+        e.preventDefault();
+        const nombre = document.getElementById("humano-nombre").value;
+        const apellido = document.getElementById("humano-apellido").value;
+        const dni = document.getElementById("humano-dni").value;
+        const medio = document.getElementById("humano-medio").value;
+
+        mostrarToast(
+          "Donante Humano Registrado",
+          `${nombre} ${apellido} (DNI ${dni}) fue incorporado con canal preferente ${medio}.`,
+          "person_add",
+        );
+        e.target.reset();
+        validarTelefonoHumano();
+      }
+
+      function guardarDonanteJuridico(e) {
+        e.preventDefault();
+        const razon = document.getElementById("juridico-razon").value;
+        const cuit = document.getElementById("juridico-cuit").value;
+        const medio = document.getElementById("juridico-medio").value;
+
+        mostrarToast(
+          "Donante Jurídico Registrado",
+          `${razon} (CUIT ${cuit}) fue registrado con canal preferente ${medio}.`,
+          "domain_add",
+        );
+        e.target.reset();
+        validarTelefonoJuridico();
+      }
+
+      function guardarEntidadBeneficiaria(e) {
+        e.preventDefault();
+        if (listaEmailsEntidad.length === 0) {
+          const errorMsg = document.getElementById("entidad-emails-error");
+          if (errorMsg) errorMsg.style.display = "block";
+          document.getElementById("entidad-nuevo-email").focus();
+          return;
+        }
+
+        const razon = document.getElementById("entidad-razon").value;
+
+        mostrarToast(
+          "Entidad Beneficiaria Registrada",
+          `${razon} ha sido dada de alta con ${listaEmailsEntidad.length} email(s) registrados.`,
+          "foundation",
+        );
+        e.target.reset();
+        listaEmailsEntidad = [];
+        renderizarEmailsEntidad();
+      }
+
+      let loteActualParaEstado = "";
+      function abrirModalEstado(loteId, desc, estadoActual) {
+        loteActualParaEstado = loteId;
+        document.getElementById("modal-estado-lote-id").innerText =
+          `${desc} (${loteId}) - Estado actual: ${estadoActual}`;
+        document.getElementById("justificacion-tecnica").value = "";
+        document.getElementById("modal-estado").classList.remove("hidden");
+      }
+
+      function guardarNuevoEstado() {
+        const nuevo = document.getElementById("nuevo-estado-select").value;
+        const justif = document
+          .getElementById("justificacion-tecnica")
+          .value.trim();
+        if (!justif) {
+          alert(
+            "Por favor ingrese la justificación técnica para garantizar la trazabilidad criptográfica.",
+          );
+          return;
+        }
+        document.getElementById("modal-estado").classList.add("hidden");
+        mostrarToast(
+          "Estado Técnico Actualizado",
+          `Lote ${loteActualParaEstado} pasó a '${nuevo}'. Registro inmutable almacenado en la cadena.`,
+          "sync",
+        );
+      }
+
+      function cambiarRanking(mes) {
+        const contenedor = document.getElementById("contenedor-ranking");
+        if (mes === "mayo-2025") {
+          contenedor.innerHTML = `
+          <div class="podium-card">
+            <div style="display: flex; align-items: center; gap: var(--space-md);">
+              <div class="podium-medal podium-gold">🥇</div>
+              <div>
+                <h3 style="font-size: 1rem; font-weight: 600; color: var(--on-surface); margin: 0;">Cervecería & Maltería Quilmes</h3>
+                <p style="font-size: 0.8125rem; color: var(--on-surface-variant); margin: 2px 0 0 0;">14 entregas • 5.600 kg donados (Agua mineral y cereales)</p>
+              </div>
+            </div>
+            <div style="text-align: right; flex-shrink: 0;">
+              <span class="podium-kilos gold">5.600 kg</span>
+              <span style="display: block; font-size: 0.6875rem; color: var(--on-surface-variant);">Mayo 2025</span>
+            </div>
+          </div>
+          <div class="podium-card">
+            <div style="display: flex; align-items: center; gap: var(--space-md);">
+              <div class="podium-medal podium-silver">🥈</div>
+              <div>
+                <h3 style="font-size: 1rem; font-weight: 600; color: var(--on-surface); margin: 0;">Empresa Alimentos Cono Sur</h3>
+                <p style="font-size: 0.8125rem; color: var(--on-surface-variant); margin: 2px 0 0 0;">9 entregas • 4.100 kg donados</p>
+              </div>
+            </div>
+            <div style="text-align: right; flex-shrink: 0;">
+              <span class="podium-kilos">4.100 kg</span>
+              <span style="display: block; font-size: 0.6875rem; color: var(--on-surface-variant);">Mayo 2025</span>
+            </div>
+          </div>
+          <div class="podium-card">
+            <div style="display: flex; align-items: center; gap: var(--space-md);">
+              <div class="podium-medal podium-bronze">🥉</div>
+              <div>
+                <h3 style="font-size: 1rem; font-weight: 600; color: var(--on-surface); margin: 0;">Carla Benítez</h3>
+                <p style="font-size: 0.8125rem; color: var(--on-surface-variant); margin: 2px 0 0 0;">Donante Particular • 2.100 kg donados</p>
+              </div>
+            </div>
+            <div style="text-align: right; flex-shrink: 0;">
+              <span class="podium-kilos">2.100 kg</span>
+              <span style="display: block; font-size: 0.6875rem; color: var(--on-surface-variant);">Mayo 2025</span>
+            </div>
+          </div>
+        `;
+          mostrarToast(
+            "Historial Cargado",
+            "Mostrando auditoría del ranking oficial de Mayo 2025.",
+            "history",
+          );
+        } else {
+          // Revertir a mes en curso
+          mostrarToast(
+            "Ranking Actualizado",
+            `Mostrando datos de ${mes.replace("-", " ").toUpperCase()}.`,
+            "history",
+          );
+        }
+      }
+
+      function procesarCSV(files) {
+        if (files.length > 0) {
+          const file = files[0];
+          mostrarToast(
+            "Archivo Cargado para Validación",
+            `${file.name} listo para streaming masivo (+10.000 filas detectadas).`,
+            "file_present",
+          );
+        }
+      }
+
+      function ejecutarImportacion() {
+        mostrarToast(
+          "Procesamiento Masivo Iniciado",
+          "Importando 12.450 donantes con streaming asíncrono y enviando claves cifradas automáticas.",
+          "mark_email_read",
+        );
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        if (
+          document.getElementById("contenedor-lista-bienes") &&
+          document.getElementById("contenedor-lista-bienes").children.length ===
+            0
+        ) {
+          agregarBienADonacion();
+        }
+      });
+      document
+        .getElementById("filtro-inventario")
+        ?.addEventListener("input", function (e) {
+          const term = e.target.value.toLowerCase();
+          const rows = document.querySelectorAll(".inventory-table tbody tr");
+          rows.forEach((row) => {
+            row.style.display = row.innerText.toLowerCase().includes(term)
+              ? ""
+              : "none";
+          });
+        });
+    </script>
+  </body>
+</html>
